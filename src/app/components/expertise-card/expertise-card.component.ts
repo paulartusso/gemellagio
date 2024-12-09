@@ -19,8 +19,4 @@ export class ExpertiseCardComponent {
   navigateTo(url: string){
     this.router.navigate([url]);
   }
-  
-  goToDescription(){
-    console.log("blabla")
-  }
 }

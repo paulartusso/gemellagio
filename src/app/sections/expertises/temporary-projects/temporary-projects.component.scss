@@ -35,61 +35,62 @@
   margin-bottom: 25px;
   .logo{
     width: 120px;
+    margin: 30px;
   }
   .classification{
     position: absolute;
-        top: 23px;
-          left: 156px;
+    top: 18px;
+    left: 134px;
     display: flex;
     flex-direction: column;
     align-items: center;
     img{
-      width: 40px;
+      width: 60px;
     }
   }
   .protection{
     position: absolute;
-    top: 22px;
-    right: 165px;
+    top: 20px;
+    right: 152px;
     display: flex;
     flex-direction: column;
     align-items: center;
     img {
-      width: 40px;
+      width: 60px;
     }
   }
     .gestion {
       position: absolute;
       bottom: 78px;
-      right: 132px;
+      right: 106px;
       display: flex;
       flex-direction: column;
       align-items: center;
       img {
-        width: 43px;
+        width: 67px;
       }
     }
     .barcode {
       position: absolute;
-      bottom: 8px;
+      bottom: -9px;
       left: 234px;
       display: flex;
       flex-direction: column;
       align-items: center;
       img {
-        width: 43px;
+        width: 63px;
       }
     }
         .destroy {
           position: absolute;
           bottom: 80px;
-          left: 125px;
+            left: 99px;
           display: flex;
           flex-direction: column;
           align-items: center;
     
           img {
-            width: 43px;
+            width: 63px;
           }
     
         }
@@ -99,4 +100,9 @@ span{
   font-size: 10px;
   text-transform: uppercase;
   margin-top: 5px;
+}
+@media screen and (max-width: 500px) {
+  .asset-items{
+    display: none;
+  }
 }

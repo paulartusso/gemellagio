@@ -1,8 +1,8 @@
-<div class="serviceBox" (click)="goToDescription()">
+<div class="serviceBox">
   <div class="icon" [style.background-image]="'url(' + img + ')'"
     style="background-position: center; background-repeat: no-repeat; background-size: cover;">
   </div>
-  <div class="content">
+  <div class="content" (click)="navigateTo(url)">
     <h2>{{cardTitle}}</h2>
     <p>
       <span>

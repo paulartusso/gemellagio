@@ -40,7 +40,6 @@
 .text {
   padding: 25px 25px 0 25px;
   text-align: center;
-  font-size: 22px;
   margin-top: -25px;
   margin-bottom: 30px;
   font-weight: 400;
@@ -50,6 +49,17 @@
     color: #DD0555;
   }
 }
+@media screen and (min-width: 500px) {
+  .text{
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 501px) {
+  .text {
+      font-size: 28px;
+    }
+}
+
 .separator{
   border-bottom: 1px solid #DD0555;
   transform-origin: center;
@@ -76,7 +86,7 @@
 
 //title && subtitle
 h3 {
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 500;
   margin-left: 35px;
   color: #009DDC;
@@ -96,7 +106,7 @@ h4 {
   }
 
   @media screen and (min-width: 501px) {
-    font-size: 13px;
+    font-size: 17px;
   }
 }
 
