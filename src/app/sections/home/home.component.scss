@@ -1,0 +1,205 @@
+//hero
+@media screen and (max-width: 500px){
+  .hero {
+    background-image:
+      linear-gradient(to bottom, rgba(34, 130, 207, 0.295), rgba(255, 255, 255, 0.443), rgba(255, 255, 255, 0.9), rgb(255, 255, 255)),
+      url('../../../assets/hero.jpg');
+    width: 100%;
+    height: calc(60vh - 55px);
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+  }
+  .size{
+    font-size: 22px;
+  }
+  .separator{
+    width: 40%;
+  }
+}
+@media screen and (min-width: 501px){
+  .hero {
+      background-image:
+        linear-gradient(to bottom, rgba(34, 130, 207, 0.295), rgba(255, 255, 255, 0.443), rgba(255, 255, 255, 0.9), rgb(255, 255, 255)),
+        url('../../../assets/hero.jpg');
+      width: 100%;
+      height: calc(80vh - 55px);
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+.size {
+    font-size: 20px;
+  }
+    .separator {
+      width: 30%;
+    }
+}
+
+//first text and mooving separator
+.text {
+  padding: 25px 25px 0 25px;
+  text-align: center;
+  font-size: 22px;
+  margin-top: -25px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  background: linear-gradient(to bottom, #ffffffaf, #ffffff, #fff);
+  span{
+    font-weight: 500;
+    color: #DD0555;
+  }
+}
+.separator{
+  border-bottom: 1px solid #DD0555;
+  transform-origin: center;
+    animation: growImage 2.5s ease-in-out forwards;
+  }
+  
+  @keyframes growImage {
+    0% {
+      transform: scale(1.1, 1.1);
+      /* Initial scale */
+    }
+  
+    100% {
+      transform: scale(4, 1);
+      /* Final scale */
+    }
+  }
+
+.second-text{
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 20px 20px 20px;
+}
+
+//title && subtitle
+h3 {
+  font-size: 27px;
+  font-weight: 500;
+  margin-left: 35px;
+  color: #009DDC;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-weight: 300;
+  margin-left: 55px;
+  color: #333;
+  margin-top: 7px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 501px) {
+    font-size: 13px;
+  }
+}
+
+.paragraph{
+  padding: 10px 25px 0 35px;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+//parallax section
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-top: 25px;
+}
+
+.img-1{
+  background-image: url("../../../assets/everience-build-the-future-together.jpg");
+}
+.img-2{
+  background-image: url("../../../assets/graphics.jpg");
+}
+
+@media screen and (max-width: 500px) {
+  .parallax{
+    height: 45vh;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  .parallax {
+      height: 70vh;
+    }
+}
+
+.timeline{
+  display: flex;
+    align-items: center;
+    margin: 35px 0 20px 15px;
+    padding: 20px 0 20px 15px;
+    flex-direction: row;
+      justify-content: center;
+  .timeline-card {
+      position: relative;
+      height: 100%;
+      width: 27%;
+  
+      .circle {
+        position: absolute;
+        top: -30px;
+        left: 33px;
+        z-index: 1001;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: #009DDC;
+        border: 5px solid #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+        color: #FFF;
+  
+        img {
+          width: 43px;
+        }
+      }
+    
+        .clipped {
+          clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+          background-color: #83D0F5;
+          height: 160px;
+          width: 120px;
+          padding: 30px 7px 0 7px;
+    
+          h5 {
+            font-size: 13px;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 0;
+            color: #FFF;
+          }
+    
+          p {
+            font-size: 8px;
+            text-align: center;
+            padding: 5px 10px;
+          }
+        }
+        
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .timeline {
+    display: none;
+  }
+}

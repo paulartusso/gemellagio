@@ -1,1 +1,83 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Everience-IT-primary: mat.define-palette(mat.$indigo-palette);
+$Everience-IT-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Everience-IT-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Everience-IT-theme: mat.define-light-theme((
+  color: (
+    primary: $Everience-IT-primary,
+    accent: $Everience-IT-accent,
+    warn: $Everience-IT-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Everience-IT-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Montserrat", sans-serif; }
+
+.separator {
+  width: 2%;
+  content: '';
+  margin-top: 40px;
+  transform-origin: center;
+  animation: growImage 2.5s ease-in-out forwards;
+}
+
+@keyframes growImage {
+  0% {
+    transform: scale(1.1, 1.1);
+    /* Initial scale */
+  }
+
+  100% {
+    transform: scale(70, 1);
+    /* Final scale */
+  }
+}
+
+h3 {
+  font-size: 27px;
+  font-weight: 500;
+  margin-left: 35px;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-weight: 300;
+  margin-left: 55px;
+  color: #333;
+  margin-top: 7px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 501px) {
+    font-size: 13px;
+  }
+}

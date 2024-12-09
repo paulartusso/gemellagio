@@ -1,0 +1,40 @@
+.parallax {
+  background-image: url("../../../../assets/Ekahau-Survey-resized-2.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin: 30px 25px;
+  height: 90vh;
+}
+section{
+  padding: 0 15px 40px 15px;
+  h5{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 25px;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+  h6{
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 25px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #DD0555;
+  }
+  p{
+    font-size: 13px;
+    font-weight: 300;
+    margin-left: 40px;
+    margin-top: 7px;
+    color: #333;
+  }
+}

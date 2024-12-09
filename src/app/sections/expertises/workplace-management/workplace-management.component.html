@@ -1,0 +1,19 @@
+<div class="separator" style="border-bottom: 1px solid #009DDC;"></div>
+<h3 style="color: #009DDC;">Workplace Management</h3>
+<h4>Lorem ipsum dolot</h4>
+<div class="cards-container">
+  <!--
+    <app-workplace-management-card [cardTitle]="'Suporto agli utenti finali'"
+      [description]="'Everience offre assistenza continua per problemi IT, migliorando la produttività degli utenti. Il service desk multilingue risolve rapidamente le richieste a livello globale.'"
+      [img]="'../../../assets/handshake.png'"></app-workplace-management-card>
+    <app-workplace-management-card [cardTitle]="'Industrializzazione dei servizi IT'"
+      [description]="'L\'azienda ottimizza i processi IT attraverso automazione estandardizzazione, riducendo costi e migliorando l\'efficienza operativa.'"
+      [img]="'../../../assets/technical-support.png'"></app-workplace-management-card>
+    <app-workplace-management-card [cardTitle]="'Suporto geografico'"
+      [description]="'Everience fornisce supporto globale con una rete di filialie partner, coprendo 8 paesi e parlando 25 lingue per assistenza ovunque.'"
+      [img]="'../../../assets/globe.png'"></app-workplace-management-card>
+  -->
+  <app-workplace-management-card *ngFor="let card of cards; let i = index" [img]="card.img" [cardTitle]="card.cardTitle"
+    [description]="card.description" [color]="card.color" [border]="card.border"
+    [bottom]="card.bottom"></app-workplace-management-card>
+</div>

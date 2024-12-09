@@ -1,0 +1,16 @@
+<!--MOBILE vertical line-->
+<!--DESKTOP horizontal line-->
+<div class="container">
+  <div class="position-div">
+    {{position}}
+  </div>
+  <div class="line" [style.height]="height"></div>
+  <div class=" point" [style.top]="top"></div>
+  <img [src]="url" alt="" class="img" [style.top]="imgPosition">
+  <!--
+    -->
+  <div class="text" [style.top]="textPosition">
+    <h6>{{title}}</h6>
+    <p>{{description}}</p>
+  </div>
+</div>

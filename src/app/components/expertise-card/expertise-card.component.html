@@ -1,0 +1,31 @@
+<div class="serviceBox" (click)="goToDescription()">
+  <div class="icon" [style.background-image]="'url(' + img + ')'"
+    style="background-position: center; background-repeat: no-repeat; background-size: cover;">
+  </div>
+  <div class="content">
+    <h2>{{cardTitle}}</h2>
+    <p>
+      <span>
+        <i class="material-icons">check</i>
+        <span>
+          {{firstItem}} <br>
+        </span>
+      </span>
+      <span>
+        <i class="material-icons">check</i>
+        <span>
+          {{secondItem}} <br>
+        </span>
+      </span>
+      <span>
+        <i class="material-icons">check</i>
+        <span>
+          {{thirdItem}} <br>
+        </span>
+      </span>
+    </p>
+  </div>
+  <button (click)="navigateTo(url)">
+    <i class="material-icons">keyboard_double_arrow_right</i>
+  </button>
+</div>

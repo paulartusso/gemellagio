@@ -1,0 +1,20 @@
+
+@media screen and (max-width: 500px) {
+  .cards-container {
+    display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  .cards-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+      margin-bottom: 30px;
+    }
+  }

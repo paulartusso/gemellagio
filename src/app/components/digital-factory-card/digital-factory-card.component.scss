@@ -1,0 +1,44 @@
+.card{
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20PX;
+  .poligon{
+        height: 189px;
+          width: 230px;
+          clip-path: polygon(0 49%, 100% 22%, 100% 100%, 0% 100%);
+          background-position: initial;
+          background-repeat: no-repeat;
+          background-size: cover;
+          -webkit-box-shadow: 0px 5px 9px 2px rgba(0, 75, 105, 0.83);
+            box-shadow: 0px 5px 9px 2px rgba(0, 75, 105, 0.83);
+  }
+  .title-container{
+    background-color: #009DDC;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 9px;
+    margin-top: -10px;
+    border-radius: 3px;
+    z-index: 1000;-webkit-box-shadow: 0px 2px 9px 2px rgba(0, 75, 105, 0.83);
+      box-shadow: 0px 1px 3px 1px rgba(0, 75, 105, 0.83);
+    h4{
+      margin: 0;
+      font-size: 11px;
+      font-weight: 500;
+      color: #FFF;
+      text-align: center;
+    }
+  }
+  .p-container{
+    width: 220px;
+    p{
+      font-size: 9px;
+      text-align: center;
+    }
+  }
+}

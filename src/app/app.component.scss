@@ -1,0 +1,38 @@
+.up {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: none;
+  background-color: #009DDC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+
+  i {
+    color: #FFF;
+  }
+}
+@media screen and (max-width: 500px) {
+  .up {
+    height: 40px;
+    width: 40px;
+
+    i {
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 501px) {
+  .up {
+    height: 33px;
+    width: 33px;
+
+    i {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-top: 1px solid #555;
+}
+.position-div{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #DD0555;
+  color: #FFF;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line{
+  height: 40px;
+  content: '';
+  border: 1px solid #DD0555;
+  position: absolute;
+  top: 15px;
+}
+.point{
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #DD0555;
+}
+.img{
+  width: 45px;
+  position: absolute;
+}
+.text{
+  position: absolute;
+    width: 75%;
+    top: 100px;
+    text-align: center;
+  h6{
+    font-size: 9px;
+    margin-bottom: 0px;
+    color: #DD0555;
+    text-transform: uppercase;
+  }
+  p{
+    font-size: 8px;
+    color: #333;
+  }
+}

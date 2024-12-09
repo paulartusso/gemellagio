@@ -1,0 +1,67 @@
+<div class="menu">
+  <span (click)="navigateTo('home')">
+    <img src="../../../assets/logo.png" alt="">
+  </span>
+  <span style="display: flex; flex-direction: row; align-items: center;">
+    <div class="desktop-menu">
+      <span (click)="navigateTo('home')" [class.active]="currentTab === 'home'">
+        About us
+      </span>
+      <span (click)="navigateTo('services')" [class.active]="currentTab === 'services'">
+        Servizi
+      </span>
+      <span (click)="navigateTo('case-studies')">
+        Case Studies
+      </span>
+      <span>
+        Lavora con noi
+      </span>
+      <span (click)="goToFooter()">
+        Contatti
+      </span>
+    </div>
+    <div class="language-wrapper">
+      <div class="selected-language" (click)="showLanguages()"></div>
+      <div [ngClass]="showLanguageOptions ? 'flags' : 'selector'">
+        <div class="flag">
+          <img src="../../../assets/eng.png" alt="EN" style="width: 15px;">
+        </div>
+      </div>
+    </div>
+    <i (click)="showMenu()" class="material-icons hamburguer">menu</i>
+  </span>
+</div>
+<!--MOBILE HIDDEN MENU-->
+<div class="links-container">
+  <div *ngIf="isShowing" class="hidden-menu">
+    <div>
+      <span>Servizi</span>
+      <span class="i-alignment">
+        <i class="material-icons">keyboard_arrow_down</i>
+      </span>
+    </div>
+    <div>
+      <span>Case studies</span>
+    </div>
+    <div>
+      <span>Carriera</span>
+    </div>
+    <span>Su di noi</span>
+    <span>Contatti</span>
+  </div>
+</div>
+<!--STUDY CASES for Desktop
+<div class="links-container">
+  <div *ngIf="showCases" class="hidden-menu">
+    <div>
+      <span>Caso 1</span>
+    </div>
+    <div>
+      <span>Caso 2</span>
+    </div>
+    <div>
+      <span>Caso 3</span>
+    </div>
+  </div>
+</div>
+-->

@@ -1,0 +1,57 @@
+.separator{
+  width: 50%;
+  border-bottom: 1px solid #009DDC;
+  content: '';
+  margin-top: 40px;
+}
+h3 {
+  font-size: 27px;
+  font-weight: 500;
+  margin-left: 35px;
+  color: #009DDC;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+h4{
+  font-weight: 300;
+  margin-left: 55px;
+  color: #333;
+  margin-top: 7px;
+  @media screen and (max-width: 500px) {    
+    font-size: 15px;
+    }
+  @media screen and (min-width: 501px) {
+    font-size: 13px;
+  }
+}
+.parallax{
+  background-image: url("../../../assets/net.jpg");
+  height: 70vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  
+  div{
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    color: #222;
+    text-align: center;
+    @media screen and (max-width: 500px) {
+        width: 60%;
+      }
+            @media screen and (min-width: 501px) {
+              width: 50%;
+              font-size: 13px;
+            }
+    strong{
+      color: #009DDC;
+    }
+  }
+}

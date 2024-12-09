@@ -1,0 +1,21 @@
+<div class="separator" style="border-bottom: 1px solid #DD0555;"></div>
+<h3 style="color: #DD0555;">Servizi</h3>
+<h4>Potenzia il tuo business</h4>
+<div class="service_Box">
+  <div class="container service_container">
+
+    <app-expertise-card [cardTitle]="'Temporary Projects'" [firstItem]="'Competenze on demand'"
+      [secondItem]="'Staff Augmentation in modalità T&M'" [thirdItem]="'Metodologie certificate di Project Management'"
+      [img]="'../../../assets/cafe.jpg'" [url]="'services/temporary-projects'"></app-expertise-card>
+    <app-expertise-card [cardTitle]="'Infrastructure engineering'" [firstItem]="'IT PM'"
+      [secondItem]="'Infrastrutture on prem / cloud'" [thirdItem]="'Supporto utenti finali'"
+      [img]="'../../../assets/ux.jpg'" [url]="'services/infrastructure-engineering'"></app-expertise-card>
+    <app-expertise-card [cardTitle]="'Digital Transformation'" [firstItem]="'Percorsi di digitalizzazione'"
+      [secondItem]="'Laboratorio di sviluppo digitale'" [thirdItem]="'Sviluppi on demand'"
+      [img]="'../../../assets/net.jpg'" [url]="'services/digital-factory'"></app-expertise-card>
+    <app-expertise-card [cardTitle]="'Workplace Management'" [firstItem]="'Supporto agli utenti finali'"
+      [secondItem]="'Industrializzazione dei servizi IT'" [thirdItem]="'Supporto geografico esteso mondiale'"
+      [img]="'../../../assets/cafe.jpg'" [url]="'services/workplace-management'"></app-expertise-card>
+  </div>
+  <router-outlet></router-outlet>
+</div>

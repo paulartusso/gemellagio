@@ -1,0 +1,144 @@
+.menu{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 9px 15px -3px rgba(0, 0, 0, 0.1);
+  span{
+    img{
+      width: 100px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+  }
+  .language-wrapper{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    .selected-language{
+      background-image: url('../../../assets/italy.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      cursor: pointer;
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      margin-right: 10px;
+      top: 0;
+      left: 0;
+      z-index: 1001;
+    }
+    .selector{
+      position: absolute;
+      top: 0;
+      left: 0;
+      .flag{
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .desktop-menu{
+    display: none;
+  }
+  .hamburguer{
+    cursor: pointer;
+  }
+  .links-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+    position: absolute;
+    background-color: #FFF;
+    z-index: 1001;
+    .hidden-menu{
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      padding: 10px;
+      div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+    @media screen and (min-width: 501px) {
+      .desktop-menu{
+        display: flex;
+        flex-direction: row;
+        span{
+          font-size: 10px;
+          margin-right: 12px;
+          cursor: pointer;
+        }
+        .dropdown{
+          display: flex;
+          align-items: center;
+          i{
+            font-size: 12px;
+          }
+        }
+      }
+      .hamburguer {
+          display: none;
+        }
+      .links-container {
+          width: 100vw;
+          position: absolute;
+          .hidden-menu {
+            padding: 10px;
+            width: 96%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 11px;
+            background-color: #ffffffd9;
+            div {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .i-alignment{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+    }
+
+        .active {
+          font-size: 11px;
+          color: #000;
+          font-weight: bold;
+        }
+
+        .desktop-menu span:hover{
+          color: #000;
+          font-weight: 500;
+        }
+
+    .flags{
+      height: 40px;
+      border: 1px solid #AAA;
+        background-color: #FFF;
+      border-radius: 9px;
+      animation: showFlags 2.5s;
+          display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 4px;
+      .flag{
+        width: 15px;
+      }
+    }

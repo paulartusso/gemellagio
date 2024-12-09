@@ -1,0 +1,18 @@
+.service_Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 55px;
+}
+
+.service_container {
+  position: relative;
+  width: 1200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
