@@ -19,14 +19,16 @@
 <div class="separator" style="border-bottom: 1px solid #DD0555;"></div>
 <h3 style="color: #DD0555;">Area Sviluppo</h3>
 <h4>Subtitulo..?</h4>
-<div class="timeline">
-  <app-sviluppo-card [cardTitle]="'DATA'"
-    [description]="'È l\'insieme delle informazioniraccolte e utilizzate perprendere decisioni, generarereport e migliorare leoperazioni aziendali, come idati dei clienti, le transazionifinanziarie e le analisi dimercato, e serve asupportare i sistemi backend e frontend.'"
-    [img]="'../../../assets/dashboard.png'"></app-sviluppo-card>
-  <app-sviluppo-card [cardTitle]="'BACKEND'"
-    [description]="'Rappresenta la parte nascosta del sistema che gestisce la logica dell\'applicazione, le interazioni con il database e i server, come server, database e API, ed è il motore che alimenta le operazioni complesse delle applicazioni.'"
-    [img]="'../../../assets/backend.png'"></app-sviluppo-card>
-  <app-sviluppo-card [cardTitle]="'FRONTEND'"
-    [description]="'È l\'interfaccia visibile con cui gli utenti interagiscono, comprendente elementi come siti web, app mobili, pulsanti e moduli di login, ed è progettato per offrire un\'interazione intuitiva e facile da usare.'"
-    [img]="'../../../assets/frontend.png'"></app-sviluppo-card>
+<div style="display: flex; justify-content: space-evenly; align-items: center;">
+  <div class="timeline" style="width: 70%;">
+    <app-sviluppo-card [cardTitle]="'DATA'"
+      [description]="'È l\'insieme delle informazioniraccolte e utilizzate perprendere decisioni, generarereport e migliorare leoperazioni aziendali, come idati dei clienti, le transazionifinanziarie e le analisi dimercato, e serve asupportare i sistemi backend e frontend.'"
+      [img]="'../../../assets/dashboard.png'"></app-sviluppo-card>
+    <app-sviluppo-card [cardTitle]="'BACKEND'"
+      [description]="'Rappresenta la parte nascosta del sistema che gestisce la logica dell\'applicazione, le interazioni con il database e i server, come server, database e API, ed è il motore che alimenta le operazioni complesse delle applicazioni.'"
+      [img]="'../../../assets/backend.png'"></app-sviluppo-card>
+    <app-sviluppo-card [cardTitle]="'FRONTEND'"
+      [description]="'È l\'interfaccia visibile con cui gli utenti interagiscono, comprendente elementi come siti web, app mobili, pulsanti e moduli di login, ed è progettato per offrire un\'interazione intuitiva e facile da usare.'"
+      [img]="'../../../assets/frontend.png'"></app-sviluppo-card>
+  </div>
 </div>
