@@ -67,15 +67,16 @@
 .footer-dark .item.text p {
   opacity: 0.6;
   margin-bottom: 0;
-  font-size: 7px;
+  font-size: 10px;
 }
 
 .footer-dark .item.social {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
   img{
-    width: 15px;
+    width: 30px;
   }
 }
 
@@ -90,13 +91,13 @@
       align-items: center;
     
       img {
-        width: 15px;
+        width: 23px;
       }
   }
 }
 
 .footer-dark .item.social>a {
-  width: 26px;
+  width: 40px;
 }
 
 .footer-dark .item.social>a:hover {

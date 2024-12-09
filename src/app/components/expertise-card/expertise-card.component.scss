@@ -1,7 +1,7 @@
 .serviceBox {
   position: relative;
-  width: 250px;
-  height: 260px;
+  width: 285px;
+  height: 285px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -29,13 +29,12 @@
 }
 
 .serviceBox:hover .icon {
-  top: 20px;
-  left: calc(50% - 40px);
-  width: 80px;
-  height: 80px;
+  top: 15px;
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   transition-delay: 0s;
-  
 }
 
 .serviceBox .icon i {
@@ -53,9 +52,9 @@
 .serviceBox .content {
   position: relative;
   padding: 20px;
-  color: #333;
+  color: #222;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 100px;
   z-index: 1;
   transform: scale(0);
   transition: 0.5s;
@@ -75,7 +74,7 @@
       color: #426FB4;
     }
     p{
-      font-size: 10px;
+      font-size: 12px;
       text-align: left;
     }
   }
@@ -106,8 +105,8 @@ p span{
   align-items: flex-start;
   margin-bottom: 3px;
   i{
-    font-size: 10px;
+    font-size: 11px;
     color: #005DDC;
-    margin: 1px 3px 0 0 ;
+    margin: 3px 3px 0 0 ;
   }
 }
