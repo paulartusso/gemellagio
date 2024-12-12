@@ -13,10 +13,13 @@
       <span (click)="navigateTo('case-studies')" [class.active]="currentTab === 'case-studies'">
         Case Studies
       </span>
-      <span>
+      <span (click)="navigateTo('media')" [class.active]="currentTab === 'media'">
+        Media
+      </span>
+      <span (click)="navigateTo('join-us')" [class.active]="currentTab === 'join-us'">
         Lavora con noi
       </span>
-      <span (click)="goToFooter()">
+      <span (click)="navigateTo('contacts')" [class.active]="currentTab === 'contacts'">
         Contatti
       </span>
     </div>
@@ -34,20 +37,20 @@
 <!--MOBILE HIDDEN MENU-->
 <div class="links-container">
   <div *ngIf="isShowing" class="hidden-menu">
-    <div>
+    <div (click)="navigateTo('services')">
       <span>Servizi</span>
       <span class="i-alignment">
         <i class="material-icons">keyboard_arrow_down</i>
       </span>
     </div>
     <div>
-      <span>Case studies</span>
+      <span (click)="navigateTo('case-studies')">Case studies</span>
     </div>
     <div>
-      <span>Carriera</span>
+      <span (click)="navigateTo('media')">Media</span>
     </div>
-    <span>Su di noi</span>
-    <span>Contatti</span>
+    <span>Lavora con Noi</span>
+    <span (click)="navigateTo('contacts')">Contatti</span>
   </div>
 </div>
 <!--STUDY CASES for Desktop

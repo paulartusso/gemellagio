@@ -47,5 +47,6 @@ export class MenuComponent {
     this.closeStudyCases();
     this.setActiveTab(url)
     this.router.navigate([url]);
+    this.isShowing = false;
   }
 }

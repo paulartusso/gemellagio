@@ -1,5 +1,4 @@
 .parallax {
-  background-image: url("../../../../assets/Ekahau-Survey-resized-2.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,6 +10,18 @@
   margin: 30px 25px;
   height: 90vh;
 }
+@media (max-width:500px) {
+  .parallax {
+      background-image: url("../../../../assets/ekahau.png");
+  }
+}
+@media (min-width:501px) {
+  .parallax {
+    background-image: url("../../../../assets/ekahau.webp");
+  }
+}
+
+
 section{
   padding: 0 15px 40px 15px;
   h5{

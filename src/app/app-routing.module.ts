@@ -7,6 +7,9 @@ import { WorkplaceManagementComponent } from './sections/expertises/workplace-ma
 import { InfrastructureEngineeringComponent } from './sections/expertises/infrastructure-engineering/infrastructure-engineering.component';
 import { TemporaryProjectsComponent } from './sections/expertises/temporary-projects/temporary-projects.component';
 import { CaseStudiesComponent } from './sections/case-studies/case-studies.component';
+import { MediaComponent } from './sections/media/media.component';
+import { ContactsComponent } from './sections/contacts/contacts.component';
+import { JoinUsComponent } from './sections/join-us/join-us.component';
 
 const routes: Routes = [
   {
@@ -21,6 +24,9 @@ const routes: Routes = [
   { path: 'services/infrastructure-engineering', component: InfrastructureEngineeringComponent},
   { path: 'services/temporary-projects', component: TemporaryProjectsComponent},
   { path: 'case-studies', component: CaseStudiesComponent},
+  { path: 'media', component: MediaComponent},
+  { path: 'join-us', component: JoinUsComponent},
+  { path: 'contacts', component: ContactsComponent},
 ];
 
 @NgModule({

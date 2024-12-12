@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './sections/home/home.component';
 import { ExpertisesComponent } from './sections/expertises/expertises.component';
 import { ExpertiseCardComponent } from './components/expertise-card/expertise-card.component';
@@ -23,6 +22,9 @@ import { TemporaryProjectsComponent } from './sections/expertises/temporary-proj
 import { CaseStudiesComponent } from './sections/case-studies/case-studies.component';
 import { LogisticaItemComponent } from './components/logistica-item/logistica-item.component';
 import { CaseStudyItemComponent } from './components/case-study-item/case-study-item.component';
+import { MediaComponent } from './sections/media/media.component';
+import { ContactsComponent } from './sections/contacts/contacts.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,11 +48,14 @@ import { CaseStudyItemComponent } from './components/case-study-item/case-study-
     CaseStudiesComponent,
     LogisticaItemComponent,
     CaseStudyItemComponent,
+    MediaComponent,
+    ContactsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

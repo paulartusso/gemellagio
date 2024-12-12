@@ -1,15 +1,20 @@
 <section>
-  <div style="width: 60%;">
-    <div class="separator"></div>
-    <h3>Unisciti a noi</h3>
-    <h4>Costruiamo un futuro insieme</h4>
-    <div class="btn-container">
-      <button>
-        Vieni a conoscerci
-        <i class="material-icons">arrow_forward</i>
-      </button>
-    </div>
-  </div>
-  <div class="parallax" style="width: 40%;">
-  </div>
+  <div class="separator" style="border: 0.5px solid #FAB716;"></div>
+  <h3 style="color: #FAB716;">Unisciti a noi</h3>
+  <h4>Costruiamo un futuro insieme</h4>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" required />
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" formControlName="message" required></textarea>
+
+    <button type="submit" [disabled]="!contactForm.valid">Send</button>
+  </form>
+
+  <div *ngIf="responseMessage">{{ responseMessage }}</div>
+
 </section>
