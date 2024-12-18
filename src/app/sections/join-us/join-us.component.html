@@ -1,20 +1,38 @@
-<section>
-  <div class="separator" style="border: 0.5px solid #FAB716;"></div>
+<section style="background-color: #fab61617; padding-top: 40px;">
+  <div class="separator" style="border: 0.5px solid #FAB716; margin: 0;"></div>
   <h3 style="color: #FAB716;">Unisciti a noi</h3>
-  <h4>Costruiamo un futuro insieme</h4>
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <label for="name">Name:</label>
-    <input id="name" formControlName="name" required />
-
-    <label for="email">Email:</label>
-    <input id="email" type="email" formControlName="email" required />
-
-    <label for="message">Message:</label>
-    <textarea id="message" formControlName="message" required></textarea>
-
-    <button type="submit" [disabled]="!contactForm.valid">Send</button>
-  </form>
+  <h4>Costruiamo un futuro insieme, consulta le posizioni aperte e inviaci il tuo curriculum!</h4>
+  <div class="content-container">
+    <div class="form-container">
+      <div class="form-header"></div>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="inputs-container">
+          <div class="field">
+            <input class="input" id="name" type="text" formControlName="name" required autocomplete="off"
+              value="tayfunerbilen">
+            <label for="name" title="Nome*" data-title="nome"></label>
+          </div>
+          <div class="field">
+            <input class="input" id="surname" type="text" formControlName="surname" required autocomplete="off">
+            <label for="surname" title="Cognome*" data-title="cognome"></label>
+          </div>
+        </div>
+        <div class="inputs-container" style="margin-top: 10px;">
+          <div class="field">
+            <input class="input" id="email" type="email" formControlName="email" required autocomplete="off">
+            <label for="email" title="Email*" data-title="Email"></label>
+          </div>
+          <div class="field">
+            <textarea placeholder="Messaggio" class="input" style="height: 41px;" id="message" formControlName="message"
+              required></textarea>
+          </div>
+        </div>
+        <div class="button-container">
+          <button type="submit" [disabled]="!contactForm.valid">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <div *ngIf="responseMessage">{{ responseMessage }}</div>
-
 </section>

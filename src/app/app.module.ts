@@ -25,6 +25,7 @@ import { CaseStudyItemComponent } from './components/case-study-item/case-study-
 import { MediaComponent } from './sections/media/media.component';
 import { ContactsComponent } from './sections/contacts/contacts.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

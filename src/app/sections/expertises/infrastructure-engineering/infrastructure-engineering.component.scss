@@ -21,10 +21,9 @@
   }
 }
 
-
 section{
   padding: 0 15px 40px 15px;
-  h5{
+  .h5{
     font-size: 22px;
     font-weight: 500;
     margin-left: 25px;
@@ -32,7 +31,7 @@ section{
     margin-top: 40px;
     margin-bottom: 0;
   }
-  h6{
+  .h6{
     font-size: 20px;
     font-weight: 500;
     margin-left: 25px;
@@ -47,5 +46,39 @@ section{
     margin-left: 40px;
     margin-top: 7px;
     color: #333;
+  }
+}
+
+@media (max-width:500px) {
+  .video-text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      .video-container {
+          //width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+  }
+}
+@media (min-width:501px) {
+  .video-text-container{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 30px 0px;
+      .video-container{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .text-container{
+        width: 35%;
+      }
   }
 }
