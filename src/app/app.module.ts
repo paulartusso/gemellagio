@@ -8,7 +8,6 @@ import { HomeComponent } from './sections/home/home.component';
 import { ExpertisesComponent } from './sections/expertises/expertises.component';
 import { ExpertiseCardComponent } from './components/expertise-card/expertise-card.component';
 import { InnovationComponent } from './sections/innovation/innovation.component';
-import { JoinUsComponent } from './sections/join-us/join-us.component';
 import { MapComponent } from './sections/map/map.component';
 import { CountUpDirective } from './count-up.directive';
 import { FooterComponent } from './sections/footer/footer.component';
@@ -26,6 +25,7 @@ import { MediaComponent } from './sections/media/media.component';
 import { ContactsComponent } from './sections/contacts/contacts.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { JoinUsComponent } from './sections/join-us/join-us.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ExpertisesComponent,
     ExpertiseCardComponent,
     InnovationComponent,
-    JoinUsComponent,
     MapComponent,
     CountUpDirective,
     FooterComponent,
@@ -51,13 +50,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CaseStudyItemComponent,
     MediaComponent,
     ContactsComponent,
+    JoinUsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

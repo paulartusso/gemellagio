@@ -27,8 +27,24 @@
     background-position: center;
     border-radius: 10px 10px 0px 0px;
     border-bottom: 5px solid #000;
-    margin-bottom: 65px;
+    margin-bottom: 35px;
   }
+
+  .response-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    .response{
+      border: 1px solid #009DDC;
+        width: 75%;
+        color: #009DDC;
+        padding: 10px 15px;
+        text-align: center;
+        background: #a6e5fe38;
+    }
+  }
+
   form{
     margin-bottom: 30px;
     .inputs-container{
@@ -38,27 +54,40 @@
       align-items: center;
       padding: 10px 0px 15px 0px;
       textarea::-webkit-scrollbar-button {
-          display: none;
+        display: none;
+      }
+      .drag-drop-area{
+        p{
+          color:#777
         }
+        button{
+          border: 1px solid #009DDC;
+          border-radius: 7px;
+          padding: 5px 15px;
+          background-color: transparent;
+          color: #009DDC;
+          font-size: 15px;
+          cursor: pointer;
+        }
+      }
     }
     
     .button-container{
       width: 97%;
-        display: flex;
-        justify-content: flex-end;
+      display: flex;
+      justify-content: flex-end;
       button{
         width: 200px;
           padding: 10px;
-          margin-top: 30px;
           font-size: 17px;
           border-radius: 15px;
           border: none;
-          background-color: #FAB716;
-          color: #FFF;
-          cursor: pointer;
-      }
-      button:hover{
-        background-color: #db9f13;
+          background-color: #dedede;
+        }
+      .send-button{
+        background-color: #FAB716;
+        color: #FFF;
+        cursor: pointer;
       }
     }
   }
@@ -105,6 +134,55 @@
     &:focus+label::before {
       @extend .label-before;
       color: #FAB716;
+    }
+  }
+}
+
+.overlay{
+  height: 100vh;
+  background-color: #15151592;
+  width: 100%;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .gif-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFF;
+    height: 30%;
+    width: 40%;
+    border-radius: 10px;
+    p{
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+    img{
+      animation: rotateGif 2s infinite linear;
+      }
+      
+      @keyframes rotateGif {
+        0% {
+          transform: rotate(90deg);
+          /* Initial scale */
+        }
+
+        25% {
+          transform: rotate(180deg);
+        }
+
+        50% {
+          transform: rotate(360deg);
+        }
+      
+        100% {
+          transform: rotate(1800deg);
+          /* Final scale */
+        }
     }
   }
 }

@@ -1,10 +1,19 @@
 <section style="background-color: #fab61617; padding-top: 40px;">
+  <div *ngIf="sendingMail" class="overlay">
+    <div class="gif-container">
+      <p>Inviando messagio...</p>
+      <img src="../../../assets/loop.png" alt="" width="50px">
+    </div>
+  </div>
   <div class="separator" style="border: 0.5px solid #FAB716; margin: 0;"></div>
   <h3 style="color: #FAB716;">Unisciti a noi</h3>
   <h4>Costruiamo un futuro insieme, consulta le posizioni aperte e inviaci il tuo curriculum!</h4>
   <div class="content-container">
     <div class="form-container">
       <div class="form-header"></div>
+      <div class="response-container">
+        <div class="response" *ngIf="responseMessage">{{ responseMessage }}</div>
+      </div>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="inputs-container">
           <div class="field">
@@ -23,16 +32,26 @@
             <label for="email" title="Email*" data-title="Email"></label>
           </div>
           <div class="field">
-            <textarea placeholder="Messaggio" class="input" style="height: 41px;" id="message" formControlName="message"
-              required></textarea>
+            <textarea placeholder="Messaggio*" class="input" style="height: 41px;" id="message"
+              formControlName="message" required></textarea>
           </div>
         </div>
+        <div class="inputs-container" style="justify-content: flex-start; padding-left: 4%;">
+          <div class="drag-drop-area" (dragover)="onDragOver($event)" (drop)="onDrop($event)"
+            (dragleave)="onDragLeave($event)" [class.dragover]="isDragOver">
+            <p *ngIf="!uploadedFile">Trascina o carica qui il tuo CV*</p>
+            <p *ngIf="uploadedFile">Uploaded: {{ uploadedFile.name }}</p>
+            <input type="file" id="fileInput" (change)="onFileSelect($event)" hidden #fileInput />
+            <button type="button" (click)="fileInput.click()">Carica CV</button>
+          </div>
+
+        </div>
         <div class="button-container">
-          <button type="submit" [disabled]="!contactForm.valid">Send</button>
+          <button type="submit" [disabled]="!contactForm.valid"
+            [ngClass]="contactForm.valid && uploadedFile ? 'send-button' : ''">Invia</button>
         </div>
       </form>
     </div>
   </div>
 
-  <div *ngIf="responseMessage">{{ responseMessage }}</div>
 </section>
