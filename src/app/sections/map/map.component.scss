@@ -30,8 +30,8 @@
       }
     }
       img {
-          width: 100%;
-          margin-bottom: 30px;
+                  width: 90%;
+                    margin-bottom: 5px;
         }
   }
   }
@@ -39,13 +39,14 @@
   @media screen and (min-width: 501px) {
     .numbers {
         background-color: #83D0F5;
-        padding: 22px;
-        font-size: 20px;
-        border-radius: 5px;
-        color: #FFF;
-        width: 70%;
-        margin-bottom: 25px;
-    
+          padding: 20px;
+          font-size: 24px;
+          text-align: center;
+          border-radius: 5px;
+          color: #FFF;
+          width: 55%;
+          margin-bottom: 25px;
+  
         h1 {
           margin: 0;
         }
@@ -57,5 +58,6 @@
     
       img {
         width: 100%;
+        margin-left: 30px;
       }
   }
