@@ -20,14 +20,14 @@
     background-color: #FFF;
   }
   .form-header{
-    height: 150px;
-    background-image: url("../../../assets/net.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     border-radius: 10px 10px 0px 0px;
-    border-bottom: 5px solid #000;
-    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px 20px 0px;
+    img{
+      width: 180px;
+    }
   }
 
   .response-container{
@@ -184,5 +184,21 @@
           /* Final scale */
         }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .inputs-container{
+    flex-direction: column;
+    .field{
+      width: 80%;
+    }
+  }
+  .button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 85%;
   }
 }
