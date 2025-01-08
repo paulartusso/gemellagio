@@ -34,7 +34,7 @@
   position: relative;
   margin-bottom: 25px;
   .logo{
-    width: 120px;
+    width: 160px;
     margin: 30px;
   }
   .classification{
@@ -45,29 +45,29 @@
     flex-direction: column;
     align-items: center;
     img{
-      width: 60px;
+      width: 70px;
     }
   }
   .protection{
     position: absolute;
-    top: 20px;
-    right: 152px;
+    top: 22px;
+    right: 137px;
     display: flex;
     flex-direction: column;
     align-items: center;
     img {
-      width: 60px;
+      width: 70px;
     }
   }
     .gestion {
       position: absolute;
-      bottom: 78px;
-      right: 106px;
+      bottom: 89px;
+      right: 87px;
       display: flex;
       flex-direction: column;
       align-items: center;
       img {
-        width: 67px;
+        width: 77px;
       }
     }
     .barcode {
@@ -78,19 +78,19 @@
       flex-direction: column;
       align-items: center;
       img {
-        width: 63px;
+        width: 73px;
       }
     }
         .destroy {
           position: absolute;
           bottom: 80px;
-            left: 99px;
+          left: 88px;
           display: flex;
           flex-direction: column;
           align-items: center;
     
           img {
-            width: 63px;
+            width: 73px;
           }
     
         }
@@ -103,6 +103,9 @@ span{
 }
 @media screen and (max-width: 500px) {
   .asset-items{
+    display: none;
+  }
+  .mobile{
     display: none;
   }
 }
