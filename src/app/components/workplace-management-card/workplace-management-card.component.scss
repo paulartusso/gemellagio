@@ -27,11 +27,13 @@
 @media screen and (max-width: 500px) {
   .card {
       width: 300px;
-      margin: 20px 0px 95px 0px;
+      margin: 20px 0px 25px 0px;
+      padding-bottom: 50px;
   }
 }
 @media screen and (min-width: 501px) {
 .card {
     width: 320px;
+    padding-bottom: 50px;
   }
 }
