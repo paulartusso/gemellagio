@@ -30,6 +30,9 @@ section{
     letter-spacing: 2px;
     margin-top: 40px;
     margin-bottom: 0;
+    @media (max-width:500px) {
+      font-size: 20px;
+    }
   }
   .h6{
     font-size: 22px;
@@ -39,6 +42,9 @@ section{
     margin-top: 20px;
     margin-bottom: 0;
     color: #DD0555;
+    @media (max-width:500px) {
+        font-size: 20px;
+      }
   }
   p{
     font-size: 20px;
@@ -46,6 +52,9 @@ section{
     margin-left: 40px;
     margin-top: 7px;
     color: #333;
+    @media (max-width:500px) {
+        font-size: 15px;
+      }
   }
 }
 
