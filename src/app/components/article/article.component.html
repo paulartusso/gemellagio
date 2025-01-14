@@ -1,0 +1,19 @@
+<div class="card">
+  <!--Image && category-->
+  <div class="graphic">
+    <div class="category">
+      <h4>
+        {{category}}
+      </h4>
+    </div>
+    <div class="img-container" [style.background-image]="'url(' + img + ')'"></div>
+  </div>
+  <!--Text-->
+  <div class="text-container">
+    <h5>{{title}}</h5>
+    <p>{{description}}</p>
+    <button>Continua a leggere
+      <img src="../../../assets/right-arrow.png" alt="" width="15px">
+    </button>
+  </div>
+</div>

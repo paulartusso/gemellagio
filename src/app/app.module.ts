@@ -26,6 +26,7 @@ import { ContactsComponent } from './sections/contacts/contacts.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { JoinUsComponent } from './sections/join-us/join-us.component';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { JoinUsComponent } from './sections/join-us/join-us.component';
     CaseStudyItemComponent,
     MediaComponent,
     ContactsComponent,
-    JoinUsComponent
+    JoinUsComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
