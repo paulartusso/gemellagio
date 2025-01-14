@@ -16,7 +16,7 @@ export class TemporaryProjectsComponent implements OnInit {
     },
     {
       cardTitle: 'Procedure',
-      description: 'Creazione di policy e procedure standarizzate per la gestione e la tracciabilità degli asset, garantendo che ogni fase del ciclo di vita, dal arrivo presso la sede del cliente, all\'utilizzo da parte del personale, alla custodia da un fornitore esterno, fino alla dimissione, segua protocolli definiti',
+      description: 'Creazione di policy e procedure standarizzate per la gestione e la tracciabilità degli asset, garantendo che ogni fase del ciclo di vita, dall\'arrivo presso la sede del cliente, all\'utilizzo da parte del personale, alla custodia da un fornitore esterno, fino alla dimissione, segua protocolli definiti',
       img: '../../../assets/planning.png',
       color: '#FAB716',
       border: '9px solid #FAB716',

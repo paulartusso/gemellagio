@@ -15,14 +15,25 @@
   .assets {
     flex-direction: column;
   }
-    .delivery-services {
-      flex-direction: column;
-    }
+  .delivery-services {
+    flex-direction: column;
+  }
+  h4{
+    margin-left: 35px;
+    margin-right: 30px;
+  }
+  .long-title{
+    margin-top: 30px;
+  font-size: 17px;
+}
 }
 
 @media screen and (min-width: 501px) {
   .assets {
   flex-direction: row;
+  }
+  .long-title{
+    font-size: 20px;
   }
 }
 

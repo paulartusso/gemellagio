@@ -17,7 +17,7 @@ export class WorkplaceManagementComponent implements OnInit {
     },
     {
       cardTitle: 'Industrializzazione dei servizi IT',
-      description: 'L\'azienda ottimizza i processi IT attraverso automazione estandardizzazione, riducendo costi e migliorando l\'efficienza operativa.',
+      description: 'L\'azienda ottimizza i processi IT attraverso automazione e standardizzazione, riducendo costi e migliorando l\'efficienza operativa.',
       img: '../../../assets/technical-support.png',
       color: '#FAB716',
       border: '9px solid #FAB716',

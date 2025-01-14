@@ -101,10 +101,19 @@
     p{
       font-size: 11px;
     }
-    .contact-data-container{
-      div{
-        p{
-          font-size: 15px;
+  }
+  .container{
+    .right-block{
+      .contact-data-container{
+        div{
+          img{
+                width: 25px;
+                  margin-right: 10px;
+                  margin-left: 10px;
+          }
+          p{
+            font-size: 15px;
+          }
         }
       }
     }
@@ -115,4 +124,16 @@
       flex-direction: row;
       height: calc(100vh - 116px);
     }
+
+}
+@media (min-width:1550px) {
+  .container {
+    flex-direction: row;
+    height: calc(100vh - 116px);
+    .left-block{
+      div{
+        padding: 30% 10% 30px 15%;
+      }
+    }
+  }
 }
