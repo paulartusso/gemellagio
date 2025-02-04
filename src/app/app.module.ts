@@ -26,7 +26,9 @@ import { ContactsComponent } from './sections/contacts/contacts.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { JoinUsComponent } from './sections/join-us/join-us.component';
-import { ArticleComponent } from './components/article/article.component';
+import { ArticleComponent } from './components/article-item/article.component';
+import { ArticleFullTextComponent } from './components/article-full-text/article-full-text.component';
+import { ScrollAnimationDirective } from './scroll-animation.directive';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { ArticleComponent } from './components/article/article.component';
     MediaComponent,
     ContactsComponent,
     JoinUsComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticleFullTextComponent,
+    ScrollAnimationDirective
   ],
   imports: [
     BrowserModule,

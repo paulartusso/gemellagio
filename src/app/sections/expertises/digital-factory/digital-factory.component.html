@@ -1,12 +1,10 @@
 <div class="separator" style="border-bottom: 1px solid #DD0555;"></div>
-<h3 style="color: #DD0555;">Sviluppo e Digital Factory</h3>
-<h4>Creiamo soluzioni digitali innovative per accelerare la tua trasformazione tecnologica.</h4>
-<p class="paragraph">
-  La nostra strategia tecnologica si basa su una selezione di linguaggi di programmazione e strumenti ampiamente
-  richiesti e versatili. Questa offerta si arricchisce ulteriormente grazie al nostro programma di formazione per
-  giovani talenti
-  e la collaborazione con fornitori qualificati.
-</p>
+<div class="sections-center">
+
+</div>
+<h3 style="color: #DD0555;" class="h3">Sviluppo e Digital Factory</h3>
+<h4 style="margin-left: 20%;">Creiamo soluzioni digitali innovative per accelerare la tua trasformazione tecnologica.
+</h4>
 <div class="card-container">
   <app-digital-factory-card [cardTitle]="'Supporto applicativo e formazione di giovani talenti'"
     [description]="'Formiamo giovani professionisti sulle tecnologie richieste, offrendo risorse qualificate a tariffe vantaggiose.'"
@@ -15,20 +13,32 @@
     [description]="'Collaboriamo con fornitori esperti per larealizzazione di progetti di sviluppo su misura.'"
     [img]="'../../../assets/ux.jpg'"></app-digital-factory-card>
 </div>
+<p class="paragraph">
+  La nostra strategia tecnologica si basa su una selezione di linguaggi di programmazione e strumenti ampiamente
+  richiesti e versatili. Questa offerta si arricchisce ulteriormente grazie al nostro programma di formazione per
+  giovani talenti
+  e la collaborazione con fornitori qualificati.
+</p>
 <!---Area Sviluppo--->
 <div class="separator" style="border-bottom: 1px solid #DD0555;"></div>
-<h3 style="color: #DD0555;">Area Sviluppo</h3>
-<h4>Subtitulo..?</h4>
-<div style="display: flex; justify-content: space-evenly; align-items: center;">
-  <div class="timeline" style="width: 70%;">
-    <app-sviluppo-card [cardTitle]="'DATA'"
-      [description]="'È l\'insieme delle informazioni raccolte e utilizzate per prendere decisioni, generare report e migliorare le operazioni aziendali, come i dati dei clienti, le transazioni finanziarie e le analisi di mercato, e serve a supportare i sistemi backend e frontend.'"
-      [img]="'../../../assets/dashboard.png'"></app-sviluppo-card>
-    <app-sviluppo-card [cardTitle]="'BACKEND'"
-      [description]="'Rappresenta la parte nascosta del sistema che gestisce la logica dell\'applicazione, le interazioni con il database e i server, come server, database e API, ed è il motore che alimenta le operazioni complesse delle applicazioni.'"
-      [img]="'../../../assets/backend.png'"></app-sviluppo-card>
-    <app-sviluppo-card [cardTitle]="'FRONTEND'"
-      [description]="'È l\'interfaccia visibile con cui gli utenti interagiscono, comprendente elementi come siti web, app mobili, pulsanti e moduli di login, ed è progettato per offrire un\'interazione intuitiva e facile da usare.'"
-      [img]="'../../../assets/frontend.png'"></app-sviluppo-card>
+<h3 style="color: #DD0555;" class="h3">Area Sviluppo</h3>
+<h4 style="margin-left: 20%;">Subtitulo..?</h4>
+
+<div class="sections-center">
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="timeline">
+      <app-sviluppo-card [cardTitle]="'DATA'"
+        [description]="'È l\'insieme delle informazioni raccolte e utilizzate per prendere decisioni, generare report e migliorare le operazioni aziendali, come i dati dei clienti, le transazioni finanziarie e le analisi di mercato, e serve a supportare i sistemi backend e frontend.'"
+        [img]="'../../../assets/dashboard.png'" style="margin-left: 10px; margin-right: 15px;"
+        appScrollAnimation="left"></app-sviluppo-card>
+      <app-sviluppo-card [cardTitle]="'BACKEND'"
+        [description]="'Rappresenta la parte nascosta del sistema che gestisce la logica dell\'applicazione, le interazioni con il database e i server, come server, database e API, ed è il motore che alimenta le operazioni complesse delle applicazioni.'"
+        [img]="'../../../assets/backend.png'" style="margin-left: 10px; margin-right: 15px;"
+        appScrollAnimation="bottom"></app-sviluppo-card>
+      <app-sviluppo-card [cardTitle]="'FRONTEND'"
+        [description]="'È l\'interfaccia visibile con cui gli utenti interagiscono, comprendente elementi come siti web, app mobili, pulsanti e moduli di login, ed è progettato per offrire un\'interazione intuitiva e facile da usare.'"
+        [img]="'../../../assets/frontend.png'" style="margin-left: 10px; margin-right: 15px;"
+        appScrollAnimation="right"></app-sviluppo-card>
+    </div>
   </div>
 </div>

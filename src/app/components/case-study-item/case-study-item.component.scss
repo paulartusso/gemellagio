@@ -2,15 +2,15 @@
   position: relative;
   height: 100%;
   width: 31%;
-  margin: 20px 30px 45px 30px;
+  margin: 30px 30px 45px 30px;
 
   .circle {
     position: absolute;
-      top: -47px;
-      left: 50px;
-      z-index: 1001;
-      height: 95px;
-      width: 95px;
+    top: -50px;
+    left: 50px;
+    z-index: 1001;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     background-color: #FFF;
     border: 4px solid #009DDC;
@@ -19,39 +19,52 @@
     align-items: center;
 
     img {
-      width: 50px;
+      width: 55px;
     }
   }
 
   .clipped {
     border-radius: 10px;
     background-color: #83D0F5;
-    height: 190px;
-    width: 185px;
+    height: 220px;
+    width: 190px;
     padding: 30px 7px 0 7px;
     z-index: 1000;
     -webkit-box-shadow: 0px 2px 9px 2px rgba(0, 75, 105, 0.83);
     box-shadow: 0px 1px 3px 0px rgba(0, 75, 105, 0.83);
+    @media screen and (min-width: 1200px){
+      height: 250px;
+      width: 210px;
+    }
 
     h5 {
       text-align: center;
       margin-top: 40px;
       margin-bottom: 0;
       color: #426FB4;
-      font-size: 17px;
+      font-size: 18px;
+      @media screen and (min-width: 1200px) {
+          font-size: 19px;
+        }
     }
     h6{
       margin: 0;
-        margin-top: 10px;
-        text-align: center;
-        color: #FFF;
-        font-size: 15px;
+      margin-top: 10px;
+      text-align: center;
+      color: #FFF;
+      font-size: 15px;
+      @media screen and (min-width: 1200px) {
+        font-size: 16px;
+      }
     }
 
     p {
-      font-size: 12px;
+      font-size: 14px;
       text-align: center;
       padding: 5px 10px;
+        @media screen and (min-width: 1200px) {
+          font-size: 16px;
+        }
     }
   }
 }

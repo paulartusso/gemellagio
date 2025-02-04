@@ -1,11 +1,11 @@
 .assets{
   display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .delivery-services{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   width: 70%;
   padding: 60px 20px 10px 20px;
@@ -60,53 +60,22 @@
       width: 70px;
     }
   }
-  .protection{
-    position: absolute;
-    top: 22px;
-    right: 137px;
+  .circle-div{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-color: skyblue;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 5px;
     img {
-      width: 70px;
+      width: 45px;
     }
   }
-    .gestion {
-      position: absolute;
-      bottom: 89px;
-      right: 87px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      img {
-        width: 77px;
-      }
-    }
-    .barcode {
-      position: absolute;
-      bottom: -9px;
-      left: 234px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      img {
-        width: 73px;
-      }
-    }
-        .destroy {
-          position: absolute;
-          bottom: 80px;
-          left: 88px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-    
-          img {
-            width: 73px;
-          }
-    
-        }
-      }
+}
+
       
 span{
   font-size: 10px;
@@ -120,4 +89,209 @@ span{
   .mobile{
     display: none;
   }
+  .donut-chart{
+    display: none;
+  }
+}
+
+.donut-chart{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .donut-chart {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 2rem;
+    border-radius: 100%;
+  }
+  
+  .donut-chart.animate-on-scroll {
+    opacity: 1;
+  }
+
+.portion-block {
+  border-radius: 50%;
+  clip: rect(0px, 300px, 300px, 150px);
+  /* Updated for the new size */
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.circle {
+  border-radius: 50%;
+  clip: rect(0px, 150px, 300px, 0px);
+  /* Updated for the new size */
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+
+#part1 {
+  transform: rotate(0deg);
+}
+
+#part1 .circle {
+  background-color: #95e1ff;
+  animation: first 1s 1 forwards;
+
+  img {
+    z-index: 1000;
+      width: 47px;
+      position: absolute;
+      top: 79px;
+      left: 31px;
+      transform: rotate(260deg);
+  }
+}
+
+#part2 {
+  transform: rotate(70deg);
+}
+
+#part2 .circle {
+  background-color: #3cc3f8;
+  animation: second 1s 1 forwards 1s;
+  img {
+    width: 47px;
+    z-index: 1000;
+    position: absolute;
+    top: 164px;
+    left: 31px;
+    transform: rotate(140deg);
+  }
+}
+
+#part3 {
+  transform: rotate(140deg);
+}
+
+#part3 .circle {
+  background-color: #009DDC;
+  animation: third 0.5s 1 forwards 2s;
+  img{
+    width: 47px;
+    z-index: 1000;
+    position: absolute;
+    top: 103px;
+    left: 29px;
+    transform: rotate(109deg);  
+  }
+}
+
+#part4 {
+  transform: rotate(210deg);
+}
+
+#part4 .circle {
+  background-color: #0888ba;
+  animation: fourth 1s 1 forwards 3s;
+  img {
+    width: 47px;
+    z-index: 1000;
+    position: absolute;
+    top: 77px;
+    left: 35px;
+    transform: rotate(50deg);
+  }
+}
+
+#part5 {
+  transform: rotate(280deg);
+}
+
+#part5 .circle {
+  background-color: #036f9a;
+  animation: fifth 1.5s 1 forwards 4s;
+  img {
+    width: 47px;
+    z-index: 1000;
+    position: absolute;
+    top: 47px;
+    left: 59px;
+    transform: rotate(0deg);
+    }
+}
+
+@keyframes first {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(100deg);
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(150deg);
+  }
+}
+
+@keyframes third {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(111deg);
+  }
+}
+
+@keyframes fourth {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(100deg);
+  }
+}
+
+@keyframes fifth {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(81deg);
+  }
+}
+
+.logo-container {
+  position: absolute;
+    background-color: #FFF;
+    border-radius: 50%;
+    width: 115px;
+    height: 115px;
+    padding: 6px;
+    z-index: 1000;
+    top: 28%;
+    left: 28%;
+
+  img {
+    width: 115px;
+  }
+}
+
+#lifecycle{
+@media screen and (min-width: 1200px){
+  margin-left: 150px;
+  margin-right: 150px;
+  h4{
+    text-align: justify;
+      margin-left: 80px;
+      margin-right: 80px;
+  }
+}
 }

@@ -1,19 +1,28 @@
 
+
 .container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   margin: 35px 0 20px 15px;
-  padding: 20px 50px 20px 50px;
+  padding: 40px 50px 20px 50px;
 }
 @media screen and (max-width: 500px) {
   .container {
     flex-direction: column;
   }
+  
 }
 
 @media screen and (min-width: 501px) {
   .container {
       flex-direction: row;
     }
+        .desktop-view {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+        }
 }

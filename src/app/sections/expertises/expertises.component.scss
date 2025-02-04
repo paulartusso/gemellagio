@@ -3,16 +3,18 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 55px;
+  padding: 25px;
 }
 
 .service_container {
   position: relative;
-  width: 1200px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  z-index: 1;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    z-index: 1;
 }
+
+

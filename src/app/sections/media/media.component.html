@@ -1,9 +1,33 @@
 <div class="separator" style="border-bottom: 1px solid #FAB716;"></div>
-<h3 style="color: #FAB716;">Media Content</h3>
+<h3 class="h3" style="color: #FAB716;">Media Content</h3>
+<h4>
+  Scropri le nostre ultime news, eventi e contenuti.
+</h4>
 <section id="articles-container">
-  <div>
-    <app-article [category]="'Case History'" [img]="'../../../assets/veryfile.png'"
-      [title]="'Supporto a Veryfile per l\'implementazione IT negli Stati Uniti'"
-      [description]="'Everience è stata recentemente coinvolta in un progetto sfidante e stimolante con Veryfile, che ci ha contattato per supportare l\'implementazione dell\'infrastruttura IT presso il cliente finale in due nuove sedi negli Stati Uniti: uno store a Miami e un ufficio a Hollywood. L\'obiettivo era...'"></app-article>
+  <div *ngFor="let article of articlesList" class="card">
+    <div class="flex" style="display: flex; width: 70%;">
+      <!--
+      <app-article [category]="'Case History'" [img]="'../../../assets/veryfile.png'"
+        [title]="'Supporto a Veryfile per l\'implementazione IT negli Stati Uniti'"
+        [description]="'Everience è stata recentemente coinvolta in un progetto sfidante e stimolante con Veryfile, che ci ha contattato per supportare l\'implementazione dell\'infrastruttura IT presso il cliente finale in due nuove sedi negli Stati Uniti: uno store a Miami e un ufficio a Hollywood. L\'obiettivo era...'"></app-article>
+      -->
+      <!--Image && category-->
+      <div class="graphic" appScrollAnimation="left">
+        <div class="category" [ngClass]="article.category === 'Case History'? 'c-history' : 'company-news'">
+          <h4>
+            {{article.category}}
+          </h4>
+        </div>
+        <div class="img-container" [ngStyle]="{'background-image': 'url(' + article.image + ')'}"></div>
+      </div>
+      <!--Text-->
+      <div class="text-container">
+        <h5>{{article.title}}</h5>
+        <p>{{article.description}}</p>
+        <button (click)="openFullArticle()">Continua a leggere
+          <img src="../../../assets/right-arrow.png" alt="" width="15px">
+        </button>
+      </div>
+    </div>
   </div>
 </section>

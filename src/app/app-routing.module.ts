@@ -10,6 +10,7 @@ import { CaseStudiesComponent } from './sections/case-studies/case-studies.compo
 import { MediaComponent } from './sections/media/media.component';
 import { ContactsComponent } from './sections/contacts/contacts.component';
 import { JoinUsComponent } from './sections/join-us/join-us.component';
+import { ArticleFullTextComponent } from './components/article-full-text/article-full-text.component';
 
 const routes: Routes = [
   {
@@ -18,20 +19,29 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'home', component: HomeComponent },
-  { path: 'services', component: ExpertisesComponent},
-  { path: 'services/digital-factory', component: DigitalFactoryComponent},
-  { path: 'services/workplace-management', component: WorkplaceManagementComponent},
-  { path: 'services/infrastructure-engineering', component: InfrastructureEngineeringComponent},
-  { path: 'services/temporary-projects', component: TemporaryProjectsComponent},
-  { path: 'case-studies', component: CaseStudiesComponent},
-  { path: 'media', component: MediaComponent},
-  { path: 'join-us', component: JoinUsComponent},
-  { path: 'contacts', component: ContactsComponent},
+  { path: 'services', component: ExpertisesComponent },
+  { path: 'services/digital-factory', component: DigitalFactoryComponent },
+  {
+    path: 'services/workplace-management',
+    component: WorkplaceManagementComponent,
+  },
+  {
+    path: 'services/infrastructure-engineering',
+    component: InfrastructureEngineeringComponent,
+  },
+  {
+    path: 'services/temporary-projects',
+    component: TemporaryProjectsComponent,
+  },
+  { path: 'case-studies', component: CaseStudiesComponent },
+  { path: 'media', component: MediaComponent },
+  { path: 'media/full-article', component: ArticleFullTextComponent },
+  { path: 'join-us', component: JoinUsComponent },
+  { path: 'contacts', component: ContactsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}

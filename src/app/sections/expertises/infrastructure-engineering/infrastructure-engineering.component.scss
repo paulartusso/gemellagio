@@ -2,13 +2,24 @@
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   margin: 30px 25px;
-  height: 95vh;
+  height: 45vh;
+  .inner-parallax{
+    background-color: #83d0f59e;
+    width: 36%;
+    padding: 22px;
+    color: #FFF;
+    border-radius: 7px;
+    p{
+      color: #063d53;
+      font-weight: 500;
+    }
+  }
 }
 
 #ekahau{
@@ -60,6 +71,7 @@
   @media (min-width:501px) {
     .parallax {
       background-image: url("../../../../assets/wyebot.png");
+      background-size: inherit;
     }
     .mobile-only{
       display: none;
@@ -89,11 +101,15 @@ section{
     margin-bottom: 0;
     color: #DD0555;
     @media (max-width:500px) {
-        font-size: 20px;
-      }
+      font-size: 20px;
+    }
+        @media (min-width:900px) {
+          font-size: 21px;
+          text-align: center;
+        }
   }
   p{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     margin-left: 40px;
     margin-top: 7px;
@@ -101,6 +117,10 @@ section{
     @media (max-width:500px) {
         font-size: 15px;
       }
+        @media (min-width:501px) {
+          text-align: justify;
+          margin: 15px;
+        }
   }
   .list{
     padding: 20px 0;
@@ -157,6 +177,22 @@ section{
       }
       .text-container{
         width: 35%;
+        div{
+          border: 1px solid #DD0555;
+          background-color: #fefefe;
+          border-radius: 7px;
+          padding: 5px 15px;
+        }
       }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .sections-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15%;
+    max-width: 1500px;
   }
 }

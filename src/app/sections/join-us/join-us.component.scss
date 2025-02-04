@@ -1,3 +1,23 @@
+section{
+  @media screen and (max-width: 700px) {
+      padding-top: 40px;
+      background-color: #FFF;
+    }
+        @media screen and (min-width: 701px) and (max-width: 1200px){
+          padding-top: 40px;
+          background-color: #FFF;
+        }
+  @media screen and (min-width: 1201px) and (max-width: 1300px){
+    height: calc(100vh - -37px);
+    background-color: #fab61617;
+    padding-top: 40px;
+  }
+    @media screen and (min-width: 1301px) {
+      height: calc(100vh - 115px);
+      background-color: #fab61617;
+        padding-top: 40px;
+    }
+}
 .label-before {
   line-height: 20px;
   font-size: 12px;
@@ -26,7 +46,7 @@
     align-items: center;
     padding: 50px 0px 20px 0px;
     img{
-      width: 180px;
+      width: 200px;
     }
   }
 
@@ -58,7 +78,9 @@
       }
       .drag-drop-area{
         p{
-          color:#777
+          color:#777;
+          font-size: 14px;
+          margin-bottom: 5px;
         }
         button{
           border: 1px solid #009DDC;
@@ -76,18 +98,24 @@
       width: 97%;
       display: flex;
       justify-content: flex-end;
+      @media screen and (max-width: 600px) {
+        justify-content: center;
+      }
       button{
         width: 200px;
           padding: 10px;
           font-size: 17px;
           border-radius: 15px;
           border: none;
-          background-color: #dedede;
+          background-color: #fab6168a;
         }
       .send-button{
         background-color: #FAB716;
         color: #FFF;
         cursor: pointer;
+      }
+      .send-button:hover{
+        background-color: #e7a610;
       }
     }
   }

@@ -1,5 +1,5 @@
 <div class="separator" style="border-bottom: 1px solid #009DDC;"></div>
-<h3 style="color: #009DDC;">Workplace Management</h3>
+<h3 class="h3" style="color: #009DDC;">Workplace Management</h3>
 <h4>Lorem ipsum dolot</h4>
 <div class="cards-container">
   <!--
@@ -14,6 +14,6 @@
       [img]="'../../../assets/globe.png'"></app-workplace-management-card>
   -->
   <app-workplace-management-card *ngFor="let card of cards; let i = index" [img]="card.img" [cardTitle]="card.cardTitle"
-    [description]="card.description" [color]="card.color" [border]="card.border"
-    [bottom]="card.bottom"></app-workplace-management-card>
+    [description]="card.description" [color]="card.color" [border]="card.border" [bottom]="card.bottom"
+    style="margin-right: 30px;"></app-workplace-management-card>
 </div>
