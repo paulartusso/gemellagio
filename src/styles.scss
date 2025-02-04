@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,13 +19,15 @@ $Everience-IT-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$Everience-IT-theme: mat.define-light-theme((
-  color: (
-    primary: $Everience-IT-primary,
-    accent: $Everience-IT-accent,
-    warn: $Everience-IT-warn,
+$Everience-IT-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $Everience-IT-primary,
+      accent: $Everience-IT-accent,
+      warn: $Everience-IT-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -35,19 +36,22 @@ $Everience-IT-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { 
-  margin: 0; 
-  font-family: "Montserrat", sans-serif; 
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 .separator {
   width: 2%;
-  content: '';
+  content: "";
   margin-top: 40px;
   transform-origin: center;
   animation: growImage 2.5s ease-in-out forwards;
-  @media screen and (min-width: 1500px){
+  @media screen and (min-width: 1500px) {
     margin-left: 10%;
   }
 }
@@ -67,74 +71,58 @@ body {
 .h3 {
   font-size: 60px;
   font-weight: 500;
-  margin-left: 14%;
   letter-spacing: 2px;
   margin-top: 40px;
   margin-bottom: 0;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 800px) {
+    margin-left: 14%;
     font-size: 23px;
     margin-top: 17px;
   }
-  @media screen and (min-width: 1500px){
+  @media screen and (min-width: 801px) {
     font-size: 65px;
+    text-align: center;
   }
 }
 
-.who-w-a{
+.who-w-a {
   font-size: 60px;
-    font-weight: 500;
-    margin-left: 14%;
-    letter-spacing: 2px;
-    margin-top: 40px;
-    margin-bottom: 0;
-  
-    @media screen and (max-width: 500px) {
-      font-size: 23px;
-      margin-top: 17px;
-    }
-  @media screen and (min-width: 1500px) {
-      font-size: 65px;
-      margin-left: 0%;
-    }
-}
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  margin-left: 14%;
 
-.sub-h3{
-  font-size: 20px;
-    letter-spacing: 0.5px;
-    margin-top: 40px;
-    margin-bottom: 0;
+  @media screen and (max-width: 800px) {
+    font-size: 23px;
+    margin-top: 17px;
+  }
+  @media screen and (min-width: 801px) {
+    font-size: 65px;
+    margin-left: 0%;
     text-align: center;
-    font-weight: 500;
-    @media screen and (max-width: 500px) {
-      font-size: 19px;
-      margin-top: 17px;
-    }
-  
-    @media screen and (min-width: 1100px) {
-      font-size: 30px;
-    }
+  }
 }
 
-.h4-who-w-a{
-  font-weight: 300;
-    margin-left: 10%;
-    color: #333;
-    margin-top: 7px;
-    margin-bottom: 20px;
-    text-align: justify;
-  
-    @media screen and (max-width: 500px) {
-      font-size: 15px;
-      margin-right: 10%;
-    }
-  
-    @media screen and (min-width: 1500px) {
-      font-size: 20px;
-      margin-left: 0%;
-    }
+.sub-h3 {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: 500;
+  @media screen and (max-width: 800px) {
+    font-size: 19px;
+    margin-top: 17px;
+  }
+
+  @media screen and (min-width: 801px) {
+    font-size: 30px;
+    text-align: center;
+  }
 }
 
-h4 {
+.h4-who-w-a {
   font-weight: 300;
   margin-left: 10%;
   color: #333;
@@ -142,14 +130,32 @@ h4 {
   margin-bottom: 20px;
   text-align: justify;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 800px) {
     font-size: 15px;
     margin-right: 10%;
   }
 
-  @media screen and (min-width: 501px) {
+  @media screen and (min-width: 801px) {
     font-size: 20px;
-    margin-left: 15%;
+    margin-left: 0%;
+  }
+}
+
+h4 {
+  font-weight: 300;
+  color: #333;
+  margin-top: 7px;
+  margin-bottom: 20px;
+  text-align: justify;
+
+  @media screen and (max-width: 800px) {
+    font-size: 15px;
+    margin-right: 10%;
+  }
+
+  @media screen and (min-width: 801px) {
+    font-size: 20px;
+    text-align: center;
   }
 }
 
