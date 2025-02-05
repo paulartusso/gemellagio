@@ -1,39 +1,49 @@
 //hero
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
   .hero {
-    background-image:
-      linear-gradient(to bottom, rgba(34, 130, 207, 0.295), rgba(255, 255, 255, 0.443), rgba(255, 255, 255, 0.9), rgb(255, 255, 255)),
-      url('../../../assets/hero.jpg');
+    background-image: linear-gradient(
+        to bottom,
+        rgba(34, 130, 207, 0.295),
+        rgba(255, 255, 255, 0.443),
+        rgba(255, 255, 255, 0.9),
+        rgb(255, 255, 255)
+      ),
+      url("../../../assets/hero.jpg");
     width: 100%;
     height: calc(60vh - 55px);
     background-size: cover;
     background-position: bottom;
     color: white;
   }
-  .size{
+  .size {
     font-size: 22px;
   }
-  .separator{
+  .separator {
     width: 30%;
   }
 }
-@media screen and (min-width: 501px){
+@media screen and (min-width: 501px) {
   .hero {
-      background-image:
-        linear-gradient(to bottom, rgba(34, 130, 207, 0.295), rgba(255, 255, 255, 0.443), rgba(255, 255, 255, 0.9), rgb(255, 255, 255)),
-        url('../../../assets/hero.jpg');
-      width: 100%;
-      height: calc(80vh - 55px);
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
-.size {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(34, 130, 207, 0.295),
+        rgba(255, 255, 255, 0.443),
+        rgba(255, 255, 255, 0.9),
+        rgb(255, 255, 255)
+      ),
+      url("../../../assets/hero.jpg");
+    width: 100%;
+    height: calc(80vh - 55px);
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  .size {
     font-size: 27px;
   }
-    .separator {
-      width: 30%;
-    }
+  .separator {
+    width: 30%;
+  }
 }
 
 //first text and mooving separator
@@ -44,41 +54,41 @@
   margin-bottom: 30px;
   font-weight: 400;
   //background: linear-gradient(to bottom, #ffffff4c, #ffffff82, #fff);
-  span{
+  span {
     font-weight: 500;
-    color: #DD0555;
+    color: #dd0555;
   }
 }
 @media screen and (min-width: 500px) {
-  .text{
+  .text {
     font-size: 27px;
   }
 }
 @media screen and (min-width: 501px) {
   .text {
-      font-size: 40px;
-    }
+    font-size: 40px;
+  }
 }
 
-.separator{
-  border-bottom: 1px solid #DD0555;
+.separator {
+  border-bottom: 1px solid #dd0555;
   transform-origin: center;
-    animation: growImage 2.5s ease-in-out forwards;
-  }
-  
-  @keyframes growImage {
-    0% {
-      transform: scale(1.1, 1.1);
-      /* Initial scale */
-    }
-  
-    100% {
-      transform: scale(4, 1);
-      /* Final scale */
-    }
+  animation: growImage 2.5s ease-in-out forwards;
+}
+
+@keyframes growImage {
+  0% {
+    transform: scale(1.1, 1.1);
+    /* Initial scale */
   }
 
-.second-text{
+  100% {
+    transform: scale(4, 1);
+    /* Final scale */
+  }
+}
+
+.second-text {
   text-align: center;
   font-size: 15px;
   padding: 10px 20px 20px 20px;
@@ -97,44 +107,44 @@
   margin-top: 25px;
 }
 
-.img-1{
+.img-1 {
   background-image: url("../../../assets/everience-build-the-future-together.jpg");
 }
-.img-2{
+.img-2 {
   background-image: url("../../../assets/graphics.jpg");
 }
 
 @media screen and (max-width: 500px) {
-  .parallax{
+  .parallax {
     height: 45vh;
   }
 }
 
 @media screen and (min-width: 501px) {
   .parallax {
-      height: 70vh;
-    }
+    height: 70vh;
+  }
 }
 
-.blue-div{
+.blue-div {
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #009ddce0;
-  color: #FFF;
+  color: #fff;
   width: 50%;
   padding: 20px;
   border-radius: 12px;
   font-size: 20px;
   margin: 55px 0;
   justify-content: center;
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     padding: 12px;
     font-size: 15px;
     margin: 26px 0;
     width: 77%;
   }
-  @media screen and (min-width: 1200px){
+  @media screen and (min-width: 1200px) {
     padding: 50px;
   }
 }
@@ -145,13 +155,13 @@
   }
 }
 
-@media screen and (min-width: 1500px){
-  .sections-center{
+@media screen and (min-width: 1500px) {
+  .sections-center {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 10%;
-    max-width: 1500px;
+    max-width: 1900px;
   }
 }
 
@@ -164,4 +174,3 @@
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
   /* Smoother transition */
 }
-

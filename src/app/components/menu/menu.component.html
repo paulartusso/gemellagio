@@ -37,11 +37,8 @@
 <!--MOBILE HIDDEN MENU-->
 <div class="links-container">
   <div *ngIf="isShowing" class="hidden-menu">
-    <div (click)="navigateTo('services')">
-      <span>Servizi</span>
-      <span class="i-alignment">
-        <i class="material-icons">keyboard_arrow_down</i>
-      </span>
+    <div>
+      <span (click)="navigateTo('services')">Servizi</span>
     </div>
     <div>
       <span (click)="navigateTo('case-studies')">Case studies</span>
@@ -49,8 +46,12 @@
     <div>
       <span (click)="navigateTo('media')">Media</span>
     </div>
-    <span>Lavora con Noi</span>
-    <span (click)="navigateTo('contacts')">Contatti</span>
+    <div>
+      <span (click)="navigateTo('join-us')">Lavora con Noi</span>
+    </div>
+    <div>
+      <span (click)="navigateTo('contacts')">Contatti</span>
+    </div>
   </div>
 </div>
 <!--STUDY CASES for Desktop
