@@ -12,7 +12,7 @@
         [description]="'Everience è stata recentemente coinvolta in un progetto sfidante e stimolante con Veryfile, che ci ha contattato per supportare l\'implementazione dell\'infrastruttura IT presso il cliente finale in due nuove sedi negli Stati Uniti: uno store a Miami e un ufficio a Hollywood. L\'obiettivo era...'"></app-article>
       -->
       <!--Image && category-->
-      <div class="graphic" appScrollAnimation="left">
+      <div class="graphic" [@slideInFromLeft] class="animated-box">
         <div class="category" [ngClass]="article.category === 'Case History'? 'c-history' : 'company-news'">
           <h4>
             {{article.category}}
