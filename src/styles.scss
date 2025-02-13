@@ -46,7 +46,7 @@ body {
 }
 
 .separator {
-  width: 2%;
+  width: 30%;
   content: "";
   margin-top: 40px;
   transform-origin: center;
@@ -63,7 +63,7 @@ body {
   }
 
   100% {
-    transform: scale(70, 1);
+    transform: scale(5, 1);
     /* Final scale */
   }
 }

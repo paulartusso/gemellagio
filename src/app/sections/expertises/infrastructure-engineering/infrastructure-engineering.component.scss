@@ -163,7 +163,7 @@ section {
     }
   }
 }
-@media (min-width: 501px) {
+@media (min-width: 501px) and (max-width: 1499px) {
   .video-text-container {
     display: flex;
     justify-content: center;
@@ -196,5 +196,28 @@ section {
     align-items: center;
     padding: 0 15%;
     max-width: 1900px;
+  }
+  .video-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 55px 0 0;
+    padding: 30px 0px 0px;
+    .video-container {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .text-container {
+      width: 35%;
+      div {
+        border: 1px solid #dd0555;
+        background-color: #fefefe;
+        border-radius: 7px;
+        padding: 5px 15px;
+      }
+    }
   }
 }
