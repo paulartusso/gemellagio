@@ -5,14 +5,14 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-join-us',
   templateUrl: './join-us.component.html',
-  styleUrls: ['./join-us.component.scss']
+  styleUrls: ['./join-us.component.scss'],
 })
 export class JoinUsComponent {
-contactForm: FormGroup;
-responseMessage: string = '';
-isDragOver = false;
-uploadedFile: File | null = null;
-sendingMail: boolean = false;
+  contactForm: FormGroup;
+  responseMessage: string = '';
+  isDragOver = false;
+  uploadedFile: File | null = null;
+  sendingMail: boolean = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
@@ -23,67 +23,92 @@ sendingMail: boolean = false;
     });
   }
 
-
-  onDragOver(event: DragEvent) {
-    event.preventDefault();
-    this.isDragOver = true;
-  }
-
-  onDragLeave(event: DragEvent) {
-    event.preventDefault();
-    this.isDragOver = false;
-  }
-
-  onDrop(event: DragEvent) {
-    event.preventDefault();
-    this.isDragOver = false;
-    if (event.dataTransfer && event.dataTransfer.files.length > 0) {
-      this.uploadedFile = event.dataTransfer.files[0];
-      this.uploadCV(this.uploadedFile); // Call your upload logic here
-    }
-  }
-
-  onFileSelect(event: Event) {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length > 0) {
-      this.uploadedFile = input.files[0];
-      this.uploadCV(this.uploadedFile); // Call your upload logic here
-    }
-  }
-
-  uploadCV(file: File) {
-    console.log('Uploading file:', file.name);
-    // Add your upload logic here
-  }
-
-  onSubmit() {
-  if (this.contactForm.valid && this.uploadedFile) {
-    const formData = new FormData();
-    formData.append('name', this.contactForm.value.name);
-    formData.append('surname', this.contactForm.value.surname);
-    formData.append('email', this.contactForm.value.email);
-    formData.append('message', this.contactForm.value.message);
-    formData.append('file', this.uploadedFile);
-
-    this.sendingMail = true; // Show the loading gif
-
-    this.http.post('/api/send-email', formData).subscribe({
-      next: () => {
-        this.responseMessage = 'Grazie per contattarci, riceverai una risposta il prima possibile';
-      },
-      error: () => {
-        this.responseMessage = "C'è stato un errore, riprova più tardi";
-      },
-      complete: () => {
-        this.sendingMail = false; // Hide the loading gif when the request completes
-      }
-    });
-
-    // Clear the form field after submission
-    this.contactForm.reset();
-  } else {
-    this.responseMessage = 'Compila tutti i campi e carica il CV prima di inviare.';
-  }
-}
-
+  jobsList: any = [
+    {
+      role: 'Full-Stack Developer',
+      company: 'Everience',
+      adress: 'Via Italo Calvino',
+      seniority: 'Middle',
+      contract_type: 'A tempo indeterminato',
+      description:
+        'Developer junior, per sviluppo siti vetrina in contesto blablabla lorem ipsum dolor dshfjdfshdhfj dsf dsjkfhjd hfjkdsh kfla.',
+      ral: null,
+      frontend_tech: ['React', 'Vue.js'],
+      backend_tech: [
+        'Django (Python)',
+        'Flask (Python)',
+        'Ruby on Rails (Ruby)',
+      ],
+      devops_requirements: [],
+      db_requirements: ['Ruby on Rails (Ruby)', 'Spring Boot (Java)'],
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Everience',
+      adress: 'Viale Monza, 12',
+      seniority: 'Junior',
+      contract_type: 'A tempo determinato',
+      description:
+        'Developer junior, per sviluppo siti vetrina in contesto blablabla lorem ipsum dolor',
+      ral: 32000,
+      frontend_tech: ['React', 'Vue.js', 'SASS/SCSS', 'jQuery'],
+      backend_tech: [],
+      devops_tech: [],
+      db_tech: [],
+    },
+    {
+      role: 'Backend Developer',
+      company: 'Everience',
+      adress: 'Viale Monza, 12',
+      seniority: 'Middle',
+      contract_type: 'A tempo indeterminato',
+      description:
+        'Profilo asi asa, minimo tres anios de experiencia, blaplaplaplaa',
+      ral: 25000,
+      frontend_tech: [],
+      backend_tech: ['Node.js', 'Express.js'],
+      devops_tech: ['Docker'],
+      db_tech: ['MySQL'],
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Everience',
+      adress: 'Viale Monza, 12',
+      contract_type: 'Stage',
+      seniority: 'Junior',
+      description: 'Profilo asi asa, minimo tres anios de experiencia, bla',
+      ral: null,
+      frontend_tech: ['React', 'Vue.js'],
+      backend_tech: ['Node.js', 'Express.js'],
+      devops_tech: [],
+      db_tech: ['MySQL', 'Firebase'],
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Everience',
+      adress: 'Viale Monza, 12',
+      seniority: 'Senior',
+      contract_type: 'A tempo determinato',
+      description: 'Profilo asi asa, minimo tres anios de experiencia, bla',
+      ral: 21200,
+      frontend_tech: ['React', 'Vue.js'],
+      backend_tech: ['Node.js', 'Express.js'],
+      devops_tech: [],
+      db_tech: ['MySQL'],
+    },
+    {
+      role: 'Backend Developer',
+      company: 'Everience',
+      adress: 'Viale Monza, 12',
+      seniority: 'Middle',
+      contract_type: 'A tempo indeterminato',
+      description:
+        'Profilo asi asa, minimo tres anios de experiencia, blaplaplaplaa',
+      ral: 25000,
+      frontend_tech: [],
+      backend_tech: ['Node.js', 'Express.js'],
+      devops_tech: ['Docker'],
+      db_tech: ['MySQL', 'MongoDB'],
+    },
+  ];
 }

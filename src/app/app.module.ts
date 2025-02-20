@@ -29,6 +29,7 @@ import { JoinUsComponent } from './sections/join-us/join-us.component';
 import { ArticleComponent } from './components/article-item/article.component';
 import { ArticleFullTextComponent } from './components/article-full-text/article-full-text.component';
 import { ScrollAnimationDirective } from './scroll-animation.directive';
+import { JobCardComponent } from './components/job-card/job-card.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ScrollAnimationDirective } from './scroll-animation.directive';
     JoinUsComponent,
     ArticleComponent,
     ArticleFullTextComponent,
-    ScrollAnimationDirective
+    ScrollAnimationDirective,
+    JobCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,6 @@ import { ScrollAnimationDirective } from './scroll-animation.directive';
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

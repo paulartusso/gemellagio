@@ -1,59 +1,22 @@
 <section>
-  <div *ngIf="sendingMail" class="overlay">
-    <div class="gif-container">
-      <p>Inviando messagio...</p>
-      <img src="../../../assets/loop.png" alt="" width="50px">
-    </div>
-  </div>
   <div class="separator" style="border: 0.5px solid #FAB716; margin: 0;"></div>
   <h3 class="h3" style="color: #FAB716;">Unisciti a noi</h3>
-  <h4>Costruiamo un futuro insieme, consulta le posizioni aperte e inviaci il tuo curriculum</h4>
-  <div class="content-container">
-    <div class="form-container">
-      <div class="form-header">
-        <img src="../../../assets/logo.png" alt="">
+  <h4 style="margin-bottom: 30px;">Costruiamo un futuro insieme, consulta le posizioni aperte e inviaci il tuo
+    curriculum</h4>
+  <div class="main">
+    <div class="input-container">
+      <div style="width: 60%;">
+        <img src="../../../assets/search.png" alt="" width="20px">
+        <input type="text" class="search-bar" placeholder="Cerca per ruolo o locazione">
       </div>
-      <div class="response-container">
-        <div class="response" *ngIf="responseMessage">{{ responseMessage }}</div>
+    </div>
+    <div class="cards-container">
+      <div *ngFor="let job of jobsList">
+        <app-job-card [role]="job.role" [companyName]="job.company" [description]="job.description"
+          [seniority]="job.seniority" [contratto]="job.contract_type" [remuneration]="job.ral"
+          [frontend_tech]="job.frontend_tech" [backend_tech]="job.backend_tech" [devops_tech]="job.devops_tech"
+          [db_tech]="job.db_tech"></app-job-card>
       </div>
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        <div class="inputs-container">
-          <div class="field">
-            <input class="input" id="name" type="text" formControlName="name" required autocomplete="off"
-              value="tayfunerbilen">
-            <label for="name" title="Nome*" data-title="nome"></label>
-          </div>
-          <div class="field">
-            <input class="input" id="surname" type="text" formControlName="surname" required autocomplete="off">
-            <label for="surname" title="Cognome*" data-title="cognome"></label>
-          </div>
-        </div>
-        <div class="inputs-container" style="margin-top: 10px;">
-          <div class="field">
-            <input class="input" id="email" type="email" formControlName="email" required autocomplete="off">
-            <label for="email" title="Email*" data-title="Email"></label>
-          </div>
-          <div class="field">
-            <textarea placeholder="Messaggio*" class="input" style="height: 41px;" id="message"
-              formControlName="message" required></textarea>
-          </div>
-        </div>
-        <div class="inputs-container" style="justify-content: flex-start; padding-left: 4%;">
-          <div class="drag-drop-area" (dragover)="onDragOver($event)" (drop)="onDrop($event)"
-            (dragleave)="onDragLeave($event)" [class.dragover]="isDragOver">
-            <p *ngIf="!uploadedFile">Trascina o carica qui il tuo CV*</p>
-            <p *ngIf="uploadedFile">Uploaded: {{ uploadedFile.name }}</p>
-            <input type="file" id="fileInput" (change)="onFileSelect($event)" hidden #fileInput />
-            <button type="button" (click)="fileInput.click()">Carica CV</button>
-          </div>
-
-        </div>
-        <div class="button-container">
-          <button type="submit" [disabled]="!contactForm.valid"
-            [ngClass]="contactForm.valid && uploadedFile ? 'send-button' : ''">Invia</button>
-        </div>
-      </form>
     </div>
   </div>
-
 </section>
