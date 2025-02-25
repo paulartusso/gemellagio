@@ -5,6 +5,39 @@ main {
   flex-direction: column;
   margin-top: 85px;
 }
+.full-offer-button {
+  border: none;
+  background-color: #dd0555;
+  color: #fff;
+  padding: 7px;
+  padding-right: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+
+.back-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  .back-button {
+    border: none;
+    background-color: #dd0555;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    /* width: 200px; */
+    border-radius: 50%;
+    height: 40px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
 .input-container {
   display: flex;
   justify-content: center;
@@ -24,6 +57,12 @@ main {
     width: 100%;
     border-radius: 20px;
     border: 1px solid #999999;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  input[type="text"]:focus {
+    border: 1px solid #dd0555;
   }
   img {
     position: absolute;
@@ -34,9 +73,40 @@ main {
 h2 {
   padding-top: 20px;
 }
+
+.carousel-position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-container {
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+  position: relative;
+  background-color: #80808012;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  //white-space: nowrap;
+  //transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  //min-width: 300px; /* Adjust width based on your design */
+  flex-shrink: 0;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  width: 80%;
+  div {
+    margin-right: 20px;
+  }
 }

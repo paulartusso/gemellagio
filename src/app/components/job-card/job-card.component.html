@@ -12,15 +12,15 @@
         {{seniority}}
       </span>
     </div>
-    <span *ngIf="remuneration" style="color: #333; font-weight: 500; font-size: 15px;">
-      €{{remuneration}}
+    <span *ngIf="ral" style="color: #333; font-weight: 500; font-size: 15px;">
+      €{{ral}}
     </span>
-    <span *ngIf="!remuneration && contratto !== 'Stage'"
+    <span *ngIf="!ral && contract !== 'Stage'"
       style="color: #999999; font-weight: 500; font-style: italic; font-size: 15px;">
       Renumerazione non disponibile
     </span>
-    <span *ngIf="!remuneration && contratto === 'Stage'" style="color: #333; font-weight: 500; font-size: 15px;">
-      {{contratto}}
+    <span *ngIf="!ral && contract === 'Stage'" style="color: #333; font-weight: 500; font-size: 15px;">
+      {{contract}}
     </span>
     <div class="description-container">
       <div *ngIf="!openDescription">
@@ -36,7 +36,7 @@
           <p class="contract-type">
             <span style="font-weight: 600;">
               Tipo di contratto:
-            </span>{{contratto}}
+            </span>{{contract}}
             <span (click)="showDescription()" class="compress-button">
               Leggere di meno
             </span>

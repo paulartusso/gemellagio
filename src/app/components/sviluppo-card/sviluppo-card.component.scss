@@ -1,49 +1,47 @@
-
-
-  .timeline-card {
-    position: relative;
-    height: 100%;
-    width: 31%;
-    margin-bottom: 40px;
-    .circle {
-      position: absolute;
-        top: -55px;
-        left: 75px;
-        z-index: 1001;
-        height: 100px;
-        width: 100px;
-      border-radius: 50%;
-      background-color: #009DDC;
-      border: 4px solid #FFF;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img{
-        width: 50px;
-      }
-    }
-
-    .clipped {
-      border-radius: 10px;
-      background-color: #83D0F5;
-      height: 335px;
-      width: 245px;
-      padding: 30px 7px 0 7px;
-      z-index: 1000;
-        -webkit-box-shadow: 0px 2px 9px 2px rgba(0, 75, 105, 0.83);
-        box-shadow: 0px 1px 3px 0px rgba(0, 75, 105, 0.83);
-      h5{
-        text-align: center;
-        margin-top: 32px;
-        margin-bottom: 0;
-        color: #FFF;
-        font-size: 16px;
-      }
-      p{
-        font-size: 14px;
-        text-align: center;
-        padding: 5px 10px;
-        line-height: 1.5;
-      }
+.timeline-card {
+  position: relative;
+  height: 100%;
+  width: 31%;
+  margin-bottom: 60px;
+  .circle {
+    position: absolute;
+    top: -55px;
+    left: 75px;
+    z-index: 1001;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #009ddc;
+    border: 4px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 50px;
     }
   }
+
+  .clipped {
+    border-radius: 10px;
+    background-color: #83d0f5;
+    height: 335px;
+    width: 245px;
+    padding: 30px 7px 0 7px;
+    z-index: 1000;
+    -webkit-box-shadow: 0px 2px 9px 2px rgba(0, 75, 105, 0.83);
+    box-shadow: 0px 1px 3px 0px rgba(0, 75, 105, 0.83);
+    h5 {
+      text-align: center;
+      margin-top: 32px;
+      margin-bottom: 0;
+      color: #fff;
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+      text-align: center;
+      padding: 5px 10px;
+      line-height: 1.5;
+    }
+  }
+}

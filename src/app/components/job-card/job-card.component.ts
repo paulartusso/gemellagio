@@ -14,11 +14,11 @@ import {
 })
 export class JobCardComponent {
   @Input() role = '';
-  @Input() companyName = '';
+  @Input() company = '';
   @Input() description = '';
   @Input() seniority = '';
-  @Input() contratto = '';
-  @Input() remuneration = 0;
+  @Input() contract = '';
+  @Input() ral = 0;
   @Input() frontend_tech = [];
   @Input() backend_tech = [];
   @Input() devops_tech = [];

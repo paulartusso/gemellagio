@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,11 +8,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./join-us.component.scss'],
 })
 export class JoinUsComponent {
+  @ViewChild('carousel', { static: false }) carousel!: ElementRef;
+  private scrollInterval: any;
   contactForm: FormGroup;
   responseMessage: string = '';
   isDragOver = false;
   uploadedFile: File | null = null;
   sendingMail: boolean = false;
+  showOffers: boolean = false;
+  showCarousel: boolean = true;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
@@ -21,6 +25,18 @@ export class JoinUsComponent {
       email: ['', [Validators.required, Validators.email]],
       message: '',
     });
+  }
+
+  showAllOffers() {
+    this.showOffers = true;
+    this.showCarousel = false;
+    clearInterval(this.scrollInterval);
+  }
+
+  backToCarousel() {
+    this.showOffers = false;
+    this.showCarousel = true;
+    this.startAutoScroll();
   }
 
   jobsList: any = [
@@ -111,4 +127,27 @@ export class JoinUsComponent {
       db_tech: ['MySQL', 'MongoDB'],
     },
   ];
+
+  ngAfterViewInit() {
+    this.startAutoScroll();
+  }
+
+  startAutoScroll() {
+    const scrollSpeed = 1; // Adjust speed (px per interval)
+    const scrollDelay = 30; // Adjust interval in ms
+
+    this.scrollInterval = setInterval(() => {
+      const carousel = this.carousel.nativeElement;
+      carousel.scrollLeft += scrollSpeed;
+
+      // Reset scroll to the start when reaching the end
+      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+        carousel.scrollLeft = 0;
+      }
+    }, scrollDelay);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.scrollInterval);
+  }
 }

@@ -53,15 +53,15 @@
   margin-top: -215px;
   margin-bottom: 30px;
   font-weight: 400;
-  //background: linear-gradient(to bottom, #ffffff4c, #ffffff82, #fff);
   span {
     font-weight: 500;
     color: #dd0555;
   }
 }
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 500px) {
   .text {
-    font-size: 27px;
+    font-size: 22px;
+    margin-top: -150px;
   }
 }
 @media screen and (min-width: 501px) {
