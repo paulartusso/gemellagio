@@ -262,16 +262,24 @@
       div {
         display: flex;
         justify-content: space-between;
-        width: 65%;
+        width: 100%;
         margin-bottom: 15px;
         span {
-          font-size: 22px;
           font-weight: 600;
           padding-left: 15px;
+          clip-path: polygon(88% 0, 100% 50%, 88% 100%, 0% 100%, 6% 50%, 0% 0%);
+          background-color: #fab716;
+          width: 50%;
+          padding: 10px;
+          padding-left: 35px;
+          margin-left: -45px;
+          margin-top: -8px;
+          text-align: center;
         }
         button {
           border: none;
-          background-color: #dd0555;
+          //background-color: #dd0555;
+          background-color: transparent;
           color: #fff;
           border-radius: 50%;
           width: 25px;
@@ -300,5 +308,30 @@
   .description {
     padding: 10px 25px;
     text-align: justify;
+  }
+
+  .application-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 25px;
+    form {
+      width: 100%;
+      div {
+        input {
+          padding: 0;
+        }
+      }
+      button {
+        margin-left: 10px;
+        width: 115px;
+        border: none;
+        padding: 7px;
+        font-size: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #009ddc;
+        color: #fff;
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import {
   FormBuilder,
@@ -27,28 +28,15 @@ export class JobCardComponent {
   openDescription: boolean = false;
   expandedCard: boolean = false;
 
-  selectedFrontendStacks: string[] = [];
-  selectedBackendStacks: string[] = [];
-  selectedDevopsStacks: string[] = [];
-  selectedDBStacks: string[] = [];
+  applyForm: any = FormGroup;
+  selectedFile: File | null = null;
 
-  editForm!: FormGroup;
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.editForm = this.fb.group({
-      ruolo: ['', Validators.required],
-      azienda: ['', Validators.required],
-      indirizzo: [''],
-      seniority: ['', Validators.required],
-      descrizione: ['', Validators.required],
-      frontendStacks: [''],
-      backendStacks: [''],
-      devopsStacks: [''],
-      dbStacks: [''],
-      altroStack: [''],
-      remunerazione: [''],
+    this.applyForm = this.fb.group({
+      // Other form controls
+      file: [null, Validators.required],
     });
   }
 
@@ -60,20 +48,31 @@ export class JobCardComponent {
     this.expandedCard = false;
   }
 
-  modify(): void {
-    if (this.editForm.valid) {
-      console.log(
-        'Form submitted:',
-        this.editForm.value,
-        this.selectedFrontendStacks
-      );
-    } else {
-      console.log('Form is not valid');
-    }
-  }
-
   expandCard() {
     console.log('expand');
     this.expandedCard = true;
+  }
+
+  onFileSelect(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input && input.files) {
+      this.selectedFile = input.files[0];
+    }
+  }
+
+  onSubmit(): void {
+    if (this.applyForm.valid && this.selectedFile) {
+      const formData = new FormData();
+      formData.append('file', this.selectedFile, this.selectedFile.name);
+
+      this.http.post('/upload', formData).subscribe(
+        (response) => {
+          console.log('File uploaded successfully!', response);
+        },
+        (error) => {
+          console.error('File upload failed!', error);
+        }
+      );
+    }
   }
 }

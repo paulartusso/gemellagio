@@ -46,15 +46,15 @@
   </div>
 </div>
 
-
+<!--EXPANDED JOB CARD-->
 <div *ngIf="expandedCard" class="overlay">
-  <div (click)="close()" class="opened-card">
+  <div class="opened-card">
     <div class="header">
       <div>
-        <span>
+        <span class="role-container">
           {{role}}
         </span>
-        <button>
+        <button (click)="close()">
           <img src="../../../assets/compress.png" alt="" width="20px">
         </button>
       </div>
@@ -64,6 +64,12 @@
         Seniority:
         <span style="font-size: 15px; color: #009DDC;">
           {{seniority}}
+        </span>
+      </span>
+      <span class="title">
+        Tipologia di Contratto:
+        <span style="font-size: 15px; color: #009DDC;">
+          {{contract}}
         </span>
       </span>
       <span class="title">
@@ -97,6 +103,17 @@
       <div class="stacks">
         <span *ngFor="let requirement of db_tech" style="background-color: #f6c554;">{{requirement}}</span>
       </div>
+    </div>
+    <div class="application-container">
+      <form [formGroup]="applyForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="file" id="file" formControlName="file" (change)="onFileSelect($event)" />
+        </div>
+        <div style="display: flex; justify-content: flex-end;">
+          <button type="submit" class="btn btn-primary" [disabled]="!applyForm.valid">Postulati</button>
+        </div>
+      </form>
+
     </div>
   </div>
 </div>
