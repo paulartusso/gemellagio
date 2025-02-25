@@ -25,6 +25,7 @@ export class JobCardComponent {
   @Input() db_tech = [];
   @Input() cardIsOpen = false;
   openDescription: boolean = false;
+  expandedCard: boolean = false;
 
   selectedFrontendStacks: string[] = [];
   selectedBackendStacks: string[] = [];
@@ -56,7 +57,7 @@ export class JobCardComponent {
   }
 
   close() {
-    this.cardIsOpen = false;
+    this.expandedCard = false;
   }
 
   modify(): void {
@@ -73,5 +74,6 @@ export class JobCardComponent {
 
   expandCard() {
     console.log('expand');
+    this.expandedCard = true;
   }
 }

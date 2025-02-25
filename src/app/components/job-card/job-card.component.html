@@ -21,25 +21,9 @@
     </span>
     <div class="description-container">
       <div *ngIf="!openDescription">
-        <p class="description">{{description.slice(0, 60) + "..."}}
-          <span (click)="showDescription()" class="expand-button">Leggere di più</span>
-        </p>
+        <p class="description">{{description.slice(0, 60) + "..."}}</p>
       </div>
-      <div *ngIf="openDescription">
-        <div>
-          <p class="description">{{description}}</p>
-        </div>
-        <div style="display: flex; flex-direction: row; align-items: center;">
-          <p class="contract-type">
-            <span style="font-weight: 600;">
-              Tipo di contratto:
-            </span>{{contract}}
-            <span (click)="showDescription()" class="compress-button">
-              Leggere di meno
-            </span>
-          </p>
-        </div>
-      </div>
+
     </div>
     <div class="all-stacks">
       <div class="stacks">
@@ -59,5 +43,60 @@
   </div>
   <div *ngIf="cardIsOpen" class="expand-container" (click)="expandCard()">
     <img src="../../../assets/expand.png" alt="" width="25px">
+  </div>
+</div>
+
+
+<div *ngIf="expandedCard" class="overlay">
+  <div (click)="close()" class="opened-card">
+    <div class="header">
+      <div>
+        <span>
+          {{role}}
+        </span>
+        <button>
+          <img src="../../../assets/compress.png" alt="" width="20px">
+        </button>
+      </div>
+    </div>
+    <div class="data-container">
+      <span class="title">
+        Seniority:
+        <span style="font-size: 15px; color: #009DDC;">
+          {{seniority}}
+        </span>
+      </span>
+      <span class="title">
+        RAL:
+        <span *ngIf="ral" style="color: #333; font-weight: 500; font-size: 15px;">
+          €{{ral}}
+        </span>
+        <span *ngIf="!ral && contract !== 'Stage'"
+          style="color: #999999; font-weight: 500; font-style: italic; font-size: 15px;">
+          Renumerazione non disponibile
+        </span>
+        <span *ngIf="!ral && contract === 'Stage'" style="color: #333; font-weight: 500; font-size: 15px;">
+          {{contract}}
+        </span>
+      </span>
+    </div>
+    <div class="description">
+      {{description}}
+    </div>
+    <div class="all-stacks" style="padding: 10px 25px;">
+      <div class="stacks">
+        <span *ngFor="let requirement of frontend_tech" style="background-color: #60cffb;">{{requirement}}</span>
+      </div>
+      <div class="stacks">
+        <span *ngFor="let requirement of backend_tech" style="background-color: #ff85b2;">{{requirement}}</span>
+      </div>
+      <div class="stacks">
+        <span *ngFor="let requirement of devops_tech"
+          style="background-color: rgb(127, 255, 249);">{{requirement}}</span>
+      </div>
+      <div class="stacks">
+        <span *ngFor="let requirement of db_tech" style="background-color: #f6c554;">{{requirement}}</span>
+      </div>
+    </div>
   </div>
 </div>
