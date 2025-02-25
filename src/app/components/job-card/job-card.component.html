@@ -3,9 +3,6 @@
     <div class="header-container">
       <div class="title-sub">
         <h5>{{role}}</h5>
-        <!--
-        <h6>{{companyName}}</h6>
-        -->
         <img src="../../../assets/logo.png" alt="" width="80px">
       </div>
       <span>
@@ -59,5 +56,8 @@
         <span *ngFor="let requirement of db_tech" style="background-color: #f6c554;">{{requirement}}</span>
       </div>
     </div>
+  </div>
+  <div *ngIf="cardIsOpen" class="expand-container" (click)="expandCard()">
+    <img src="../../../assets/expand.png" alt="" width="25px">
   </div>
 </div>

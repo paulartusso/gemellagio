@@ -19,7 +19,7 @@
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.46);
   box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.46);
-  padding: 22px 30px 10px 45px;
+  padding: 22px 30px 20px 45px;
   margin-top: 50px;
   margin-bottom: 20px;
   overflow: auto;
@@ -225,5 +225,14 @@
         color: #fff;
       }
     }
+  }
+}
+.expand-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  img {
+    margin-right: -10px;
+    cursor: pointer;
   }
 }

@@ -23,13 +23,14 @@ export class JobCardComponent {
   @Input() backend_tech = [];
   @Input() devops_tech = [];
   @Input() db_tech = [];
-  cardIsOpen: boolean = false;
+  @Input() cardIsOpen = false;
   openDescription: boolean = false;
 
   selectedFrontendStacks: string[] = [];
   selectedBackendStacks: string[] = [];
   selectedDevopsStacks: string[] = [];
   selectedDBStacks: string[] = [];
+
   editForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -48,11 +49,6 @@ export class JobCardComponent {
       altroStack: [''],
       remunerazione: [''],
     });
-  }
-
-  openCard() {
-    console.log(this.role, 'fdasfgd');
-    this.cardIsOpen = true;
   }
 
   showDescription() {
@@ -75,7 +71,7 @@ export class JobCardComponent {
     }
   }
 
-  confirmDelete() {
-    console.log('Are you sure?');
+  expandCard() {
+    console.log('expand');
   }
 }
