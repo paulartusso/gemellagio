@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <!--Full offers no carousel-->
+    <!-- Full offers no carousel -->
     <div *ngIf="showOffers">
       <div style="display: flex; justify-content: center; width: 100%;">
         <div class="back-input-container">
@@ -38,14 +38,15 @@
                 class="material-icons">arrow_back_ios_new</i></button>
             <div>
               <img src="../../../assets/img/search.png" alt="" width="20px">
-              <input type="text" class="search-bar" placeholder="Cerca per ruolo o locazione">
+              <input [(ngModel)]="searchQuery" (input)="filterJobs()" type="text" class="search-bar"
+                placeholder="Cerca per ruolo o locazione">
             </div>
           </div>
         </div>
       </div>
       <div class="carousel-position">
         <div class="cards-container">
-          <div *ngFor="let job of jobsList">
+          <div *ngFor="let job of filteredJobs">
             <app-job-card [role]="job.role" [company]="job.company" [location]="job.location"
               [description]="job.description" [seniority]="job.seniority" [contract]="job.contract_type" [ral]="job.ral"
               [frontend_tech]="job.frontend_tech" [backend_tech]="job.backend_tech" [devops_tech]="job.devops_tech"

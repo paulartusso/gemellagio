@@ -23,7 +23,7 @@ import { LogisticaItemComponent } from './components/logistica-item/logistica-it
 import { CaseStudyItemComponent } from './components/case-study-item/case-study-item.component';
 import { MediaComponent } from './sections/media/media.component';
 import { ContactsComponent } from './sections/contacts/contacts.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { JoinUsComponent } from './sections/join-us/join-us.component';
 import { ArticleComponent } from './components/article-item/article.component';
@@ -66,6 +66,7 @@ import { JobCardComponent } from './components/job-card/job-card.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

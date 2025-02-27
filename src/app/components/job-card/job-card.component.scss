@@ -122,111 +122,6 @@
   }
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #0d17396f;
-  z-index: 1000;
-  .opened-card {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 15px;
-    width: 60%;
-    .rows {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      width: 100%;
-      @media screen and (max-width: 1000px) {
-        flex-direction: column;
-      }
-
-      @media screen and (min-width: 1001px) {
-        flex-direction: row;
-      }
-      @media screen and (max-width: 1500px) {
-        input {
-          width: 275px;
-        }
-        textarea {
-          width: 275px;
-        }
-        select {
-          width: 300px;
-        }
-      }
-      @media screen and (min-width: 1501px) and (max-width: 1800px) {
-        input {
-          width: 350px;
-        }
-        textarea {
-          width: 350px;
-        }
-        select {
-          width: 375px;
-        }
-      }
-      @media screen and (min-width: 1801px) {
-        input {
-          width: 400px;
-        }
-        textarea {
-          width: 400px;
-        }
-        select {
-          width: 425px;
-        }
-      }
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 15px;
-    }
-
-    label {
-      font-weight: 500;
-    }
-
-    input,
-    select,
-    textarea {
-      padding: 10px;
-      margin-top: 5px;
-    }
-
-    .btn-container {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 40px;
-      button {
-        padding: 10px 15px;
-        width: 120px;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-right: 10px;
-      }
-      .cancel {
-        background-color: transparent;
-        border: 1px solid #dd0555;
-        color: #dd0555;
-      }
-      .modify {
-        background-color: #009ddc;
-        color: #fff;
-      }
-    }
-  }
-}
 .expand-container {
   display: flex;
   justify-content: flex-end;
@@ -254,6 +149,8 @@
     padding: 25px 20px;
     border-radius: 15px;
     width: 40%;
+    max-height: 85vh;
+    overflow: auto;
     .header {
       display: flex;
       flex-direction: row;

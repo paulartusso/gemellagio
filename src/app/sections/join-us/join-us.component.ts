@@ -19,6 +19,9 @@ export class JoinUsComponent implements OnInit {
   showOffers: boolean = false;
   showCarousel: boolean = true;
 
+  filteredJobs: any[] = [];
+  searchQuery: string = '';
+
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
@@ -75,11 +78,24 @@ export class JoinUsComponent implements OnInit {
     this.jobService.getJobs().subscribe(
       (data: any) => {
         this.jobsList = data;
+        this.filteredJobs = [...this.jobsList]; // Initialize with all jobs
         console.log('Jobs fetched:', this.jobsList);
       },
       (error: any) => {
         console.error('Error fetching jobs:', error);
       }
     );
+  }
+
+  filterJobs(): void {
+    if (this.searchQuery.trim()) {
+      this.filteredJobs = this.jobsList.filter(
+        (job: any) =>
+          job.role.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          job.location.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    } else {
+      this.filteredJobs = [...this.jobsList];
+    }
   }
 }
