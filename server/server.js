@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const mysql = require("mysql2");
+const sql = require("mssql");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,57 +10,77 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MySQL Database Connection
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+//require('dotenv').config({ path: '../.env' });
+
+//console.log("DB_HOST:", process.env.DB_HOST, process.env.DB_PASSWORD);
+
+
+const dbConfig = {
+  user: 'sqlAdministrator',
+  password: 'E7AT3v@d32WsG@E',
+  server: 'everience.database.windows.net',
+  database: 'hr-jobs',
+  options: {
+    encrypt: true,
+    trustServerCertificate: false
+  }
+};
+
+sql.connect(dbConfig).then(() => {
+  console.log('Connected to SQL Server');
+}).catch((err) => {
+  console.error('Database connection failed:', err);
 });
 
-// Connect to MySQL
-db.connect((err) => {
+
+// Connect to SQL Server
+sql.connect(dbConfig, (err) => {
   if (err) {
     console.error("Database connection failed:", err);
     return;
   }
-  console.log("Connected to MySQL database");
+  console.log("Connected to SQL Server database");
 });
 
-//get all jobs
-app.get('/api/jobs', (req, res) => {
+// Get all jobs
+app.get('/api/jobs', async (req, res) => {
   const query = `
     SELECT j.id, j.role, j.seniority, j.company, j.location, j.contract_type, j.description, j.ral,
-           GROUP_CONCAT(DISTINCT f.name ORDER BY f.name ASC) AS frontend_tech,
-           GROUP_CONCAT(DISTINCT b.name ORDER BY b.name ASC) AS backend_tech,
-           GROUP_CONCAT(DISTINCT d.name ORDER BY d.name ASC) AS db_tech,
-           GROUP_CONCAT(DISTINCT o.name ORDER BY o.name ASC) AS devops_tech
-    FROM jobs j
-    LEFT JOIN frontend_requirements f ON j.id = f.job_id
-    LEFT JOIN backend_requirements b ON j.id = b.job_id
-    LEFT JOIN db_requirements d ON j.id = d.job_id
-    LEFT JOIN devops_requirements o ON j.id = o.job_id
-    GROUP BY j.id;
-  `;
+       STUFF((SELECT ', ' + f.name
+              FROM frontend_requirements f
+              WHERE f.job_id = j.id
+              FOR XML PATH('')), 1, 2, '') AS frontend_tech,
+       STUFF((SELECT ', ' + b.name
+              FROM backend_requirements b
+              WHERE b.job_id = j.id
+              FOR XML PATH('')), 1, 2, '') AS backend_tech,
+       STUFF((SELECT ', ' + d.name
+              FROM db_requirements d
+              WHERE d.job_id = j.id
+              FOR XML PATH('')), 1, 2, '') AS db_tech,
+       STUFF((SELECT ', ' + o.name
+              FROM devops_requirements o
+              WHERE o.job_id = j.id
+              FOR XML PATH('')), 1, 2, '') AS devops_tech
+FROM jobs j;
+ `;
 
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error('Error fetching jobs:', err);
-      res.status(500).send('Error fetching jobs');
-      return;
-    }
-
-    //transform the result into an array
-    const jobs = results.map(job => ({
+  try {
+    const result = await sql.query(query);
+    // Transform the result into an array
+    const jobs = result.recordset.map(job => ({
       ...job,
-      frontend_tech: job.frontend_tech ? job.frontend_tech.split(',') : [],
-      backend_tech: job.backend_tech ? job.backend_tech.split(',') : [],
-      db_tech: job.db_tech ? job.db_tech.split(',') : [],
-      devops_tech: job.devops_tech ? job.devops_tech.split(',') : [],
+      frontend_tech: job.frontend_tech ? job.frontend_tech.split(', ') : [],
+      backend_tech: job.backend_tech ? job.backend_tech.split(', ') : [],
+      db_tech: job.db_tech ? job.db_tech.split(', ') : [],
+      devops_tech: job.devops_tech ? job.devops_tech.split(', ') : [],
     }));
 
     res.json(jobs);
-  });
+  } catch (err) {
+    console.error('Error fetching jobs:', err);
+    res.status(500).send('Error fetching jobs');
+  }
 });
 
 // Start Server
