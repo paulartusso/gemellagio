@@ -42,7 +42,7 @@
     </div>
   </div>
   <div *ngIf="cardIsOpen" class="expand-container" (click)="expandCard()">
-    <img src="../../../assets/expand.png" alt="" width="25px">
+    <img src="../../../assets/icons/expand.png" alt="" width="25px">
   </div>
 </div>
 
@@ -55,11 +55,17 @@
           {{role}}
         </span>
         <button (click)="close()">
-          <img src="../../../assets/compress.png" alt="" width="20px">
+          <img src="../../../assets/icons/compress.png" alt="" width="20px">
         </button>
       </div>
     </div>
     <div class="data-container">
+      <span class="title">
+        Provincia:
+        <span style="font-size: 15px; color: #009DDC;">
+          {{location}}
+        </span>
+      </span>
       <span class="title">
         Seniority:
         <span style="font-size: 15px; color: #009DDC;">

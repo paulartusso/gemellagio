@@ -8,7 +8,9 @@
   <div class="main">
     <div style="display: flex; justify-content: center; align-items: center;">
       <div style="margin-top: 30px; width: 80%; position: relative;">
-        <button *ngIf="showCarousel" (click)="showAllOffers()" class="full-offer-button">Vedi tutte le Offerte</button>
+        <button *ngIf="showCarousel" (click)="showAllOffers()" class="full-offer-button">
+          Vedi tutte le Offerte <i class="material-icons">arrow_back_ios_new</i>
+        </button>
       </div>
     </div>
     <div *ngIf="showCarousel">
@@ -16,10 +18,10 @@
         <div #carousel class="carousel-container">
           <div class="carousel-track">
             <div *ngFor="let job of jobsList" class="carousel-item">
-              <app-job-card [role]="job.role" [company]="job.company" [description]="job.description"
-                [seniority]="job.seniority" [contract]="job.contract_type" [ral]="job.ral"
-                [frontend_tech]="job.frontend_tech" [backend_tech]="job.backend_tech" [devops_tech]="job.devops_tech"
-                [db_tech]="job.db_tech">
+              <app-job-card [role]="job.role" [company]="job.company" [location]="job.location"
+                [description]="job.description" [seniority]="job.seniority" [contract]="job.contract_type"
+                [ral]="job.ral" [frontend_tech]="job.frontend_tech" [backend_tech]="job.backend_tech"
+                [devops_tech]="job.devops_tech" [db_tech]="job.db_tech">
               </app-job-card>
             </div>
           </div>
@@ -35,7 +37,7 @@
             <button *ngIf="showOffers" (click)="backToCarousel()" class="back-button"><i
                 class="material-icons">arrow_back_ios_new</i></button>
             <div>
-              <img src="../../../assets/search.png" alt="" width="20px">
+              <img src="../../../assets/img/search.png" alt="" width="20px">
               <input type="text" class="search-bar" placeholder="Cerca per ruolo o locazione">
             </div>
           </div>
@@ -44,8 +46,8 @@
       <div class="carousel-position">
         <div class="cards-container">
           <div *ngFor="let job of jobsList">
-            <app-job-card [role]="job.role" [company]="job.company" [description]="job.description"
-              [seniority]="job.seniority" [contract]="job.contract_type" [ral]="job.ral"
+            <app-job-card [role]="job.role" [company]="job.company" [location]="job.location"
+              [description]="job.description" [seniority]="job.seniority" [contract]="job.contract_type" [ral]="job.ral"
               [frontend_tech]="job.frontend_tech" [backend_tech]="job.backend_tech" [devops_tech]="job.devops_tech"
               [db_tech]="job.db_tech" [cardIsOpen]="showOffers">
             </app-job-card>

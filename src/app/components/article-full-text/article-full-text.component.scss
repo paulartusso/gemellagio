@@ -1,0 +1,54 @@
+@media screen and (max-width: 800px) {
+  .hero {
+    background-image: url("../../../assets/img/veryfile.png");
+    width: 100%;
+    height: calc(40vh - 55px);
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+  }
+  .size {
+    font-size: 22px;
+  }
+  .separator {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 801px) {
+  .hero {
+    background-image: url("../../../assets/img/veryfile.png");
+    width: 100%;
+    height: calc(50vh - 55px);
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  .size {
+    font-size: 27px;
+  }
+  .separator {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .sections-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15%;
+    max-width: 1900px;
+  }
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 30px;
+}
+.description-container {
+  padding: 0 15%;
+  text-align: justify;
+  padding-bottom: 50px;
+}

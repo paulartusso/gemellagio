@@ -72,13 +72,17 @@
     }
 
     button {
-      display: flex;
-      align-items: center;
+      /* display: flex
+; */
+      /* align-items: center; */
       border: none;
-      background-color: transparent;
+      background-color: #dd0555;
       font-size: 14px;
-      margin-left: -6px;
+      /* margin-left: -6px; */
       cursor: pointer;
+      border-radius: 20px;
+      padding: 10px 15px;
+      color: #fff;
 
       img {
         margin-left: 5px;

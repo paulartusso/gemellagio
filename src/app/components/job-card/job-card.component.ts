@@ -16,6 +16,7 @@ import {
 export class JobCardComponent {
   @Input() role = '';
   @Input() company = '';
+  @Input() location = '';
   @Input() description = '';
   @Input() seniority = '';
   @Input() contract = '';

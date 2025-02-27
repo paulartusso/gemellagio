@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   { path: 'case-studies', component: CaseStudiesComponent },
   { path: 'media', component: MediaComponent },
-  { path: 'media/full-article', component: ArticleFullTextComponent },
+  { path: 'media/full-article/:id', component: ArticleFullTextComponent },
   { path: 'join-us', component: JoinUsComponent },
   { path: 'contacts', component: ContactsComponent },
 ];

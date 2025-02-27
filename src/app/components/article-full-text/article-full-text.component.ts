@@ -1,10 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article-full-text',
   templateUrl: './article-full-text.component.html',
-  styleUrls: ['./article-full-text.component.scss']
+  styleUrls: ['./article-full-text.component.scss'],
 })
-export class ArticleFullTextComponent {
+export class ArticleFullTextComponent implements OnInit {
+  id!: number;
 
+  articlesList: any = [
+    {
+      id: 1,
+      category: 'Case History',
+      title: "Supporto per l'implementazione IT negli Stati Uniti",
+      description1:
+        "Everience ha recentemente supportato l'implementazione dell’infrastruttura IT presso un cliente in due nuove sedi negli Stati Uniti: uno store a Miami e un ufficio a Hollywood. L’obiettivo era garantire una configurazione efficace per l’apertura dello store il 1° novembre e completare una site survey per l’ufficio. Una criticità chiave emersa fin dall’inizio è stata la mancanza di connettività in fibra ottica nei tempi previsti. Per ovviare al problema, è stato adottato un router modem 5G come soluzione temporanea, integrato alla rete LAN. La necessità di reperire rapidamente l’hardware necessario ha incontrato ostacoli logistici, tra cui la scadenza della nostra partnership con Cisco per l’acquisto diretto di dispositivi Meraki. Dopo aver coinvolto diversi partner, abbiamo trovato supporto in Soteria365, che ha fornito hardware e risorse sul campo tramite il loro partner USA. Tuttavia, il router inizialmente proposto non era compatibile con il 5G e solo dopo un’attenta revisione tecnica è stato sostituito con il modello corretto. La site survey sullo store di Miami è stata condotta dai Field Engineer del partner USA, supportati in remoto dal nostro team. Parallelamente, il cliente si è occupato del network cabinet e del cablaggio.",
+      description2:
+        "Il nostro team ha seguito da vicino l'intervento: Moroni ha gestito le priorità tecniche e le soluzioni operative, mentre Pellegrini ha coordinato i fornitori per evitare costi extra e garantire che le soluzioni venissero recepite efficacemente dai tecnici locali. Il 28 ottobre, una call preliminare ha permesso di definire i dettagli delle attività, tra cui l'installazione e configurazione del router 5G, degli switch e degli access point Meraki. Tuttavia, il giorno successivo sono emerse nuove difficoltà: l'accesso al router ha richiesto ore di lavoro a causa della scarsa preparazione del personale locale e la SIM fornita era incompatibile con il dispositivo. Questo ha richiesto soluzioni rapide, come l’acquisto di un router alternativo da Verizon. Anche l'installazione degli access point ha subito ritardi a causa di errori sul campo e della necessità di negoziare con il Point of Contact del cliente. Nonostante gli imprevisti, la maggior parte delle attività è stata completata, lasciando solo alcune marginali per il giorno di hypercare del 1° novembre. Questo progetto ha evidenziato la capacità di Everience di affrontare sfide operative e logistiche, garantendo reattività e flessibilità nella gestione degli imprevisti. Le lezioni apprese suggeriscono l’importanza di ridurre le incertezze operative, testare preventivamente le soluzioni di connettività e standardizzare le procedure. La combinazione di competenza tecnica, coordinamento efficace e spirito di squadra ha permesso di superare le difficoltà e rafforzare la fiducia dei nostri clienti e partner.",
+      image: '../../../assets/img/veryfile.png',
+    },
+  ];
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('Article ID:', this.id);
+    this.scrollUp();
+  }
+  scrollUp() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
 }

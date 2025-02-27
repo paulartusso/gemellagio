@@ -23,9 +23,9 @@
       <!--Text-->
       <div class="text-container">
         <h5>{{article.title}}</h5>
-        <p>{{article.description}}</p>
-        <button (click)="openFullArticle()">Continua a leggere
-          <img src="../../../assets/right-arrow.png" alt="" width="15px">
+        <p>{{article.description.slice(0, 220) + "..."}}</p>
+        <button (click)="openFullArticle(article.id)">
+          Continua a leggere
         </button>
       </div>
     </div>
