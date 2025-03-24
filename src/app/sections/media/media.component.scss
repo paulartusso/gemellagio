@@ -61,8 +61,11 @@
     @media screen and (min-width: 500px) and (max-width: 1600px) {
       width: 350px;
     }
-    @media screen and (min-width: 1601px) {
+    @media screen and (min-width: 1601px) and (max-width: 1700px) {
       width: 425px;
+    }
+    @media screen and (min-width: 1701px) {
+      width: 485px;
     }
   }
 
