@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,10 +9,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArticleFullTextComponent implements OnInit {
   id!: number;
+  fullArticle = {
+    title: '',
+    description1: '',
+    description2: '',
+    imageUrl: '',
+  };
 
   articlesList: any = [
     {
       id: 1,
+      imageUrl: '../../../assets/img/veryfile.jpg',
       category: 'Case History',
       title: "Supporto per l'implementazione IT negli Stati Uniti",
       description1:
@@ -20,14 +28,47 @@ export class ArticleFullTextComponent implements OnInit {
         "Il nostro team ha seguito da vicino l'intervento: Moroni ha gestito le priorità tecniche e le soluzioni operative, mentre Pellegrini ha coordinato i fornitori per evitare costi extra e garantire che le soluzioni venissero recepite efficacemente dai tecnici locali. Il 28 ottobre, una call preliminare ha permesso di definire i dettagli delle attività, tra cui l'installazione e configurazione del router 5G, degli switch e degli access point Meraki. Tuttavia, il giorno successivo sono emerse nuove difficoltà: l'accesso al router ha richiesto ore di lavoro a causa della scarsa preparazione del personale locale e la SIM fornita era incompatibile con il dispositivo. Questo ha richiesto soluzioni rapide, come l’acquisto di un router alternativo da Verizon. Anche l'installazione degli access point ha subito ritardi a causa di errori sul campo e della necessità di negoziare con il Point of Contact del cliente. Nonostante gli imprevisti, la maggior parte delle attività è stata completata, lasciando solo alcune marginali per il giorno di hypercare del 1° novembre. Questo progetto ha evidenziato la capacità di Everience di affrontare sfide operative e logistiche, garantendo reattività e flessibilità nella gestione degli imprevisti. Le lezioni apprese suggeriscono l’importanza di ridurre le incertezze operative, testare preventivamente le soluzioni di connettività e standardizzare le procedure. La combinazione di competenza tecnica, coordinamento efficace e spirito di squadra ha permesso di superare le difficoltà e rafforzare la fiducia dei nostri clienti e partner.",
       image: '../../../assets/img/veryfile.png',
     },
+    {
+      id: 2,
+      imageUrl: '../../../assets/img/yoga.jpg',
+      category: 'Case History',
+      title: "Yoga dopo il lavoro: un'opportunità per il benessere in azienda",
+      description1:
+        "In Everience Italia, abbiamo sempre creduto che un ambiente di lavoro sano e positivo dipenda anche dal benessere delle persone che lo compongono. Per questo motivo, grazie al contributo di ciascun collaboratore, abbiamo introdotto una nuova iniziativa: una lezione di yoga post-lavoro aperta a tutti i colleghi. Lo yoga non è solo un'attività fisica; è uno strumento efficace per migliorare la concentrazione, ridurre lo stress e migliorare il benessere complessivo. La pratica regolare aiuta a sviluppare una maggiore consapevolezza del corpo e della mente, promuovendo una postura migliore e un approccio più rilassato alle sfide quotidiane. Per chi trascorre lunghe ore alla scrivania, rappresenta un’opportunità per rilasciare la tensione accumulata e prevenire disagi muscolari. Lo stress è uno dei fattori più significativi che influenzano la qualità della vita lavorativa e la produttività. Orari frenetici, scadenze stringenti e responsabilità quotidiane possono generare sovraccarico mentale, che, nel tempo, incide negativamente sulla concentrazione e sulla motivazione. Grazie alle tecniche di respirazione e agli esercizi di rilassamento, lo yoga offre un modo concreto per ripristinare l'equilibrio tra corpo e mente, aiutando a gestire la pressione in modo più efficace. Ridurre lo stress non solo migliora le prestazioni lavorative, ma favorisce anche le capacità decisionali e un approccio più positivo alle sfide.",
+      description2:
+        'Oltre ai benefici individuali, questa attività rafforza anche il senso di appartenenza e il lavoro di squadra. Condividere un momento al di fuori dell’ambiente lavorativo consente ai colleghi di creare nuove connessioni, rafforzando la dinamica di gruppo e contribuendo a un ambiente di lavoro più collaborativo. Un team sereno e coeso lavora in maggiore armonia, riducendo i conflitti e aumentando l’efficienza complessiva. Questa iniziativa è un esempio concreto di come, con un piccolo sforzo collettivo, possiamo migliorare la qualità della vita lavorativa. Prendersi cura del nostro benessere significa investire non solo in noi stessi, ma anche in un ambiente di lavoro più equilibrato e produttivo.',
+      image: '../../../assets/img/veryfile.png',
+    },
+    {
+      id: 2,
+      imageUrl: '../../../assets/img/rete.jpg',
+      category: 'Case History',
+      title: "Yoga dopo il lavoro: un'opportunità per il benessere in azienda",
+      description1:
+        "In Everience Italia, abbiamo sempre creduto che un ambiente di lavoro sano e positivo dipenda anche dal benessere delle persone che lo compongono. Per questo motivo, grazie al contributo di ciascun collaboratore, abbiamo introdotto una nuova iniziativa: una lezione di yoga post-lavoro aperta a tutti i colleghi. Lo yoga non è solo un'attività fisica; è uno strumento efficace per migliorare la concentrazione, ridurre lo stress e migliorare il benessere complessivo. La pratica regolare aiuta a sviluppare una maggiore consapevolezza del corpo e della mente, promuovendo una postura migliore e un approccio più rilassato alle sfide quotidiane. Per chi trascorre lunghe ore alla scrivania, rappresenta un’opportunità per rilasciare la tensione accumulata e prevenire disagi muscolari. Lo stress è uno dei fattori più significativi che influenzano la qualità della vita lavorativa e la produttività. Orari frenetici, scadenze stringenti e responsabilità quotidiane possono generare sovraccarico mentale, che, nel tempo, incide negativamente sulla concentrazione e sulla motivazione. Grazie alle tecniche di respirazione e agli esercizi di rilassamento, lo yoga offre un modo concreto per ripristinare l'equilibrio tra corpo e mente, aiutando a gestire la pressione in modo più efficace. Ridurre lo stress non solo migliora le prestazioni lavorative, ma favorisce anche le capacità decisionali e un approccio più positivo alle sfide.",
+      description2:
+        'Oltre ai benefici individuali, questa attività rafforza anche il senso di appartenenza e il lavoro di squadra. Condividere un momento al di fuori dell’ambiente lavorativo consente ai colleghi di creare nuove connessioni, rafforzando la dinamica di gruppo e contribuendo a un ambiente di lavoro più collaborativo. Un team sereno e coeso lavora in maggiore armonia, riducendo i conflitti e aumentando l’efficienza complessiva. Questa iniziativa è un esempio concreto di come, con un piccolo sforzo collettivo, possiamo migliorare la qualità della vita lavorativa. Prendersi cura del nostro benessere significa investire non solo in noi stessi, ma anche in un ambiente di lavoro più equilibrato e produttivo.',
+      image: '../../../assets/img/veryfile.png',
+    },
   ];
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log('Article ID:', this.id);
+    this.getArticleData();
     this.scrollUp();
+  }
+
+  getArticleData() {
+    for (let item of this.articlesList) {
+      if (this.id == item.id) {
+        this.fullArticle.title = item.title;
+        this.fullArticle.description1 = item.description1;
+        this.fullArticle.description2 = item.description2;
+        this.fullArticle.imageUrl = item.imageUrl;
+      }
+    }
   }
   scrollUp() {
     window.scrollTo({
