@@ -1,6 +1,9 @@
 <div class="serviceBox">
   <div class="icon" [style.background-image]="'url(' + img + ')'"
     style="background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div>
+      {{cardTitle}}
+    </div>
   </div>
   <div class="content" (click)="navigateTo(url)">
     <h2>{{cardTitle}}</h2>
