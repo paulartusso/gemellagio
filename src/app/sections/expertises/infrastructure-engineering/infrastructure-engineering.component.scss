@@ -8,17 +8,17 @@
   align-items: center;
   color: #fff;
   margin: 30px 25px;
-  height: 45vh;
-  .inner-parallax {
-    background-color: #83d0f59e;
-    width: 36%;
-    padding: 22px;
-    color: #fff;
-    border-radius: 7px;
-    p {
-      color: #063d53;
-      font-weight: 500;
-    }
+  height: 40vh;
+}
+.inner-parallax {
+  background-color: #83d1f5e0;
+  width: 36%;
+  padding: 22px;
+  color: #fff;
+  border-radius: 7px;
+  p {
+    color: #063d53;
+    font-weight: 500;
   }
 }
 
@@ -42,7 +42,7 @@
     .parallax {
       background-image: url("../../../../assets/img/ekahau.png");
       background-size: contain;
-      height: 80vh;
+      height: 43vh;
     }
     .mobile-only {
       display: none;
@@ -52,7 +52,7 @@
 #wyebot {
   @media (max-width: 500px) {
     .parallax {
-      background-image: url("../../../../assets/img/wyebot.png");
+      background-image: url("../../../../assets/img/wyebot.jpg");
       background-size: contain;
       height: 40vh;
       margin-top: -35px;
@@ -72,8 +72,9 @@
 
   @media (min-width: 501px) {
     .parallax {
-      background-image: url("../../../../assets/img/wyebot.png");
+      background-image: url("../../../../assets/img/wyebot.jpg");
       background-size: inherit;
+      height: 43vh;
     }
     .mobile-only {
       display: none;
@@ -82,7 +83,7 @@
 }
 
 section {
-  padding: 0 15px 40px 15px;
+  padding: 0 15px;
   .h5 {
     font-size: 22px;
     font-weight: 500;
@@ -105,9 +106,15 @@ section {
     @media (max-width: 500px) {
       font-size: 20px;
     }
-    @media (min-width: 900px) {
+    @media (min-width: 900px) and (min-width: 1200px) {
       font-size: 21px;
       text-align: center;
+      margin-left: 0;
+    }
+    @media (min-width: 1201px) {
+      font-size: 22px;
+      text-align: center;
+      margin-left: 0;
     }
   }
   p {
@@ -119,13 +126,21 @@ section {
     @media (max-width: 500px) {
       font-size: 15px;
     }
-    @media (min-width: 501px) {
+    @media (min-width: 501px) and (max-width: 1000px) {
       text-align: justify;
       margin: 15px;
     }
+    @media (min-width: 1001px) {
+      padding: 0 60px;
+    }
   }
   .list {
-    padding: 20px 0;
+    @media (max-width: 900px) {
+      padding: 20px;
+    }
+    @media (min-width: 901px) {
+      padding: 20px 150px;
+    }
     ul {
       li {
         margin: 20px;
@@ -182,8 +197,11 @@ section {
       div {
         border: 1px solid #dd0555;
         background-color: #fefefe;
-        border-radius: 7px;
-        padding: 5px 15px;
+        border-radius: 10px;
+        padding: 5px;
+        p {
+          padding: 5px;
+        }
       }
     }
   }
@@ -216,8 +234,49 @@ section {
         border: 1px solid #dd0555;
         background-color: #fefefe;
         border-radius: 7px;
-        padding: 5px 15px;
+        padding: 5px;
+
+        p {
+          padding: 5px 10px;
+        }
       }
     }
+  }
+}
+
+.first-h6 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-left: 25px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  color: #dd0555;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
+  @media (min-width: 900px) and (min-width: 1200px) {
+    font-size: 30px;
+    text-align: center;
+  }
+  @media (min-width: 1201px) {
+    font-size: 45px;
+    text-align: center;
+  }
+}
+
+.ekahau-img {
+  @media (max-width: 900px) {
+    width: 95%;
+  }
+  @media (min-width: 901px) {
+    width: 65%;
+  }
+}
+.wyebot-img {
+  @media (max-width: 900px) {
+    width: 85%;
+  }
+  @media (min-width: 901px) {
+    width: 55%;
   }
 }
