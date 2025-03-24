@@ -42,7 +42,7 @@
     }
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .desktop-menu {
     display: none;
   }
@@ -52,7 +52,7 @@
   .links-container {
     display: flex;
     justify-content: flex-end;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     background-color: #fff;
     z-index: 1001;
@@ -63,16 +63,26 @@
       padding: 10px;
       div {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         padding: 10px;
         border-bottom: 1px solid #eee;
         border-top: 1px solid #eee;
       }
     }
   }
+  .links-container .hidden-menu div .case-studies-mobile {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    span {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
 }
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 701px) {
   .desktop-menu {
     display: flex;
     flex-direction: row;
@@ -93,17 +103,16 @@
     display: none;
   }
   .links-container {
-    width: 100vw;
+    width: 100%;
     position: absolute;
     .hidden-menu {
-      padding: 10px;
-      width: 96%;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
-      font-size: 11px;
-      background-color: #ffffffd9;
+      padding: 20px 0;
+      font-size: 14px;
+      background-color: rgba(210, 210, 210, 0.651);
       div {
         display: flex;
         justify-content: space-between;

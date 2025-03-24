@@ -30,6 +30,11 @@ import { ArticleComponent } from './components/article-item/article.component';
 import { ArticleFullTextComponent } from './components/article-full-text/article-full-text.component';
 import { ScrollAnimationDirective } from './scroll-animation.directive';
 import { JobCardComponent } from './components/job-card/job-card.component';
+import { ApplicationsComponent } from './sections/join-us/applications/applications.component';
+import { RouterModule } from '@angular/router';
+import { CrossChannelComponent } from './sections/case-studies/cross-channel/cross-channel.component';
+import { ToolsSelectionComponent } from './sections/case-studies/tools-selection/tools-selection.component';
+import { MobilityComponent } from './sections/case-studies/mobility/mobility.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +64,11 @@ import { JobCardComponent } from './components/job-card/job-card.component';
     ArticleFullTextComponent,
     ScrollAnimationDirective,
     JobCardComponent,
+    ApplicationsComponent,
+    CrossChannelComponent,
+    ToolsSelectionComponent,
+    MobilityComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +77,7 @@ import { JobCardComponent } from './components/job-card/job-card.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

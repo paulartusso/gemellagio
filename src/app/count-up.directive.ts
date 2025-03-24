@@ -28,7 +28,7 @@ const easeOutQuad = (x: number): number => x * (2 - x);
 })
 export class CountUpDirective implements OnInit, OnDestroy {
   private readonly count$ = new BehaviorSubject(0);
-  private readonly duration$ = new BehaviorSubject(2000);
+  private readonly duration$ = new BehaviorSubject(600);
   private readonly currentCount$ = combineLatest([
     this.count$,
     this.duration$,
@@ -78,10 +78,10 @@ export class CountUpDirective implements OnInit, OnDestroy {
       ([entry]) => {
         if (entry.isIntersecting) {
           this.displayCurrentCount();
-          this.observer?.disconnect(); // Stop observing after the first trigger
+          //this.observer?.disconnect(); // Stop observing after the first trigger
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 }
     );
 
     this.observer.observe(this.elementRef.nativeElement);

@@ -4,48 +4,53 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router,){}
-
-  isShowing: boolean=false;
-  showCases: boolean=false;
-  currentTab: string = 'home'; 
-  showLanguageOptions: boolean =false;
+  isShowing: boolean = false;
+  showCases: boolean = false;
+  showMobileCases: boolean = false;
+  currentTab: string = 'home';
+  showLanguageOptions: boolean = false;
 
   setActiveTab(tabName: string): void {
     this.currentTab = tabName;
   }
-  
-  showMenu(){
+
+  showMenu() {
     this.isShowing = !this.isShowing;
   }
 
-  showStudyCases(){
-    this.showCases = !this.showCases;
+  showStudyCases(screen: string) {
+    if (screen == 'mobile') {
+      this.showMobileCases = !this.showMobileCases;
+    }
+    if (screen == 'desktop') {
+      this.showCases = !this.showCases;
+    }
   }
 
-  closeStudyCases(){
+  closeStudyCases() {
     this.showCases = false;
   }
 
-  showLanguages(){
+  showLanguages() {
     this.showLanguageOptions = !this.showLanguageOptions;
   }
 
-  goToFooter(){
+  goToFooter() {
     this.closeStudyCases();
     window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth",
-    })
+      top: document.body.scrollHeight,
+      behavior: 'smooth',
+    });
   }
 
-  navigateTo(url: string){
+  navigateTo(url: string) {
     this.closeStudyCases();
-    this.setActiveTab(url)
+    this.setActiveTab(url);
     this.router.navigate([url]);
     this.isShowing = false;
   }

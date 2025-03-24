@@ -1,8 +1,63 @@
-
-.footer-dark {
-  padding: 30px 20px;
-  background-color: #bbbbbb38;
+.contact-us-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: rgb(233 233 233 / 75%);
   color: #333;
+  .contact-us-div {
+    background-color: #009ddc;
+    color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 700px) {
+      padding: 20px 30px;
+    }
+    @media (min-width: 701px) {
+      padding: 20px 90px;
+    }
+    h6 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      @media (min-width: 701px) {
+        font-size: 21px;
+      }
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 35px;
+      font-size: 11px;
+      @media (min-width: 701px) {
+        font-size: 17px;
+      }
+    }
+    button {
+      border: none;
+      background-color: #fff;
+      padding: 7px 15px 7px 18px;
+      border-radius: 20px;
+      color: #009ddc;
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      i {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+.footer-dark {
+  padding: 50px 20px 20px 20px;
+  background-color: #222;
+  color: #fff;
 }
 
 .footer-dark h3 {
@@ -10,12 +65,12 @@
   margin-bottom: -10px;
   font-weight: bold;
 }
-@media (max-width:500px) {
-  .footer-dark h3{
+@media (max-width: 500px) {
+  .footer-dark h3 {
     font-size: 11px;
   }
 }
-@media (min-width:501px) {
+@media (min-width: 501px) {
   .footer-dark h3 {
     font-size: 14px;
   }
@@ -26,7 +81,6 @@
   list-style: none;
   line-height: 1.5;
   margin-bottom: 0;
-  
 }
 
 .footer-dark ul a {
@@ -35,45 +89,47 @@
   opacity: 0.6;
   margin-bottom: 10px;
 }
-@media (max-width:500px) {
-  .footer-dark ul a{
-    font-size: 12px;
+@media (max-width: 500px) {
+  .footer-dark ul a {
+    font-size: 10px;
   }
 }
-  @media (min-width:501px) {
-    .footer-dark ul a {
-      font-size: 15px;
-    }
+@media (min-width: 501px) {
+  .footer-dark ul a {
+    font-size: 13px;
   }
+}
 
 .footer-dark ul a:hover {
   opacity: 0.8;
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .footer-dark .item:not(.social) {
     text-align: center;
   }
 }
 
 .footer-dark .item.text {
-  img{
+  img {
     width: 130px;
   }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .footer-dark .item.text {
+    margin-top: 30px;
     margin-bottom: 0;
     img {
-        width: 100px;
-        margin-bottom: 20px;
-      }
+      width: 100px;
+      margin-bottom: 20px;
+    }
   }
 }
 
-@media (min-width:760px) {
+@media (min-width: 760px) {
   .footer-dark .item.text {
+    margin-top: 40px;
     margin-bottom: 0;
     text-align: center;
     img {
@@ -84,46 +140,46 @@
 }
 
 .footer-dark .item.text p {
-  opacity: 0.6;
   margin-bottom: 0;
-  font-size: 10px;
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.footer-dark .item.text p span {
+  color: #fab716;
+  opacity: 1 !important;
 }
 
 .footer-dark .item.social {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  img{
+  img {
     width: 30px;
   }
 }
 
-
-
-@media (max-width:991px) {
+@media (max-width: 991px) {
   .footer-dark .item.social {
-    text-align: center;
-    margin-top: 35px;
     display: flex;
-      justify-content: center;
-      align-items: center;
-    
-      img {
-        width: 23px;
-      }
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 23px;
+    }
   }
 }
 
-.footer-dark .item.social>a {
+.footer-dark .item.social > a {
   width: 40px;
 }
 
-.footer-dark .item.social>a span{
+.footer-dark .item.social > a span {
   font-size: 13px;
 }
 
-.footer-dark .item.social>a:hover {
+.footer-dark .item.social > a:hover {
   opacity: 0.9;
 }
 
@@ -135,13 +191,15 @@
   margin-bottom: 0;
 }
 
-@media (max-width:500px) {
-  .logo{
+@media (max-width: 500px) {
+  .logo {
     width: 100px;
+    margin-top: -5px;
   }
 }
-@media (min-width:501px) {
+@media (min-width: 501px) {
   .logo {
-      width: 120px;
-    }
+    width: 130px;
+    margin-top: -5px;
+  }
 }

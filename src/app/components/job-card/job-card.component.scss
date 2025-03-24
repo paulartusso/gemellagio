@@ -148,9 +148,11 @@
     background-color: #fff;
     padding: 25px 20px;
     border-radius: 15px;
-    width: 40%;
+    width: 60%;
     max-height: 85vh;
     overflow: auto;
+    scrollbar-color: #0c92c3 #eaf7fc;
+    scrollbar-width: thin;
     .header {
       display: flex;
       flex-direction: row;

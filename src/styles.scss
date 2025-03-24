@@ -132,13 +132,15 @@ body {
   text-align: justify;
 
   @media screen and (max-width: 800px) {
-    font-size: 15px;
+    font-size: 17px;
     margin-right: 10%;
   }
 
   @media screen and (min-width: 801px) {
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 500;
     margin-left: 0%;
+    text-align: center;
   }
 }
 
@@ -173,5 +175,123 @@ h4 {
 
   @media screen and (min-width: 501px) {
     font-size: 21px;
+  }
+}
+
+.case-studies-styles {
+  @media screen and (max-width: 1300px) {
+    .sections-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10% 20px 10%;
+    }
+  }
+  @media screen and (min-width: 1301px) {
+    .sections-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 15% 30px 15%;
+      max-width: 1900px;
+    }
+  }
+
+  h6 {
+    margin-top: 30px;
+    margin-bottom: 5px;
+    color: #dd0555;
+  }
+
+  @media screen and (max-width: 800px) {
+    .case-studies-texts {
+      padding: 0 7%;
+    }
+    h5 {
+      font-size: 19px;
+    }
+    h6 {
+      font-size: 17px;
+    }
+    p {
+      font-size: 14px;
+    }
+    li {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (min-width: 801px) and (max-width: 1300px) {
+    .case-studies-texts {
+      padding: 0 10%;
+    }
+    h5 {
+      font-size: 21px;
+    }
+    h6 {
+      font-size: 19px;
+    }
+    p {
+      font-size: 17px;
+    }
+    li {
+      font-size: 17px;
+    }
+  }
+
+  @media screen and (min-width: 1301px) {
+    .case-studies-texts {
+      padding: 0 15%;
+      max-width: 1900px;
+    }
+    h5 {
+      font-size: 23px;
+    }
+    h6 {
+      font-size: 21px;
+    }
+    p {
+      font-size: 19px;
+    }
+    li {
+      font-size: 19px;
+    }
+  }
+
+  .parallax {
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 25px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .parallax {
+      height: 35vh;
+    }
+  }
+
+  @media screen and (min-width: 501px) {
+    .parallax {
+      height: 60vh;
+    }
+  }
+
+  ul {
+    margin-bottom: 40px;
+  }
+  ul li {
+    list-style: square;
+  }
+  ul li::marker {
+    color: #dd0555;
+    font-size: 20px;
   }
 }

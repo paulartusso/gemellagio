@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { JobService } from 'src/app/services/job.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-join-us',
@@ -25,7 +26,8 @@ export class JoinUsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private jobService: JobService
+    private jobService: JobService,
+    private router: Router
   ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -36,6 +38,7 @@ export class JoinUsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getAllJobs();
+    console.log(this.router);
   }
 
   showAllOffers() {
@@ -96,6 +99,15 @@ export class JoinUsComponent implements OnInit {
       );
     } else {
       this.filteredJobs = [...this.jobsList];
+    }
+  }
+
+  jobApplication(id: number) {
+    console.log('-->', id);
+    if (this.router) {
+      this.router.navigate(['join-us/application', id]);
+    } else {
+      console.log('no router');
     }
   }
 }

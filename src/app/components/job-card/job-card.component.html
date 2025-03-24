@@ -119,10 +119,11 @@
           <input type="file" id="file" formControlName="file" (change)="onFileSelect($event)" />
         </div>
         <div style="display: flex; justify-content: flex-end;">
-          <button type="submit" class="btn btn-primary" [disabled]="!applyForm.valid">Postulati</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!applyForm.valid">Candidati</button>
         </div>
       </form>
 
     </div>
+    <button (click)="jobApplication()"></button>
   </div>
 </div>

@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 
 
 const dbConfig = {
-  user: 'sqlAdministrator',
-  password: 'E7AT3v@d32WsG@E',
-  server: 'everience.database.windows.net',
+  user: 'adminSql',
+  password: '>+e7RALX>Q??~rc',
+  server: 'db-sitoweb.database.windows.net',
   database: 'hr-jobs',
   options: {
     encrypt: true,

@@ -10,14 +10,14 @@
       <span (click)="navigateTo('services')" [class.active]="currentTab === 'services'">
         Servizi
       </span>
-      <span (click)="navigateTo('case-studies')" [class.active]="currentTab === 'case-studies'">
+      <span (click)="showStudyCases('desktop')" [class.active]="currentTab === 'case-studies'">
         Case Studies
       </span>
       <span (click)="navigateTo('media')" [class.active]="currentTab === 'media'">
         Media
       </span>
       <span (click)="navigateTo('join-us')" [class.active]="currentTab === 'join-us'">
-        Lavora con noi
+        Carriera
       </span>
       <span (click)="navigateTo('contacts')" [class.active]="currentTab === 'contacts'">
         Contatti
@@ -41,31 +41,35 @@
       <span (click)="navigateTo('services')">Servizi</span>
     </div>
     <div>
-      <span (click)="navigateTo('case-studies')">Case studies</span>
+      <span (click)="showStudyCases('mobile')">Case studies</span>
+      <div *ngIf="showMobileCases" class="case-studies-mobile">
+        <span (click)="navigateTo('case-studies/cross-channel')">Cross channel</span>
+        <span (click)="navigateTo('case-studies/tools-selection')">Selezione degli strumenti</span>
+        <span (click)="navigateTo('case-studies/mobility')">Mobilità</span>
+      </div>
     </div>
     <div>
       <span (click)="navigateTo('media')">Media</span>
     </div>
     <div>
-      <span (click)="navigateTo('join-us')">Lavora con Noi</span>
+      <span (click)="navigateTo('join-us')">Carriera</span>
     </div>
     <div>
       <span (click)="navigateTo('contacts')">Contatti</span>
     </div>
   </div>
 </div>
-<!--STUDY CASES for Desktop
+<!--STUDY CASES for Desktop-->
 <div class="links-container">
-  <div *ngIf="showCases" class="hidden-menu">
+  <div *ngIf="showCases && !isShowing" class="hidden-menu">
     <div>
-      <span>Caso 1</span>
+      <span (click)="navigateTo('case-studies/cross-channel')">Cross channel</span>
     </div>
     <div>
-      <span>Caso 2</span>
+      <span (click)="navigateTo('case-studies/tools-selection')">Selezione degli strumenti</span>
     </div>
     <div>
-      <span>Caso 3</span>
+      <span (click)="navigateTo('case-studies/mobility')">Mobilità</span>
     </div>
   </div>
 </div>
--->

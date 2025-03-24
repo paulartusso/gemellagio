@@ -13,7 +13,8 @@
       -->
       <!--Image && category-->
       <div class="graphic" [@slideInFromLeft] class="animated-box">
-        <div class="category" [ngClass]="article.category === 'Case History'? 'c-history' : 'company-news'">
+        <div class="category" appScrollAnimation="right"
+          [ngClass]="article.category === 'Case History'? 'c-history' : 'company-news'">
           <h4>
             {{article.category}}
           </h4>

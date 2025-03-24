@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import {
   FormBuilder,
   FormGroup,
@@ -14,6 +15,7 @@ import {
   styleUrls: ['./job-card.component.scss'],
 })
 export class JobCardComponent {
+  @Input() id = 0;
   @Input() role = '';
   @Input() company = '';
   @Input() location = '';
@@ -26,13 +28,18 @@ export class JobCardComponent {
   @Input() devops_tech = [];
   @Input() db_tech = [];
   @Input() cardIsOpen = false;
+  @Input() apply!: (id: number) => void;
   openDescription: boolean = false;
   expandedCard: boolean = false;
 
   applyForm: any = FormGroup;
   selectedFile: File | null = null;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.applyForm = this.fb.group({
@@ -43,6 +50,11 @@ export class JobCardComponent {
 
   showDescription() {
     this.openDescription = !this.openDescription;
+  }
+
+  jobApplication() {
+    console.log(this.id, 'fghfghfg');
+    this.apply(this.id);
   }
 
   close() {
