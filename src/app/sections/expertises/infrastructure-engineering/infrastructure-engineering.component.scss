@@ -280,3 +280,42 @@ section {
     width: 55%;
   }
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* light shadow */
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  label {
+    font-size: 13px;
+  }
+  input {
+    padding: 4px;
+    margin-bottom: 7px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 50%;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 5px;
+      background-color: #009ddc;
+      margin-top: 30px;
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+    }
+  }
+}
+
+.form:hover {
+  transform: translateY(-5px); /* slight lift */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* darker shadow */
+}
