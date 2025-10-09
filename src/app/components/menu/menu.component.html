@@ -10,15 +10,19 @@
       <span (click)="navigateTo('services')" [class.active]="currentTab === 'services'">
         Servizi
       </span>
-      <span (click)="showStudyCases('desktop')" [class.active]="currentTab === 'case-studies'">
-        Case Studies
-      </span>
+      <!--
+        <span (click)="showStudyCases('desktop')" [class.active]="currentTab === 'case-studies'">
+          Case Studies
+        </span>
+      -->
       <span (click)="navigateTo('media')" [class.active]="currentTab === 'media'">
         Media
       </span>
-      <span (click)="navigateTo('join-us')" [class.active]="currentTab === 'join-us'">
-        Carriera
-      </span>
+      <!--
+        <span (click)="navigateTo('join-us')" [class.active]="currentTab === 'join-us'">
+          Carriera
+        </span>
+      -->
       <span (click)="navigateTo('contacts')" [class.active]="currentTab === 'contacts'">
         Contatti
       </span>
@@ -40,20 +44,24 @@
     <div>
       <span (click)="navigateTo('services')">Servizi</span>
     </div>
-    <div>
-      <span (click)="showStudyCases('mobile')">Case studies</span>
-      <div *ngIf="showMobileCases" class="case-studies-mobile">
-        <span (click)="navigateTo('case-studies/cross-channel')">Cross channel</span>
-        <span (click)="navigateTo('case-studies/tools-selection')">Selezione degli strumenti</span>
-        <span (click)="navigateTo('case-studies/mobility')">Mobilità</span>
+    <!--
+      <div>
+        <span (click)="showStudyCases('mobile')">Case studies</span>
+        <div *ngIf="showMobileCases" class="case-studies-mobile">
+          <span (click)="navigateTo('case-studies/cross-channel')">Cross channel</span>
+          <span (click)="navigateTo('case-studies/tools-selection')">Selezione degli strumenti</span>
+          <span (click)="navigateTo('case-studies/mobility')">Mobilità</span>
+        </div>
       </div>
-    </div>
+    -->
     <div>
       <span (click)="navigateTo('media')">Media</span>
     </div>
-    <div>
-      <span (click)="navigateTo('join-us')">Carriera</span>
-    </div>
+    <!--
+      <div>
+        <span (click)="navigateTo('join-us')">Carriera</span>
+      </div>
+    -->
     <div>
       <span (click)="navigateTo('contacts')">Contatti</span>
     </div>
