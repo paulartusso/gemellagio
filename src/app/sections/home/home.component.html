@@ -1,43 +1,42 @@
 <div class="hero">
 </div>
-<div class="text size">
-  Everience <span>agevola</span> la digitalizzazione aziendale
-</div>
+<!--
+  <div class="text size">
+    Everience <span>agevola</span> la digitalizzazione aziendale
+  </div>
+-->
 <div style="display: flex; justify-content: left;">
   <div class="separator"></div>
 </div>
 <div class="sections-center">
   <section>
 
-    <h3 class="who-w-a" style="color: #DD0555;">Chi Siamo</h3>
-    <h4 class="h4-who-w-a">Everience è una realtà IT che accellera le prestazioni delle aziende facilitando gli usi
-      digitali
+    <h3 class="who-w-a" style="color: #168a52;">{{ 'HOME.CHI_SIAMO_TITLE' | translate }}</h3>
+    <h4 class="h4-who-w-a">
+      {{ 'HOME.CHI_SIAMO_INTRO' | translate }}
     </h4>
 
   </section>
 </div>
 <div class="parallax img-2">
   <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-    <div class="blue-div" appScrollAnimation="bottom">
-      In qualità di filiale di un'azienda francese
-      specializzata nel supporto agli utenti, Everience è presente su scala internazionale per affrontare le sfide sia
-      dei grandi gruppi globali che delle organizzazioni locali. <br>
-      Siamo specializzati in Digital Transformation. Ciò
-      che ci distingue è il nostro potere innovativo, la nostra dedizione per la qualità, decenni di esperienza e una
-      visione chiara per gli sviluppi futuri.
+    <div class="red-div" appScrollAnimation="bottom" [innerHTML]="'HOME.HISTORY_TEXT' | translate">
     </div>
   </div>
 </div>
+
 <div class="sections-center">
   <section>
-    <h3 class="h3" style="color: #009DDC">Our Mission</h3>
-    <h4>La missione di Everience è facilitare le trasformazioni
-      digitali delle aziende, <br>
-      ottimizzando i processi IT e migliorando l'esperienza utente.<br>
-      Puntiamo a massimizzare la produttività e la soddisfazzione</h4>
-    <div>
-      <img src="../../../assets/img/timeline.png" alt="graph" width="100%">
-    </div>
+    <!--
+      <h3 class="h3" style="color: #009DDC">Our Mission</h3>
+      <h4>La missione di Everience è facilitare le trasformazioni
+        digitali delle aziende, <br>
+        ottimizzando i processi IT e migliorando l'esperienza utente.<br>
+        Puntiamo a massimizzare la produttività e la soddisfazzione</h4>
+        <div>
+          <img src="../../../assets/img/timeline.png" alt="graph" width="100%">
+        </div>
+        -->
     <app-map></app-map>
   </section>
 </div>

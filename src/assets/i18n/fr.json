@@ -1,0 +1,57 @@
+{
+  "NAV": {
+    "HOME": "Accueil",
+    "ABOUT": "Qui sommes-nous",
+    "SERVICES": "Produits",
+    "MEDIA": "Médias",
+    "CONTACT": "Contact",
+    "CROSS_CHANNEL": "Cross channel",
+    "TOOLS_SELECTION": "Sélection des outils",
+    "MOBILITY": "Mobilité"
+  },
+  "WHERE_WE_ARE": {
+    "EYEBROW": "Une association internationale",
+    "TITLE_PREFIX": "Distance",
+    "TITLE_SUFFIX": "entre les villes jumelées",
+    "DISTANCE_TO": "jusqu'à",
+    "INHABITANTS": "habitants"
+  },
+  "HOME": {
+    "CHI_SIAMO_TITLE": "Qui sommes-nous",
+    "CHI_SIAMO_INTRO": "__TODO : brève introduction, deux phrases maximum__",
+    "HISTORY_TEXT": "L’activité de l’association a débuté presque en parallèle avec la décision de notre Commune d’autoriser, le 02/08/2007, la signature des « pactes de jumelage » avec la maire de l’époque, Ivana Ballante, entre les communes de Raon-l’Étape et Kuppenheim.<br><br>Mais bien avant cela, beaucoup de ceux qui font aujourd’hui partie de l’association avaient déjà participé, avec leurs enfants au collège, aux échanges culturels entre les communes jumelées. Les jeunes, grâce à la participation de l’école, ont été la véritable première impulsion pour créer ce projet ambitieux : l’actuel « pacte de jumelage »."
+  },
+  "PRODUCTS": {
+    "TITLE": "Produits",
+    "SUBTITLE": "Les saveurs de notre région"
+  },
+  "MEDIA": {
+    "TITLE": "Contenus Média",
+    "SUBTITLE": "Découvrez nos dernières actualités, événements et contenus.",
+    "READ_MORE": "Lire la suite",
+    "COUNTRY": {
+      "it": "Italie",
+      "de": "Allemagne",
+      "fr": "France"
+    },
+    "ARTICLES": {
+      "CARNEVALE": {
+        "TITLE": "Carnaval en France",
+        "DESCRIPTION": "__TODO : description réelle__ Un moment de fête partagé entre les membres français de l'association, entre masques, musique et tradition. Plus de détails à venir."
+      },
+      "SUNFLOWERS": {
+        "TITLE": "Déguisés en tournesols",
+        "DESCRIPTION": "__TODO : description réelle__ Un événement haut en couleur et en bonne humeur, où les participants étaient déguisés en tournesols. Plus de détails bientôt."
+      }
+    }
+  },
+  "CONTACT": {
+    "INTRO": "Contactez-nous pour en savoir plus",
+    "INTRO_HIGHLIGHT": "sur notre association",
+    "HOURS_LINE1": "Nous sommes disponibles du lundi au vendredi",
+    "HOURS_LINE2": "de 9h00 à 18h00"
+  },
+  "FOOTER": {
+    "REGISTRY_LABEL": "Numéro du Registre du Commerce de Milan Monza Brianza et Lodi"
+  }
+}

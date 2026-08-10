@@ -1,14 +1,14 @@
 <div class="menu">
   <span (click)="navigateTo('home')">
-    <img src="../../../assets/logo.png" alt="">
+    <img src="../../../assets/logo-LOW.png" alt="">
   </span>
   <span style="display: flex; flex-direction: row; align-items: center;">
     <div class="desktop-menu">
       <span (click)="navigateTo('home')" [class.active]="currentTab === 'home'">
-        About us
+        {{ 'NAV.ABOUT' | translate }}
       </span>
       <span (click)="navigateTo('services')" [class.active]="currentTab === 'services'">
-        Servizi
+        {{ 'NAV.SERVICES' | translate }}
       </span>
       <!--
         <span (click)="showStudyCases('desktop')" [class.active]="currentTab === 'case-studies'">
@@ -16,7 +16,7 @@
         </span>
       -->
       <span (click)="navigateTo('media')" [class.active]="currentTab === 'media'">
-        Media
+        {{ 'NAV.MEDIA' | translate }}
       </span>
       <!--
         <span (click)="navigateTo('join-us')" [class.active]="currentTab === 'join-us'">
@@ -24,15 +24,19 @@
         </span>
       -->
       <span (click)="navigateTo('contacts')" [class.active]="currentTab === 'contacts'">
-        Contatti
+        {{ 'NAV.CONTACT' | translate }}
       </span>
     </div>
     <div class="language-wrapper">
-      <div class="selected-language" (click)="showLanguages()"></div>
-      <div [ngClass]="showLanguageOptions ? 'flags' : 'selector'">
-        <div class="flag">
-          <img src="../../../assets/img/eng.png" alt="EN" style="width: 15px;">
-        </div>
+      <button type="button" class="selected-language" (click)="showLanguages()"
+        [attr.aria-expanded]="showLanguageOptions" aria-label="Cambia lingua">
+        <img [src]="flagIcon(currentLang)" [alt]="currentLang.toUpperCase()">
+      </button>
+
+      <div class="flags" *ngIf="showLanguageOptions">
+        <button type="button" class="flag" *ngFor="let lang of otherLanguages()" (click)="selectLanguage(lang)">
+          <img [src]="flagIcon(lang)" [alt]="lang.toUpperCase()">
+        </button>
       </div>
     </div>
     <i (click)="showMenu()" class="material-icons hamburguer">menu</i>
@@ -42,7 +46,7 @@
 <div class="links-container">
   <div *ngIf="isShowing" class="hidden-menu">
     <div>
-      <span (click)="navigateTo('services')">Servizi</span>
+      <span (click)="navigateTo('services')">{{ 'NAV.SERVICES' | translate }}</span>
     </div>
     <!--
       <div>
@@ -55,7 +59,7 @@
       </div>
     -->
     <div>
-      <span (click)="navigateTo('media')">Media</span>
+      <span (click)="navigateTo('media')">{{ 'NAV.MEDIA' | translate }}</span>
     </div>
     <!--
       <div>
@@ -63,7 +67,7 @@
       </div>
     -->
     <div>
-      <span (click)="navigateTo('contacts')">Contatti</span>
+      <span (click)="navigateTo('contacts')">{{ 'NAV.CONTACT' | translate }}</span>
     </div>
   </div>
 </div>
@@ -71,13 +75,13 @@
 <div class="links-container">
   <div *ngIf="showCases && !isShowing" class="hidden-menu">
     <div>
-      <span (click)="navigateTo('case-studies/cross-channel')">Cross channel</span>
+      <span (click)="navigateTo('case-studies/cross-channel')">{{ 'NAV.CROSS_CHANNEL' | translate }}</span>
     </div>
     <div>
-      <span (click)="navigateTo('case-studies/tools-selection')">Selezione degli strumenti</span>
+      <span (click)="navigateTo('case-studies/tools-selection')">{{ 'NAV.TOOLS_SELECTION' | translate }}</span>
     </div>
     <div>
-      <span (click)="navigateTo('case-studies/mobility')">Mobilità</span>
+      <span (click)="navigateTo('case-studies/mobility')">{{ 'NAV.MOBILITY' | translate }}</span>
     </div>
   </div>
 </div>

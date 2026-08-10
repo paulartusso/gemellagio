@@ -11,15 +11,15 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$Everience-IT-primary: mat.define-palette(mat.$indigo-palette);
-$Everience-IT-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+//$Everience-IT-primary: mat.define-palette(mat.$indigo-palette);
+//$Everience-IT-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$Everience-IT-warn: mat.define-palette(mat.$red-palette);
+//$Everience-IT-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$Everience-IT-theme: mat.define-light-theme(
+/*$Everience-IT-theme: mat.define-light-theme(
   (
     color: (
       primary: $Everience-IT-primary,
@@ -28,11 +28,12 @@ $Everience-IT-theme: mat.define-light-theme(
     ),
   )
 );
+*/
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($Everience-IT-theme);
+//@include mat.all-component-themes($Everience-IT-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -42,7 +43,15 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.heading {
+  font-family: "Montserrat", serif;
 }
 
 .separator {
@@ -108,7 +117,7 @@ body {
 .sub-h3 {
   font-size: 20px;
   letter-spacing: 0.5px;
-  margin-top: 40px;
+  margin-top: 45px;
   margin-bottom: 0;
   text-align: center;
   font-weight: 500;

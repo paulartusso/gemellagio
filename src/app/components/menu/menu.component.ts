@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppLanguage, TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+    private readonly translation: TranslationService
+  ) {}
 
   isShowing: boolean = false;
   showCases: boolean = false;
@@ -54,4 +57,28 @@ export class MenuComponent {
     this.router.navigate([url]);
     this.isShowing = false;
   }
+
+  get currentLang(): AppLanguage {
+  return this.translation.current;
+}
+ 
+// Add these methods:
+otherLanguages(): AppLanguage[] {
+  return this.translation.supported.filter((l) => l !== this.currentLang);
+}
+ 
+flagIcon(lang: AppLanguage): string {
+  const icons: Record<AppLanguage, string> = {
+    it: '../../../assets/icons/italy.png',
+    de: '../../../assets/icons/germany.png',
+    fr: '../../../assets/icons/france.png',
+  };
+  return icons[lang];
+}
+
+selectLanguage(lang: AppLanguage): void {
+  this.translation.use(lang);
+  this.showLanguageOptions = false;
+}
+
 }

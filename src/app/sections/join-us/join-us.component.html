@@ -38,8 +38,10 @@
                 class="material-icons">arrow_back_ios_new</i></button>
             <div>
               <img src="../../../assets/img/search.png" alt="" width="20px">
+            <!--
               <input [(ngModel)]="searchQuery" (input)="filterJobs()" type="text" class="search-bar"
                 placeholder="Cerca per ruolo o locazione">
+              -->
             </div>
           </div>
         </div>
@@ -47,11 +49,7 @@
       <div class="carousel-position">
         <div class="cards-container">
           <div *ngFor="let job of filteredJobs">
-            <app-job-card [id]="job.id" [role]="job.role" [company]="job.company" [location]="job.location"
-              [description]="job.description" [seniority]="job.seniority" [contract]="job.contract_type" [ral]="job.ral"
-              [frontend_tech]="job.frontend_tech" [backend_tech]="job.backend_tech" [devops_tech]="job.devops_tech"
-              [db_tech]="job.db_tech" [cardIsOpen]="showOffers" [apply]="jobApplication">
-            </app-job-card>
+            
           </div>
         </div>
       </div>

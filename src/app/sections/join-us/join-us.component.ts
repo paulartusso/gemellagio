@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { JobService } from 'src/app/services/job.services';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,7 +25,7 @@ export class JoinUsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private jobService: JobService,
+    //private jobService: JobService,
     private router: Router
   ) {
     this.contactForm = this.fb.group({
@@ -37,7 +36,6 @@ export class JoinUsComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.getAllJobs();
     console.log(this.router);
   }
 
@@ -77,6 +75,7 @@ export class JoinUsComponent implements OnInit {
   }
 
   jobsList: any = [];
+  /*
   getAllJobs(): void {
     this.jobService.getJobs().subscribe(
       (data: any) => {
@@ -110,4 +109,5 @@ export class JoinUsComponent implements OnInit {
       console.log('no router');
     }
   }
+    */
 }

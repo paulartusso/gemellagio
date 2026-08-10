@@ -1,32 +1,26 @@
 <div class="separator" style="border-bottom: 1px solid #FAB716; margin: 0;"></div>
-<h3 class="h3" style="color: #FAB716;">Media Content</h3>
+<h3 class="h3" style="color: #FAB716;">{{ 'MEDIA.TITLE' | translate }}</h3>
 <h4>
-  Scropri le nostre ultime news, eventi e contenuti.
+  {{ 'MEDIA.SUBTITLE' | translate }}
 </h4>
 <section id="articles-container">
   <div *ngFor="let article of articlesList" class="card">
     <div class="flex" style="display: flex; width: 70%;">
-      <!--
-      <app-article [category]="'Case History'" [img]="'../../../assets/veryfile.png'"
-        [title]="'Supporto a Veryfile per l\'implementazione IT negli Stati Uniti'"
-        [description]="'Everience è stata recentemente coinvolta in un progetto sfidante e stimolante con Veryfile, che ci ha contattato per supportare l\'implementazione dell\'infrastruttura IT presso il cliente finale in due nuove sedi negli Stati Uniti: uno store a Miami e un ufficio a Hollywood. L\'obiettivo era...'"></app-article>
-      -->
-      <!--Image && category-->
-      <div class="graphic" [@slideInFromLeft] class="animated-box">
-        <div class="category" appScrollAnimation="right"
-          [ngClass]="article.category === 'Case History'? 'c-history' : 'company-news'">
+      <!--Image && country badge-->
+      <div class="graphic animated-box">
+        <div class="category" appScrollAnimation="right" [ngClass]="'country-' + article.country">
           <h4>
-            {{article.category}}
+            {{ ('MEDIA.COUNTRY.' + article.country) | translate }}
           </h4>
         </div>
         <div class="img-container" [ngStyle]="{'background-image': 'url(' + article.image + ')'}"></div>
       </div>
       <!--Text-->
       <div class="text-container">
-        <h5>{{article.title}}</h5>
-        <p>{{article.description.slice(0, 220) + "..."}}</p>
+        <h5>{{ article.titleKey | translate }}</h5>
+        <p>{{ (article.descriptionKey | translate).slice(0, 220) + '...' }}</p>
         <button (click)="openFullArticle(article.id)">
-          Continua a leggere
+          {{ 'MEDIA.READ_MORE' | translate }}
         </button>
       </div>
     </div>

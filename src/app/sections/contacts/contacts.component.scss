@@ -3,7 +3,7 @@
   justify-content: center;
   .left-block {
     width: 45%;
-    background-color: #222;
+    background-color: #202124;
     text-align: left;
     div {
       padding: 20% 10% 30px 15%;
@@ -13,7 +13,7 @@
         padding: 0;
         span {
           font-weight: 500;
-          color: #009ddc;
+          color: #168a52;
         }
       }
       .second-paragraph {
@@ -51,7 +51,7 @@
       content: "";
       margin: 50px 0px 50px 20px;
       width: 285px;
-      border-top: 1px solid #dd0555;
+      border-top: 1px solid #c92a2a;
     }
     .social {
       display: flex;
@@ -88,7 +88,7 @@
 }
 
 .footer {
-  background-color: #dd0555;
+  background-color: #c92a2a;
   margin: 0;
   padding: 0;
   p {

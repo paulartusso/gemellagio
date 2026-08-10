@@ -1,10 +1,16 @@
+$porcelain: #f8f7f2;
+$tuscan-sun: #e5b72f;
+$sea-green: #168a52;
+$flag-red: #c92a2a;
+$shadow-grey: #202124;
+
 .up {
   position: fixed;
   right: 35px;
   bottom: 30px;
   border-radius: 50%;
   border: none;
-  background-color: #009DDC;
+  background-color: $flag-red;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -8,7 +8,7 @@
         rgba(255, 255, 255, 0.9),
         rgb(255, 255, 255)
       ),
-      url("../../../assets/img/hero.jpg");
+      url("../../../assets/img/filottrano-1024x627.webp");
     width: 100%;
     height: calc(60vh - 55px);
     background-size: cover;
@@ -25,15 +25,13 @@
 @media screen and (min-width: 501px) {
   .hero {
     background-image: linear-gradient(
-        to bottom,
-        rgba(34, 130, 207, 0.295),
-        rgba(255, 255, 255, 0.443),
-        rgba(255, 255, 255, 0.9),
-        rgb(255, 255, 255)
-      ),
-      url("../../../assets/img/hero.jpg");
+      to bottom, rgb(42 45 48 / 0%), 
+      rgb(255 255 255 / 18%), 
+      rgb(255 255 255 / 60%), 
+      rgb(255, 255, 255)),
+      url("../../../assets/img/filottrano-1024x627.webp");
     width: 100%;
-    height: calc(80vh - 55px);
+    height: calc(80vh - 58px);
     background-size: cover;
     background-position: center;
     color: white;
@@ -71,7 +69,7 @@
 }
 
 .separator {
-  border-bottom: 1px solid #dd0555;
+  border-bottom: 1px solid #168a52;
   transform-origin: center;
   animation: growImage 2.5s ease-in-out forwards;
 }
@@ -111,7 +109,7 @@
   background-image: url("../../../assets/img/hero.jpg");
 }
 .img-2 {
-  background-image: url("../../../assets/img/graphics.jpg");
+  background-image: url("../../../assets/img/products.jpg");
 }
 
 @media screen and (max-width: 500px) {
@@ -126,14 +124,14 @@
   }
 }
 
-.blue-div {
+.red-div {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #009ddce0;
+  background-color: #202124dd;
   color: #fff;
   width: 50%;
-  border-radius: 40px;
+  border-radius: 20px;
   margin: 55px 0;
   justify-content: center;
   text-align: center;

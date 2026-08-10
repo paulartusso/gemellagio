@@ -1,0 +1,57 @@
+{
+  "NAV": {
+    "HOME": "Startseite",
+    "ABOUT": "Über uns",
+    "SERVICES": "Produkte",
+    "MEDIA": "Medien",
+    "CONTACT": "Kontakt",
+    "CROSS_CHANNEL": "Cross Channel",
+    "TOOLS_SELECTION": "Auswahl der Werkzeuge",
+    "MOBILITY": "Mobilität"
+  },
+  "WHERE_WE_ARE": {
+    "EYEBROW": "Ein internationaler Verein",
+    "TITLE_PREFIX": "Entfernung",
+    "TITLE_SUFFIX": "zwischen den Partnerstädten",
+    "DISTANCE_TO": "nach",
+    "INHABITANTS": "Einwohner"
+  },
+  "HOME": {
+    "CHI_SIAMO_TITLE": "Über uns",
+    "CHI_SIAMO_INTRO": "__TODO: kurze Einleitung, maximal zwei Sätze__",
+    "HISTORY_TEXT": "Die Vereinstätigkeit begann fast zeitgleich mit dem Beschluss unserer Gemeinde, am 02.08.2007 unter der damaligen Bürgermeisterin Ivana Ballante die „Partnerschaftsverträge“ zwischen den Gemeinden Raon-l’Étape und Kuppenheim zu unterzeichnen.<br><br>Doch schon vorher hatten viele der heutigen Vereinsmitglieder mit ihren Kindern über die Mittelschule an den kulturellen Austauschen zwischen den Partnergemeinden teilgenommen. Die Jugendlichen und die Beteiligung der Schule waren der eigentliche erste Anstoß für dieses ambitionierte Projekt: den heutigen „Partnerschaftsvertrag“."
+  },
+  "PRODUCTS": {
+    "TITLE": "Produkte",
+    "SUBTITLE": "Die Geschmäcker unserer Region"
+  },
+  "MEDIA": {
+    "TITLE": "Medieninhalte",
+    "SUBTITLE": "Entdecken Sie unsere neuesten Nachrichten, Veranstaltungen und Inhalte.",
+    "READ_MORE": "Weiterlesen",
+    "COUNTRY": {
+      "it": "Italien",
+      "de": "Deutschland",
+      "fr": "Frankreich"
+    },
+    "ARTICLES": {
+      "CARNEVALE": {
+        "TITLE": "Karneval in Frankreich",
+        "DESCRIPTION": "__TODO: echte Beschreibung__ Ein gemeinsames Fest unserer französischen Mitglieder, mit Masken, Musik und Tradition. Details folgen in Kürze."
+      },
+      "SUNFLOWERS": {
+        "TITLE": "Als Sonnenblumen verkleidet",
+        "DESCRIPTION": "__TODO: echte Beschreibung__ Ein farbenfrohes und fröhliches Event, bei dem die Teilnehmer als Sonnenblumen verkleidet waren. Weitere Details folgen bald."
+      }
+    }
+  },
+  "CONTACT": {
+    "INTRO": "Kontaktieren Sie uns, um mehr zu erfahren",
+    "INTRO_HIGHLIGHT": "über unseren Verein",
+    "HOURS_LINE1": "Wir sind montags bis freitags erreichbar",
+    "HOURS_LINE2": "von 9:00 bis 18:00 Uhr"
+  },
+  "FOOTER": {
+    "REGISTRY_LABEL": "Handelsregisternummer Mailand Monza Brianza und Lodi"
+  }
+}

@@ -12,21 +12,30 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
+
   .flex {
     flex-direction: row;
+
     @media screen and (max-width: 1200px) {
       flex-direction: column;
       width: 80%;
     }
+
     @media screen and (min-width: 1201px) {
       flex-direction: row;
       width: 65%;
     }
   }
 
+  .graphic {
+    position: relative; // <-- ADDED: gives .category a containing box to anchor to
+  }
+
   .category {
     z-index: 1000;
     position: absolute;
+    top: 0;
+    left: 0;
     height: 35px;
     //clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     margin-top: 15px;
@@ -47,6 +56,7 @@
   .c-history {
     background-color: #fab716;
   }
+
   .company-news {
     background-color: #dd0555;
   }
@@ -58,14 +68,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 7px;
+
     @media screen and (min-width: 500px) and (max-width: 1600px) {
-      width: 350px;
+      width: 380px;
     }
+
     @media screen and (min-width: 1601px) and (max-width: 1700px) {
       width: 425px;
     }
+
     @media screen and (min-width: 1701px) {
-      width: 485px;
+      width: 500px;
     }
   }
 
@@ -80,13 +93,9 @@
     }
 
     button {
-      /* display: flex
-; */
-      /* align-items: center; */
       border: none;
       background-color: #dd0555;
       font-size: 14px;
-      /* margin-left: -6px; */
       cursor: pointer;
       border-radius: 20px;
       padding: 10px 15px;
@@ -105,10 +114,12 @@
 
     .graphic {
       width: 100%;
+
       .img-container {
         width: 95%;
       }
     }
+
     .animated-box {
       width: 100%;
       border-radius: 8px;
@@ -121,6 +132,7 @@
         font-size: 20px;
         margin-top: 20px;
       }
+
       p {
         text-align: justify;
         font-size: 14px;
@@ -134,12 +146,28 @@
     .graphic {
       width: 40%;
     }
+
     .animated-box {
       width: 40%;
       border-radius: 8px;
     }
+
     .text-container {
       width: 47%;
     }
+  }
+}
+
+.category {
+  &.country-it {
+    background-color: #168a52; // sea-green
+  }
+
+  &.country-de {
+    background-color: #202124; // shadow-grey
+  }
+
+  &.country-fr {
+    background-color: #c92a2a; // flag-red
   }
 }

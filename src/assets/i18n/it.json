@@ -1,0 +1,61 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "ABOUT": "Chi siamo",
+    "SERVICES": "Prodotti",
+    "MEDIA": "Media",
+    "CONTACT": "Contatti",
+    "CROSS_CHANNEL": "Cross channel",
+    "TOOLS_SELECTION": "Selezione degli strumenti",
+    "MOBILITY": "Mobilità"
+  },
+  "WHERE_WE_ARE": {
+    "EYEBROW": "Una associazione internazionale",
+    "TITLE_PREFIX": "Distanza",
+    "TITLE_SUFFIX": "tra le città gemellate",
+    "DISTANCE_TO": "da",
+    "INHABITANTS": "abitanti"
+  },
+  "HOME": {
+    "CHI_SIAMO_TITLE": "Chi Siamo",
+    "CHI_SIAMO_INTRO": "__TODO: breve introduzione, massimo due frasi__",
+    "HISTORY_TEXT": "L’associazione ha cominciato la sua attività in maniera quasi parallela alla volontà del nostro Comune di autorizzare in data 02/08/2007 la stipula dei “patti di gemellaggio” con l’allora sindaco Ivana Ballante tra i Comuni di Raon l’Étape e Kuppenheim.<br><br>Ma ancora prima molti di quelli che ora sono all’interno dell’Associazione hanno partecipato, con la scuola media e i propri figli, agli scambi culturali tra i Comuni gemellati. I ragazzi, con la partecipazione della scuola, sono stati il primo vero impulso per creare questo ambizioso progetto: l’attuale “Patto di gemellaggio”."
+  },
+  "PRODUCTS": {
+    "TITLE": "Prodotti",
+    "SUBTITLE": "I sapori del nostro territorio"
+  },
+  "MEDIA": {
+    "TITLE": "Media Content",
+    "SUBTITLE": "Scopri le nostre ultime news, eventi e contenuti.",
+    "READ_MORE": "Continua a leggere",
+    "COUNTRY": {
+      "it": "Italia",
+      "de": "Germania",
+      "fr": "Francia"
+    },
+    "ARTICLES": {
+      "CARNEVALE": {
+        "TITLE": "Carnevale in Francia",
+        "DESCRIPTION": "__TODO: descrizione reale__ Un momento di festa condiviso tra i soci francesi dell'associazione, tra maschere, musica e tradizione. Racconteremo presto i dettagli di questa giornata."
+      },
+      "SUNFLOWERS": {
+        "TITLE": "Vestiti da girasoli",
+        "DESCRIPTION": "__TODO: descrizione reale__ Un evento all'insegna del colore e dell'allegria, con i partecipanti travestiti da girasoli per l'occasione. Presto maggiori dettagli."
+      },
+       "STADT": {
+        "TITLE": "STADT FEST",
+        "DESCRIPTION": "Festa Kuppenheim grehgrhgehjrgjewh xhegrgucyegruy4gwejhrehjcg ejgr h"
+      }
+    }
+  },
+  "CONTACT": {
+"INTRO": "Contattaci per saperne di più",
+"INTRO_HIGHLIGHT": "sulla nostra associazione",
+"HOURS_LINE1": "Siamo attivi dal lunedì al venerdì",
+"HOURS_LINE2": "dalle 9:00 alle 18:00"
+},
+"FOOTER": {
+"REGISTRY_LABEL": "Numero Registro Imprese di Milano Monza Brianza e Lodi"
+}
+}

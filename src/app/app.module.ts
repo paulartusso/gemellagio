@@ -35,6 +35,12 @@ import { RouterModule } from '@angular/router';
 import { CrossChannelComponent } from './sections/case-studies/cross-channel/cross-channel.component';
 import { ToolsSelectionComponent } from './sections/case-studies/tools-selection/tools-selection.component';
 import { MobilityComponent } from './sections/case-studies/mobility/mobility.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -78,6 +84,14 @@ import { MobilityComponent } from './sections/case-studies/mobility/mobility.com
     HttpClientModule,
     FormsModule,
     RouterModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'it',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
