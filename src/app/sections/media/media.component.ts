@@ -52,13 +52,6 @@ export class MediaComponent {
       descriptionKey: 'MEDIA.ARTICLES.SUNFLOWERS.DESCRIPTION',
       image: '../../../assets/img/media/sunflowers.jpg',
     },
-    {
-      id: 3,
-      country: 'de', // TODO: confirm actual country — placeholder guess
-      titleKey: 'MEDIA.ARTICLES.STADT.TITLE',
-      descriptionKey: 'MEDIA.ARTICLES.STADT.DESCRIPTION',
-      image: '../../../assets/img/media/stadt-fest.jpg',
-    },
   ];
 
   openFullArticle(id: number) {
