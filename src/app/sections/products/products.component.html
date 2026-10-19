@@ -1,0 +1,10 @@
+<header class="page-header container">
+  <span class="eyebrow">{{ 'NAV.PRODUCTS' | translate }}</span>
+  <h1>{{ 'PRODUCTS.TITLE' | translate }}</h1>
+  <p class="lead">{{ 'PRODUCTS.LEAD' | translate }}</p>
+  <div class="town-band"><span></span></div>
+</header>
+
+<section class="container products">
+  <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+</section>

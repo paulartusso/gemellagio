@@ -1,44 +1,50 @@
-$porcelain: #f8f7f2;
-$tuscan-sun: #e5b72f;
-$sea-green: #168a52;
-$flag-red: #c92a2a;
-$shadow-grey: #202124;
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 3000;
+  padding: var(--space-2) var(--space-4);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
 
-.up {
+  &:focus {
+    top: var(--space-4);
+  }
+}
+
+main {
+  display: block;
+  outline: none;
+}
+
+.back-to-top {
   position: fixed;
-  right: 35px;
-  bottom: 30px;
-  border-radius: 50%;
-  border: none;
-  background-color: $flag-red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  right: var(--space-5);
+  bottom: var(--space-5);
   z-index: 1000;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
   cursor: pointer;
+  transition: background-color var(--dur) ease, color var(--dur) ease;
 
-  i {
-    color: #FFF;
+  &:hover {
+    background: var(--ink);
+    color: var(--paper);
   }
-}
-@media screen and (max-width: 500px) {
-  .up {
-    height: 40px;
-    width: 40px;
 
-    i {
-      font-size: 30px;
-    }
-  }
-}
-
-@media screen and (min-width: 501px) {
-  .up {
-    height: 55px;
-    width: 55px;
-
-    i {
-      font-size: 35px;
-    }
+  @media (max-width: 600px) {
+    right: var(--space-4);
+    bottom: var(--space-4);
+    width: 42px;
+    height: 42px;
   }
 }

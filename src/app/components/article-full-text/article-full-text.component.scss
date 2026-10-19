@@ -1,52 +1,46 @@
-@media screen and (max-width: 800px) {
-  .hero {
-    width: 100%;
-    height: calc(40vh - 55px);
-    background-size: cover;
-    background-position: bottom;
-    color: white;
-  }
-  .size {
-    font-size: 22px;
-  }
-  .separator {
-    width: 30%;
-  }
-}
-@media screen and (min-width: 801px) {
-  .hero {
-    width: 100%;
-    height: calc(50vh - 55px);
-    background-size: cover;
-    background-position: center;
-    color: white;
-  }
-  .size {
-    font-size: 27px;
-  }
-  .separator {
-    width: 30%;
+.article {
+  max-width: calc(860px + 2 * var(--gutter));
+  padding-block: var(--space-6) var(--section-y);
+
+  header {
+    margin-block: var(--space-6) var(--space-5);
+
+    .badge {
+      margin-bottom: var(--space-3);
+    }
+
+    h1 {
+      font-size: var(--text-h1);
+    }
   }
 }
 
-@media screen and (min-width: 1500px) {
-  .sections-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 15%;
-    max-width: 1900px;
-  }
-}
-
-.title {
-  font-size: 30px;
-  text-align: center;
+.back {
+  display: inline-block;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
   font-weight: 500;
-  margin-top: 30px;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--accent);
+  }
 }
-.description-container {
-  padding: 0 15%;
-  text-align: justify;
-  padding-bottom: 50px;
+
+.cover {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-6);
+}
+
+.text {
+  max-width: var(--measure);
+
+  p {
+    font-size: var(--text-lg);
+    line-height: 1.75;
+    color: var(--ink-2);
+  }
 }

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
 import { AppLanguage, TranslationService } from '../../services/translation.service';
 
 @Component({
@@ -8,77 +7,42 @@ import { AppLanguage, TranslationService } from '../../services/translation.serv
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  constructor(private router: Router,
-    private readonly translation: TranslationService
-  ) {}
+  menuOpen = false;
 
-  isShowing: boolean = false;
-  showCases: boolean = false;
-  showMobileCases: boolean = false;
-  currentTab: string = 'home';
-  showLanguageOptions: boolean = false;
+  readonly links = [
+    { path: '/home', label: 'NAV.ABOUT' },
+    { path: '/products', label: 'NAV.PRODUCTS' },
+    { path: '/media', label: 'NAV.MEDIA' },
+    { path: '/contacts', label: 'NAV.CONTACT' },
+  ];
 
-  setActiveTab(tabName: string): void {
-    this.currentTab = tabName;
-  }
+  // Language names are always shown in their own language.
+  readonly languages: { code: AppLanguage; name: string }[] = [
+    { code: 'it', name: 'Italiano' },
+    { code: 'fr', name: 'Français' },
+    { code: 'de', name: 'Deutsch' },
+  ];
 
-  showMenu() {
-    this.isShowing = !this.isShowing;
-  }
-
-  showStudyCases(screen: string) {
-    if (screen == 'mobile') {
-      this.showMobileCases = !this.showMobileCases;
-    }
-    if (screen == 'desktop') {
-      this.showCases = !this.showCases;
-    }
-  }
-
-  closeStudyCases() {
-    this.showCases = false;
-  }
-
-  showLanguages() {
-    this.showLanguageOptions = !this.showLanguageOptions;
-  }
-
-  goToFooter() {
-    this.closeStudyCases();
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth',
-    });
-  }
-
-  navigateTo(url: string) {
-    this.closeStudyCases();
-    this.setActiveTab(url);
-    this.router.navigate([url]);
-    this.isShowing = false;
-  }
+  constructor(private readonly translation: TranslationService) {}
 
   get currentLang(): AppLanguage {
-  return this.translation.current;
-}
- 
-// Add these methods:
-otherLanguages(): AppLanguage[] {
-  return this.translation.supported.filter((l) => l !== this.currentLang);
-}
- 
-flagIcon(lang: AppLanguage): string {
-  const icons: Record<AppLanguage, string> = {
-    it: '../../../assets/icons/italy.png',
-    de: '../../../assets/icons/germany.png',
-    fr: '../../../assets/icons/france.png',
-  };
-  return icons[lang];
-}
+    return this.translation.current;
+  }
 
-selectLanguage(lang: AppLanguage): void {
-  this.translation.use(lang);
-  this.showLanguageOptions = false;
-}
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
 
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    this.closeMenu();
+  }
+
+  selectLanguage(lang: AppLanguage): void {
+    this.translation.use(lang);
+  }
 }

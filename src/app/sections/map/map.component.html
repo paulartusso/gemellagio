@@ -1,23 +1,27 @@
-<section>
-  <div class="separator" style="border: 1px solid #168a52;"></div>
-  <h3 class="h3" style="color: #168a52">{{ 'WHERE_WE_ARE.EYEBROW' | translate }}</h3>
-  <h4><span>{{ 'WHERE_WE_ARE.TITLE_PREFIX' | translate }}</span> {{ 'WHERE_WE_ARE.TITLE_SUFFIX' | translate }}: {{ homeCity.name }}</h4>
-  <div class="map-container">
-    <div class="map-image" style="margin-bottom: 30px; margin-top: 20px;">
-      <img [src]="mapImage" alt="Mappa con {{ homeCity.name }} evidenziata">
-    </div>
-    <div class="number-cards-container">
-      <div class="numbers" *ngFor="let d of distances" appScrollAnimation="bottom">
-        <h1>
-          <span [countUp]="d.km" [duration]="5000"></span><span class="unit">km</span>
-        </h1>
-        <span class="numbers-label">{{ 'WHERE_WE_ARE.DISTANCE_TO' | translate }} {{ d.toCity.name }}</span>
-      </div>
-      <div class="numbers" appScrollAnimation="bottom">
-        <h1>
-          <span [countUp]="homeCity.population" [duration]="5000"></span><span class="unit">+</span>
-        </h1>
-        <span class="numbers-label">{{ 'WHERE_WE_ARE.INHABITANTS' | translate }}</span>
-      </div>
+<section class="section where">
+  <div class="container">
+    <header class="where-header">
+      <span class="eyebrow">{{ 'WHERE_WE_ARE.EYEBROW' | translate }}</span>
+      <h2 class="section-title">{{ 'WHERE_WE_ARE.TITLE' | translate: { city: homeCity.name } }}</h2>
+      <p class="lead">{{ 'WHERE_WE_ARE.LEAD' | translate }}</p>
+    </header>
+
+    <div class="where-grid">
+      <figure class="map">
+        <img [src]="mapImage" width="1000" height="800" loading="lazy"
+          [alt]="'WHERE_WE_ARE.MAP_ALT' | translate: { city: homeCity.name }">
+      </figure>
+
+      <dl class="stats">
+        <div class="stat" *ngFor="let d of distances" appScrollAnimation="bottom">
+          <dt>{{ 'WHERE_WE_ARE.DISTANCE_TO' | translate: { city: d.toCity.name } }}</dt>
+          <dd><span [countUp]="d.km" [locale]="locale"></span><span class="unit">km</span></dd>
+        </div>
+        <div class="stat" appScrollAnimation="bottom">
+          <dt>{{ 'WHERE_WE_ARE.INHABITANTS' | translate: { city: homeCity.name } }}</dt>
+          <dd><span [countUp]="homeCity.population" [locale]="locale"></span></dd>
+        </div>
+      </dl>
     </div>
   </div>
+</section>

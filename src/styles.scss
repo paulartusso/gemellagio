@@ -1,306 +1,296 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use "@angular/material" as mat;
-// Plus imports for other components in your app.
+// Design tokens. Palette taken from the twin-town emblem:
+// deep navy circle, Filottrano crimson, Kuppenheim gold.
+:root {
+  --ink: #1b2430;
+  --ink-2: #4a5563;
+  --muted: #5f6b78;
+  --paper: #f7f4ee;
+  --surface: #ffffff;
+  --surface-2: #efe9df;
+  --line: #e2dbcf;
+  --accent: #9b2335;
+  --accent-strong: #7d1b2a;
+  --gold: #c9a24a;
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
+  // One colour per country, used for the town band and country badges.
+  --it: #2f6b4f;
+  --fr: #2b4a7a;
+  --de: #85631a;
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-//$Everience-IT-primary: mat.define-palette(mat.$indigo-palette);
-//$Everience-IT-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+  --font-serif: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-// The warn palette is optional (defaults to red).
-//$Everience-IT-warn: mat.define-palette(mat.$red-palette);
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.3rem);
+  --text-h3: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-h2: clamp(1.9rem, 1.45rem + 2vw, 2.85rem);
+  --text-h1: clamp(2.3rem, 1.6rem + 3.2vw, 4rem);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-/*$Everience-IT-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $Everience-IT-primary,
-      accent: $Everience-IT-accent,
-      warn: $Everience-IT-warn,
-    ),
-  )
-);
-*/
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --section-y: clamp(56px, 8vw, 104px);
+  --gutter: clamp(16px, 4vw, 32px);
+  --container: 1160px;
+  --measure: 68ch;
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-//@include mat.all-component-themes($Everience-IT-theme);
-
-/* You can add global styles to this file, and also import other style files */
-
-html,
-body {
-  height: 100%;
+  --radius-sm: 6px;
+  --radius: 12px;
+  --shadow-sm: 0 1px 2px rgba(27, 36, 48, 0.06);
+  --shadow-md: 0 8px 24px rgba(27, 36, 48, 0.1);
+  --dur: 200ms;
+  --header-h: 72px;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: calc(var(--header-h) + var(--space-4));
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
 h3,
-h4,
-.heading {
-  font-family: "Montserrat", serif;
-}
-
-.separator {
-  width: 30%;
-  content: "";
-  margin-top: 40px;
-  transform-origin: center;
-  animation: growImage 2.5s ease-in-out forwards;
-  @media screen and (min-width: 1500px) {
-    margin-left: 10%;
-  }
-}
-
-@keyframes growImage {
-  0% {
-    transform: scale(1.1, 1.1);
-    /* Initial scale */
-  }
-
-  100% {
-    transform: scale(5, 1);
-    /* Final scale */
-  }
-}
-
-.h3 {
-  font-size: 60px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-top: 40px;
-  margin-bottom: 0;
-  @media screen and (max-width: 800px) {
-    margin-left: 6%;
-    font-size: 32px;
-    margin-top: 25px;
-  }
-  @media screen and (min-width: 801px) {
-    font-size: 65px;
-    text-align: center;
-  }
-}
-
-.who-w-a {
-  font-size: 60px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-top: 40px;
-  margin-bottom: 0;
-  margin-left: 14%;
-
-  @media screen and (max-width: 800px) {
-    font-size: 33px;
-    margin-left: 8%;
-    margin-top: 17px;
-  }
-  @media screen and (min-width: 801px) {
-    font-size: 65px;
-    margin-left: 0%;
-    text-align: center;
-  }
-}
-
-.sub-h3 {
-  font-size: 20px;
-  letter-spacing: 0.5px;
-  margin-top: 45px;
-  margin-bottom: 0;
-  text-align: center;
-  font-weight: 500;
-  @media screen and (max-width: 800px) {
-    font-size: 19px;
-    margin-top: 17px;
-  }
-
-  @media screen and (min-width: 801px) {
-    font-size: 30px;
-    text-align: center;
-  }
-}
-
-.h4-who-w-a {
-  font-weight: 300;
-  margin-left: 10%;
-  color: #333;
-  margin-top: 7px;
-  margin-bottom: 20px;
-  text-align: justify;
-
-  @media screen and (max-width: 800px) {
-    font-size: 17px;
-    margin-right: 10%;
-  }
-
-  @media screen and (min-width: 801px) {
-    font-size: 22px;
-    font-weight: 500;
-    margin-left: 0%;
-    text-align: center;
-  }
-}
-
 h4 {
-  font-weight: 300;
-  color: #333;
-  margin-top: 7px;
-  margin-bottom: 20px;
-  text-align: justify;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+  // Long German compounds must never overflow narrow screens.
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
 
-  @media screen and (max-width: 800px) {
-    font-size: 15px;
-    margin-left: 11%;
-    margin-right: 10%;
-  }
+p {
+  margin: 0 0 var(--space-4);
+  hyphens: auto;
+  text-wrap: pretty;
+}
 
-  @media screen and (min-width: 801px) {
-    font-size: 20px;
-    text-align: center;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--accent-strong);
   }
 }
 
-.paragraph {
-  padding: 10px 25px 0 35px;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
-  text-align: left;
-  margin-bottom: 0px;
+button {
+  font: inherit;
+}
 
-  @media screen and (max-width: 500px) {
-    font-size: 15px;
-  }
+// Layout
 
-  @media screen and (min-width: 501px) {
-    font-size: 21px;
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-y);
+
+  &--alt {
+    background: var(--surface-2);
   }
 }
 
-.case-studies-styles {
-  @media screen and (max-width: 1300px) {
-    .sections-center {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 10% 20px 10%;
-    }
-  }
-  @media screen and (min-width: 1301px) {
-    .sections-center {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 15% 30px 15%;
-      max-width: 1900px;
-    }
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.section-title {
+  font-size: var(--text-h2);
+  margin-bottom: var(--space-4);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--ink-2);
+  max-width: var(--measure);
+}
+
+// Header used by every inner page (products, media, contacts, article).
+.page-header {
+  padding-block: clamp(48px, 7vw, 88px) clamp(32px, 4vw, 48px);
+
+  h1 {
+    font-size: var(--text-h1);
+    margin-bottom: var(--space-4);
   }
 
-  h6 {
-    margin-top: 30px;
-    margin-bottom: 5px;
-    color: #dd0555;
+  .town-band {
+    margin-top: var(--space-6);
+  }
+}
+
+// Three-colour band: Filottrano, Raon-l'Étape, Kuppenheim.
+.town-band {
+  display: flex;
+  width: 96px;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+
+  &::before,
+  &::after,
+  span {
+    content: "";
+    flex: 1;
   }
 
-  @media screen and (max-width: 800px) {
-    .case-studies-texts {
-      padding: 0 7%;
-    }
-    h5 {
-      font-size: 19px;
-    }
-    h6 {
-      font-size: 17px;
-    }
-    p {
-      font-size: 14px;
-    }
-    li {
-      font-size: 14px;
-    }
+  &::before {
+    background: var(--it);
   }
 
-  @media screen and (min-width: 801px) and (max-width: 1300px) {
-    .case-studies-texts {
-      padding: 0 10%;
-    }
-    h5 {
-      font-size: 21px;
-    }
-    h6 {
-      font-size: 19px;
-    }
-    p {
-      font-size: 17px;
-    }
-    li {
-      font-size: 17px;
-    }
+  span {
+    background: var(--fr);
   }
 
-  @media screen and (min-width: 1301px) {
-    .case-studies-texts {
-      padding: 0 15%;
-      max-width: 1900px;
-    }
-    h5 {
-      font-size: 23px;
-    }
-    h6 {
-      font-size: 21px;
-    }
-    p {
-      font-size: 19px;
-    }
-    li {
-      font-size: 19px;
-    }
+  &::after {
+    background: var(--de);
   }
 
-  .parallax {
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &--full {
+    width: 100%;
+    height: 4px;
+    border-radius: 0;
+  }
+}
+
+// Components
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--dur) ease, color var(--dur) ease,
+    border-color var(--dur) ease;
+
+  &--primary {
+    background: var(--accent);
     color: #fff;
-    margin-top: 25px;
-  }
 
-  @media screen and (max-width: 500px) {
-    .parallax {
-      height: 35vh;
+    &:hover {
+      background: var(--accent-strong);
+      color: #fff;
     }
   }
 
-  @media screen and (min-width: 501px) {
-    .parallax {
-      height: 60vh;
+  &--ghost {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--ink);
+
+    &:hover {
+      border-color: var(--ink);
+      color: var(--ink);
     }
   }
 
-  ul {
-    margin-bottom: 40px;
+  svg {
+    flex: none;
   }
-  ul li {
-    list-style: square;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--ink);
+
+  &--it {
+    background: var(--it);
   }
-  ul li::marker {
-    color: #dd0555;
-    font-size: 20px;
+
+  &--fr {
+    background: var(--fr);
+  }
+
+  &--de {
+    background: var(--de);
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

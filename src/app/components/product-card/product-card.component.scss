@@ -1,0 +1,61 @@
+:host {
+  display: block;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+.body {
+  padding: var(--space-5);
+}
+
+.town {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h2 {
+  font-size: var(--text-h3);
+  margin-bottom: var(--space-4);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+}
+
+li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  color: var(--ink-2);
+
+  svg {
+    flex: none;
+    position: relative;
+    top: 2px;
+    color: var(--it);
+  }
+}

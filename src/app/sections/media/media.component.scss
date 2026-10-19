@@ -1,173 +1,81 @@
-#articles-container {
-  width: 100%;
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: var(--space-5);
+  padding-bottom: var(--section-y);
+}
+
+// The whole card is clickable via the title link's stretched ::after.
+.article {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  padding-top: 50px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur) ease;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
 }
 
-.card {
+.thumb img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-5);
 
-  .flex {
-    flex-direction: row;
-
-    @media screen and (max-width: 1200px) {
-      flex-direction: column;
-      width: 80%;
-    }
-
-    @media screen and (min-width: 1201px) {
-      flex-direction: row;
-      width: 65%;
-    }
+  .badge {
+    align-self: flex-start;
+    margin-bottom: var(--space-3);
   }
+}
 
-  .graphic {
-    position: relative; // <-- ADDED: gives .category a containing box to anchor to
-  }
+h2 {
+  font-size: var(--text-h3);
+  margin-bottom: var(--space-3);
 
-  .category {
-    z-index: 1000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 35px;
-    //clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-    margin-top: 15px;
-    margin-left: -15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 45px;
+  a {
+    color: var(--ink);
+    text-decoration: none;
 
-    h4 {
-      color: #fff;
-      font-size: 15px;
-      margin: 0;
-      font-weight: 500;
-    }
-  }
-
-  .c-history {
-    background-color: #fab716;
-  }
-
-  .company-news {
-    background-color: #dd0555;
-  }
-
-  .img-container {
-    position: relative;
-    height: 300px;
-    background-position: initial;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 7px;
-
-    @media screen and (min-width: 500px) and (max-width: 1600px) {
-      width: 380px;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
     }
 
-    @media screen and (min-width: 1601px) and (max-width: 1700px) {
-      width: 425px;
-    }
-
-    @media screen and (min-width: 1701px) {
-      width: 500px;
-    }
-  }
-
-  .text-container {
-    width: 60%;
-
-    h5 {
-      font-size: 30px;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin: 0;
-    }
-
-    button {
-      border: none;
-      background-color: #dd0555;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 20px;
-      padding: 10px 15px;
-      color: #fff;
-
-      img {
-        margin-left: 5px;
-      }
+    &:focus-visible {
+      outline: none;
     }
   }
 }
 
-@media screen and (max-width: 800px) {
-  .card {
-    flex-direction: column;
-
-    .graphic {
-      width: 100%;
-
-      .img-container {
-        width: 95%;
-      }
-    }
-
-    .animated-box {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .text-container {
-      width: 95%;
-
-      h5 {
-        font-size: 20px;
-        margin-top: 20px;
-      }
-
-      p {
-        text-align: justify;
-        font-size: 14px;
-      }
-    }
-  }
+.excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--ink-2);
 }
 
-@media screen and (min-width: 701px) {
-  .card {
-    .graphic {
-      width: 40%;
-    }
-
-    .animated-box {
-      width: 40%;
-      border-radius: 8px;
-    }
-
-    .text-container {
-      width: 47%;
-    }
-  }
-}
-
-.category {
-  &.country-it {
-    background-color: #168a52; // sea-green
-  }
-
-  &.country-de {
-    background-color: #202124; // shadow-grey
-  }
-
-  &.country-fr {
-    background-color: #c92a2a; // flag-red
-  }
+.read-more {
+  margin-top: auto;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9375rem;
 }

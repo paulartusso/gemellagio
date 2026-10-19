@@ -1,34 +1,73 @@
 {
-  "NAV": {
-    "HOME": "Startseite",
-    "ABOUT": "Über uns",
-    "SERVICES": "Produkte",
-    "MEDIA": "Medien",
-    "CONTACT": "Kontakt",
-    "CROSS_CHANNEL": "Cross Channel",
-    "TOOLS_SELECTION": "Auswahl der Werkzeuge",
-    "MOBILITY": "Mobilität"
+  "META": {
+    "SITE_NAME": "Städtepartnerschaft Filottrano · Kuppenheim · Raon-l’Étape",
+    "DESCRIPTION": "Verein für die Städtepartnerschaft zwischen Filottrano, Kuppenheim und Raon-l’Étape: Geschichte, Veranstaltungen und Produkte der drei Städte."
   },
-  "WHERE_WE_ARE": {
-    "EYEBROW": "Ein internationaler Verein",
-    "TITLE_PREFIX": "Entfernung",
-    "TITLE_SUFFIX": "zwischen den Partnerstädten",
-    "DISTANCE_TO": "nach",
-    "INHABITANTS": "Einwohner"
+  "COMMON": {
+    "SKIP_TO_CONTENT": "Zum Inhalt springen",
+    "BACK_TO_TOP": "Nach oben",
+    "NEW_TAB": "(öffnet in neuem Tab)"
+  },
+  "NAV": {
+    "BRAND": "Städtepartnerschaft",
+    "ABOUT": "Über uns",
+    "PRODUCTS": "Produkte",
+    "MEDIA": "Aktuelles",
+    "CONTACT": "Kontakt",
+    "MAIN": "Hauptnavigation",
+    "MENU_OPEN": "Menü öffnen",
+    "MENU_CLOSE": "Menü schließen",
+    "LANGUAGE": "Sprache"
   },
   "HOME": {
-    "CHI_SIAMO_TITLE": "Über uns",
-    "CHI_SIAMO_INTRO": "__TODO: kurze Einleitung, maximal zwei Sätze__",
-    "HISTORY_TEXT": "Die Vereinstätigkeit begann fast zeitgleich mit dem Beschluss unserer Gemeinde, am 02.08.2007 unter der damaligen Bürgermeisterin Ivana Ballante die „Partnerschaftsverträge“ zwischen den Gemeinden Raon-l’Étape und Kuppenheim zu unterzeichnen.<br><br>Doch schon vorher hatten viele der heutigen Vereinsmitglieder mit ihren Kindern über die Mittelschule an den kulturellen Austauschen zwischen den Partnergemeinden teilgenommen. Die Jugendlichen und die Beteiligung der Schule waren der eigentliche erste Anstoß für dieses ambitionierte Projekt: den heutigen „Partnerschaftsvertrag“."
+    "HERO_EYEBROW": "Städtepartnerschaft seit 2007",
+    "HERO_LEAD": "Drei Städte, drei Länder – eine europäische Freundschaft, getragen von Bürgerinnen und Bürgern, Familien und Schulen.",
+    "HERO_ALT": "Blick auf Filottrano und die Hügel der Marken",
+    "CTA_EVENTS": "Neuigkeiten und Veranstaltungen",
+    "CTA_ABOUT": "Über uns",
+    "ABOUT_EYEBROW": "Über uns",
+    "ABOUT_TITLE": "Eine Freundschaft zwischen drei Gemeinden",
+    "ABOUT_INTRO": "Wir sind der Verein, der die Partnerschaft zwischen Filottrano, Kuppenheim und Raon-l’Étape lebendig hält. Wir organisieren Austausche, Begegnungen und Veranstaltungen, die die Menschen der drei Städte zusammenbringen.",
+    "EMBLEM_ALT": "Emblem der Städtepartnerschaft mit den Wappen von Raon-l’Étape, Filottrano und Kuppenheim",
+    "HISTORY_EYEBROW": "Unsere Geschichte",
+    "HISTORY_TITLE": "Entstanden aus dem Schüleraustausch",
+    "HISTORY_P1": "Die Arbeit des Vereins begann fast zeitgleich mit dem Beschluss der Gemeinde Filottrano, am 2. August 2007 unter der damaligen Bürgermeisterin Ivana Ballante die Partnerschaftsverträge mit den Gemeinden Raon-l’Étape und Kuppenheim zu schließen.",
+    "HISTORY_P2": "Doch schon vorher hatten viele der heutigen Vereinsmitglieder mit ihren Kindern über die Mittelschule am Kulturaustausch zwischen den Partnergemeinden teilgenommen. Die Jugendlichen und die Schule gaben den ersten echten Anstoß für dieses ambitionierte Projekt: die heutige Städtepartnerschaft.",
+    "DISCOVER": "Entdecken"
+  },
+  "WHERE_WE_ARE": {
+    "EYEBROW": "Ein europäisches Netzwerk",
+    "TITLE": "Entfernungen ab {{city}}",
+    "LEAD": "Drei Städte in drei Ländern, verbunden durch einen Freundschaftspakt.",
+    "MAP_ALT": "Europakarte mit {{city}} und den hervorgehobenen Partnerstädten",
+    "DISTANCE_TO": "Entfernung nach {{city}}",
+    "INHABITANTS": "Einwohner von {{city}}"
   },
   "PRODUCTS": {
-    "TITLE": "Produkte",
-    "SUBTITLE": "Die Geschmäcker unserer Region"
+    "TITLE": "Regionale Spezialitäten",
+    "SUBTITLE": "Die Spezialitäten unserer Städte",
+    "LEAD": "Spezialitäten aus unseren Partnerstädten, verwurzelt in ihrer Landschaft und Tradition.",
+    "ITEMS": {
+      "OLIVE_OIL": {
+        "NAME": "Olivenöl",
+        "FEATURES": ["Hergestellt in Filottrano", "Aus grünen Oliven", "Kaltgepresst"]
+      },
+      "VERDICCHIO": {
+        "NAME": "Verdicchio dei Castelli di Jesi",
+        "FEATURES": ["Weißwein", "Aus den Hügeln der Castelli di Jesi", "Rebsorte Verdicchio"]
+      },
+      "SPRITZ": {
+        "NAME": "Spritz",
+        "FEATURES": ["Italienischer Aperitif", "Orangefarben", "Gut gekühlt serviert"]
+      }
+    }
   },
   "MEDIA": {
-    "TITLE": "Medieninhalte",
-    "SUBTITLE": "Entdecken Sie unsere neuesten Nachrichten, Veranstaltungen und Inhalte.",
+    "TITLE": "Neuigkeiten und Veranstaltungen",
+    "SUBTITLE": "Aktuelles, Veranstaltungen und gemeinsame Momente aus unseren Städten.",
     "READ_MORE": "Weiterlesen",
+    "BACK": "Alle Neuigkeiten",
+    "NOT_FOUND": "Artikel nicht gefunden",
     "COUNTRY": {
       "it": "Italien",
       "de": "Deutschland",
@@ -37,21 +76,32 @@
     "ARTICLES": {
       "CARNEVALE": {
         "TITLE": "Karneval in Frankreich",
-        "DESCRIPTION": "__TODO: echte Beschreibung__ Ein gemeinsames Fest unserer französischen Mitglieder, mit Masken, Musik und Tradition. Details folgen in Kürze."
+        "BODY": "Ein gemeinsames Fest unserer französischen Mitglieder mit Masken, Musik und Tradition. Mehr über diesen Tag erzählen wir in Kürze."
       },
       "SUNFLOWERS": {
         "TITLE": "Als Sonnenblumen verkleidet",
-        "DESCRIPTION": "__TODO: echte Beschreibung__ Ein farbenfrohes und fröhliches Event, bei dem die Teilnehmer als Sonnenblumen verkleidet waren. Weitere Details folgen bald."
+        "BODY": "Eine farbenfrohe, fröhliche Veranstaltung, bei der sich die Teilnehmenden als Sonnenblumen verkleidet hatten. Weitere Details folgen bald."
+      },
+      "STADT": {
+        "TITLE": "Stadtfest in Kuppenheim",
+        "BODY": "Das Stadtfest in Kuppenheim – ein Treffpunkt für die Menschen vor Ort und die Freunde aus den Partnerstädten. Weitere Details folgen bald."
       }
     }
   },
   "CONTACT": {
-    "INTRO": "Kontaktieren Sie uns, um mehr zu erfahren",
-    "INTRO_HIGHLIGHT": "über unseren Verein",
-    "HOURS_LINE1": "Wir sind montags bis freitags erreichbar",
-    "HOURS_LINE2": "von 9:00 bis 18:00 Uhr"
+    "TITLE": "Kontakt aufnehmen",
+    "LEAD": "Sie möchten mehr über unseren Verein erfahren oder beim nächsten Austausch dabei sein? Wir freuen uns auf Ihre Nachricht.",
+    "ADDRESS": "Sitz",
+    "OPEN_MAP": "Karte öffnen",
+    "EMAIL": "E-Mail",
+    "WRITE": "Schreiben Sie uns",
+    "PHONE": "Telefon",
+    "CALL": "Anrufen",
+    "FOLLOW": "Folgen Sie uns"
   },
   "FOOTER": {
-    "REGISTRY_LABEL": "Handelsregisternummer Mailand Monza Brianza und Lodi"
+    "TAGLINE": "Verein für die Städtepartnerschaft zwischen Filottrano, Kuppenheim und Raon-l’Étape.",
+    "NAV_LABEL": "Navigation",
+    "FISCAL_CODE": "Steuernummer"
   }
 }

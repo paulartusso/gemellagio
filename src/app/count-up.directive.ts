@@ -2,20 +2,19 @@ import {
   Directive,
   ElementRef,
   Input,
+  OnChanges,
+  OnDestroy,
   OnInit,
   Renderer2,
-  OnDestroy,
 } from '@angular/core';
 import {
   animationFrameScheduler,
-  BehaviorSubject,
-  combineLatest,
-  switchMap,
-  map,
-  interval,
-  takeWhile,
-  endWith,
   distinctUntilChanged,
+  endWith,
+  interval,
+  map,
+  Subscription,
+  takeWhile,
 } from 'rxjs';
 
 /**
@@ -23,77 +22,77 @@ import {
  */
 const easeOutQuad = (x: number): number => x * (2 - x);
 
+// Counts from 0 to the target the first time the element scrolls into view,
+// formatting the number for the given locale (8.849 / 8 849).
 @Directive({
   selector: '[countUp]',
 })
-export class CountUpDirective implements OnInit, OnDestroy {
-  private readonly count$ = new BehaviorSubject(0);
-  private readonly duration$ = new BehaviorSubject(600);
-  private readonly currentCount$ = combineLatest([
-    this.count$,
-    this.duration$,
-  ]).pipe(
-    switchMap(([count, duration]) => {
-      const startTime = animationFrameScheduler.now();
-
-      return interval(0, animationFrameScheduler).pipe(
-        map(() => animationFrameScheduler.now() - startTime),
-        map((elapsedTime) => elapsedTime / duration),
-        takeWhile((progress) => progress <= 1),
-        map(easeOutQuad),
-        map((progress) => Math.round(progress * count)),
-        endWith(count),
-        distinctUntilChanged()
-      );
-    })
-  );
+export class CountUpDirective implements OnInit, OnChanges, OnDestroy {
+  @Input('countUp') count = 0;
+  @Input() duration = 2000;
+  @Input() locale = 'it-IT';
 
   private observer: IntersectionObserver | null = null;
-
-  @Input('countUp')
-  set count(count: number) {
-    this.count$.next(count);
-  }
-
-  @Input()
-  set duration(duration: number) {
-    this.duration$.next(duration);
-  }
+  private animation?: Subscription;
+  private started = false;
 
   constructor(
-    private readonly elementRef: ElementRef,
+    private readonly elementRef: ElementRef<HTMLElement>,
     private readonly renderer: Renderer2
   ) {}
 
   ngOnInit(): void {
-    this.setupIntersectionObserver();
+    this.render(this.prefersReducedMotion() ? this.count : 0);
+    if (this.prefersReducedMotion()) {
+      this.started = true;
+      return;
+    }
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.observer?.disconnect();
+          this.start();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    this.observer.observe(this.elementRef.nativeElement);
+  }
+
+  ngOnChanges(): void {
+    // Language or city changed after the animation ran: show the new value directly.
+    if (this.started) {
+      this.animation?.unsubscribe();
+      this.render(this.count);
+    }
   }
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
+    this.animation?.unsubscribe();
   }
 
-  private setupIntersectionObserver(): void {
-    this.observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          this.displayCurrentCount();
-          //this.observer?.disconnect(); // Stop observing after the first trigger
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    this.observer.observe(this.elementRef.nativeElement);
+  private start(): void {
+    this.started = true;
+    const target = this.count;
+    const startTime = animationFrameScheduler.now();
+    this.animation = interval(0, animationFrameScheduler)
+      .pipe(
+        map(() => (animationFrameScheduler.now() - startTime) / this.duration),
+        takeWhile((progress) => progress <= 1),
+        map((progress) => Math.round(easeOutQuad(progress) * target)),
+        endWith(target),
+        distinctUntilChanged()
+      )
+      .subscribe((value) => this.render(value));
   }
 
-  private displayCurrentCount(): void {
-    this.currentCount$.subscribe((currentCount) => {
-      this.renderer.setProperty(
-        this.elementRef.nativeElement,
-        'innerHTML',
-        currentCount
-      );
-    });
+  private render(value: number): void {
+    const text = new Intl.NumberFormat(this.locale).format(value);
+    this.renderer.setProperty(this.elementRef.nativeElement, 'textContent', text);
+  }
+
+  private prefersReducedMotion(): boolean {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 }

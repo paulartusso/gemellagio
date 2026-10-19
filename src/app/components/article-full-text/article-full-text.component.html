@@ -1,9 +1,18 @@
-<div class="hero" [ngStyle]="{'background-image': 'url(' + fullArticle.imageUrl + ')'}">
-</div>
-<section class="section-center">
-  <h2 class="title">{{fullArticle.title}}</h2>
-  <div class="description-container">
-    <p>{{fullArticle.description1}}</p>
-    <p>{{fullArticle.description2}}</p>
+<article *ngIf="article; else notFound" class="container article">
+  <a routerLink="/media" class="back">← {{ 'MEDIA.BACK' | translate }}</a>
+  <header>
+    <span class="badge" [ngClass]="'badge--' + article.country">{{ 'MEDIA.COUNTRY.' + article.country | translate }}</span>
+    <h1>{{ article.key + '.TITLE' | translate }}</h1>
+  </header>
+  <img class="cover" [src]="article.image" alt="" width="1600" height="1067">
+  <div class="text">
+    <p>{{ article.key + '.BODY' | translate }}</p>
   </div>
-</section>
+</article>
+
+<ng-template #notFound>
+  <section class="container page-header">
+    <h1>{{ 'MEDIA.NOT_FOUND' | translate }}</h1>
+    <a routerLink="/media" class="btn btn--primary">← {{ 'MEDIA.BACK' | translate }}</a>
+  </section>
+</ng-template>

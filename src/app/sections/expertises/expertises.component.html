@@ -1,9 +1,0 @@
-<div class="separator" style="border-bottom: 1px solid #DD0555; margin: 0;"></div>
-<h3 class="h3" style="color: #DD0555;">{{ 'PRODUCTS.TITLE' | translate }}</h3>
-<h4>{{ 'PRODUCTS.SUBTITLE' | translate }}</h4>
-<div class="service_Box">
-  <div class="container service_container">
-    <app-expertise-card *ngFor="let p of products" [cardTitle]="p.title" [firstItem]="p.firstItem"
-      [secondItem]="p.secondItem" [thirdItem]="p.thirdItem" [img]="p.img"></app-expertise-card>
-  </div>
-</div>

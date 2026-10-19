@@ -1,43 +1,76 @@
-<div class="hero">
-</div>
-<!--
-  <div class="text size">
-    Everience <span>agevola</span> la digitalizzazione aziendale
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">{{ 'HOME.HERO_EYEBROW' | translate }}</span>
+      <h1>
+        <span>Filottrano</span>
+        <span>Kuppenheim</span>
+        <span>Raon-l’Étape</span>
+      </h1>
+      <p class="lead">{{ 'HOME.HERO_LEAD' | translate }}</p>
+      <div class="hero-actions">
+        <a routerLink="/media" class="btn btn--primary">
+          {{ 'HOME.CTA_EVENTS' | translate }}
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a routerLink="/home" fragment="chi-siamo" class="btn btn--ghost">{{ 'HOME.CTA_ABOUT' | translate }}</a>
+      </div>
+    </div>
+    <figure class="hero-media">
+      <img src="assets/img/filottrano-1024x627.webp" width="1024" height="627" fetchpriority="high"
+        [alt]="'HOME.HERO_ALT' | translate">
+    </figure>
   </div>
--->
-<div style="display: flex; justify-content: left;">
-  <div class="separator"></div>
-</div>
-<div class="sections-center">
-  <section>
+</section>
 
-    <h3 class="who-w-a" style="color: #168a52;">{{ 'HOME.CHI_SIAMO_TITLE' | translate }}</h3>
-    <h4 class="h4-who-w-a">
-      {{ 'HOME.CHI_SIAMO_INTRO' | translate }}
-    </h4>
+<section class="section about" id="chi-siamo">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">{{ 'HOME.ABOUT_EYEBROW' | translate }}</span>
+      <h2 class="section-title">{{ 'HOME.ABOUT_TITLE' | translate }}</h2>
+      <p class="lead">{{ 'HOME.ABOUT_INTRO' | translate }}</p>
+    </div>
+    <img class="emblem" src="assets/emblem.webp" width="280" height="272" loading="lazy"
+      [alt]="'HOME.EMBLEM_ALT' | translate">
+  </div>
+</section>
 
-  </section>
-</div>
-<div class="parallax img-2">
-  <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-    <div class="red-div" appScrollAnimation="bottom" [innerHTML]="'HOME.HISTORY_TEXT' | translate">
+<section class="section section--alt history">
+  <div class="container history-grid">
+    <div class="history-year" aria-hidden="true">2007</div>
+    <div class="history-text" appScrollAnimation="bottom">
+      <span class="eyebrow">{{ 'HOME.HISTORY_EYEBROW' | translate }}</span>
+      <h2 class="section-title">{{ 'HOME.HISTORY_TITLE' | translate }}</h2>
+      <p>{{ 'HOME.HISTORY_P1' | translate }}</p>
+      <p>{{ 'HOME.HISTORY_P2' | translate }}</p>
     </div>
   </div>
-</div>
+</section>
 
-<div class="sections-center">
-  <section>
-    <!--
-      <h3 class="h3" style="color: #009DDC">Our Mission</h3>
-      <h4>La missione di Everience è facilitare le trasformazioni
-        digitali delle aziende, <br>
-        ottimizzando i processi IT e migliorando l'esperienza utente.<br>
-        Puntiamo a massimizzare la produttività e la soddisfazzione</h4>
-        <div>
-          <img src="../../../assets/img/timeline.png" alt="graph" width="100%">
+<app-map></app-map>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="explore-grid">
+      <a routerLink="/products" class="explore-card">
+        <img src="assets/img/products/oliva.webp" alt="" loading="lazy" width="640" height="427">
+        <div class="explore-body">
+          <span class="eyebrow">{{ 'NAV.PRODUCTS' | translate }}</span>
+          <h3>{{ 'PRODUCTS.SUBTITLE' | translate }}</h3>
+          <span class="explore-link">{{ 'HOME.DISCOVER' | translate }} →</span>
         </div>
-        -->
-    <app-map></app-map>
-  </section>
-</div>
-<app-footer></app-footer>
+      </a>
+      <a routerLink="/media" class="explore-card">
+        <img src="assets/img/media/carnival.webp" alt="" loading="lazy" width="640" height="480">
+        <div class="explore-body">
+          <span class="eyebrow">{{ 'NAV.MEDIA' | translate }}</span>
+          <h3>{{ 'MEDIA.SUBTITLE' | translate }}</h3>
+          <span class="explore-link">{{ 'HOME.DISCOVER' | translate }} →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

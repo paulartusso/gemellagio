@@ -16,6 +16,7 @@ export class MapComponent implements OnInit, OnDestroy {
   homeCity!: TwinCity;
   distances: CityDistance[] = [];
   mapImage = '';
+  locale = 'it-IT';
 
   private sub?: Subscription;
 
@@ -36,5 +37,6 @@ export class MapComponent implements OnInit, OnDestroy {
     this.homeCity = this.twinCities.getHomeCity(lang);
     this.distances = this.twinCities.getDistancesFromHome(lang);
     this.mapImage = this.homeCity.mapImage;
+    this.locale = this.translation.locale;
   }
 }

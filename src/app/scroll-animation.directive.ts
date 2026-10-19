@@ -1,62 +1,57 @@
-import {
-  Directive,
-  ElementRef,
-  HostListener,
-  Renderer2,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { Directive, ElementRef, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 
+// Fades an element in with a short slide the first time it enters the viewport.
+// Does nothing for visitors who prefer reduced motion.
 @Directive({
   selector: '[appScrollAnimation]',
 })
-export class ScrollAnimationDirective implements OnInit {
-  @Input() appScrollAnimation: 'left' | 'right' | 'top' | 'bottom' = 'top';
+export class ScrollAnimationDirective implements OnInit, OnDestroy {
+  @Input() appScrollAnimation: 'left' | 'right' | 'top' | 'bottom' | '' = 'bottom';
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  private observer: IntersectionObserver | null = null;
 
-  ngOnInit() {
-    this.setInitialStyle();
-  }
+  constructor(private el: ElementRef<HTMLElement>, private renderer: Renderer2) {}
 
-  private setInitialStyle() {
-    this.renderer.setStyle(this.el.nativeElement, 'opacity', '0');
-    const transformValue = this.getInitialTransform();
-    this.renderer.setStyle(this.el.nativeElement, 'transform', transformValue);
+  ngOnInit(): void {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+    const node = this.el.nativeElement;
+    this.renderer.setStyle(node, 'opacity', '0');
+    this.renderer.setStyle(node, 'transform', this.initialTransform());
     this.renderer.setStyle(
-      this.el.nativeElement,
+      node,
       'transition',
-      'opacity 1s ease-in-out, transform 1s ease-in-out'
+      'opacity 700ms ease-out, transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1)'
     );
+
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.renderer.setStyle(node, 'opacity', '1');
+          this.renderer.setStyle(node, 'transform', 'none');
+          this.observer?.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    this.observer.observe(node);
   }
 
-  private getInitialTransform(): string {
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  private initialTransform(): string {
     switch (this.appScrollAnimation) {
       case 'left':
-        return 'translateX(-150px)';
+        return 'translateX(-24px)';
       case 'right':
-        return 'translateX(150px)';
+        return 'translateX(24px)';
       case 'top':
-        return 'translateY(-150px)';
-      case 'bottom':
-        return 'translateY(150px)';
+        return 'translateY(-24px)';
       default:
-        return 'translateY(150px)';
-    }
-  }
-
-  @HostListener('window:scroll', [])
-  onScroll() {
-    const rect = this.el.nativeElement.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight - 100 && rect.bottom >= 0;
-
-    if (isVisible) {
-      this.renderer.setStyle(this.el.nativeElement, 'opacity', '1');
-      this.renderer.setStyle(
-        this.el.nativeElement,
-        'transform',
-        'translate(0, 0)'
-      );
+        return 'translateY(24px)';
     }
   }
 }

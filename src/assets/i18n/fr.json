@@ -1,34 +1,73 @@
 {
-  "NAV": {
-    "HOME": "Accueil",
-    "ABOUT": "Qui sommes-nous",
-    "SERVICES": "Produits",
-    "MEDIA": "Médias",
-    "CONTACT": "Contact",
-    "CROSS_CHANNEL": "Cross channel",
-    "TOOLS_SELECTION": "Sélection des outils",
-    "MOBILITY": "Mobilité"
+  "META": {
+    "SITE_NAME": "Jumelage Filottrano · Kuppenheim · Raon-l’Étape",
+    "DESCRIPTION": "Association pour le jumelage entre Filottrano, Kuppenheim et Raon-l’Étape : histoire, événements et produits des trois villes."
   },
-  "WHERE_WE_ARE": {
-    "EYEBROW": "Une association internationale",
-    "TITLE_PREFIX": "Distance",
-    "TITLE_SUFFIX": "entre les villes jumelées",
-    "DISTANCE_TO": "jusqu'à",
-    "INHABITANTS": "habitants"
+  "COMMON": {
+    "SKIP_TO_CONTENT": "Aller au contenu",
+    "BACK_TO_TOP": "Retour en haut",
+    "NEW_TAB": "(s’ouvre dans un nouvel onglet)"
+  },
+  "NAV": {
+    "BRAND": "Jumelage",
+    "ABOUT": "Qui sommes-nous",
+    "PRODUCTS": "Produits",
+    "MEDIA": "Actualités",
+    "CONTACT": "Contact",
+    "MAIN": "Navigation principale",
+    "MENU_OPEN": "Ouvrir le menu",
+    "MENU_CLOSE": "Fermer le menu",
+    "LANGUAGE": "Langue"
   },
   "HOME": {
-    "CHI_SIAMO_TITLE": "Qui sommes-nous",
-    "CHI_SIAMO_INTRO": "__TODO : brève introduction, deux phrases maximum__",
-    "HISTORY_TEXT": "L’activité de l’association a débuté presque en parallèle avec la décision de notre Commune d’autoriser, le 02/08/2007, la signature des « pactes de jumelage » avec la maire de l’époque, Ivana Ballante, entre les communes de Raon-l’Étape et Kuppenheim.<br><br>Mais bien avant cela, beaucoup de ceux qui font aujourd’hui partie de l’association avaient déjà participé, avec leurs enfants au collège, aux échanges culturels entre les communes jumelées. Les jeunes, grâce à la participation de l’école, ont été la véritable première impulsion pour créer ce projet ambitieux : l’actuel « pacte de jumelage »."
+    "HERO_EYEBROW": "Jumelage depuis 2007",
+    "HERO_LEAD": "Trois villes, trois pays, une amitié européenne construite par les habitants, les familles et les écoles.",
+    "HERO_ALT": "Vue de Filottrano et des collines des Marches",
+    "CTA_EVENTS": "Actualités et événements",
+    "CTA_ABOUT": "Qui sommes-nous",
+    "ABOUT_EYEBROW": "Qui sommes-nous",
+    "ABOUT_TITLE": "Une amitié entre trois communautés",
+    "ABOUT_INTRO": "Nous sommes l’association qui fait vivre le jumelage entre Filottrano, Kuppenheim et Raon-l’Étape. Nous organisons des échanges, des rencontres et des événements qui rapprochent les habitants des trois villes.",
+    "EMBLEM_ALT": "Emblème du jumelage avec les blasons de Raon-l’Étape, Filottrano et Kuppenheim",
+    "HISTORY_EYEBROW": "Notre histoire",
+    "HISTORY_TITLE": "Née des échanges entre les écoles",
+    "HISTORY_P1": "L’activité de l’association a débuté presque en même temps que la décision de la commune de Filottrano d’autoriser, le 2 août 2007, la signature des pactes de jumelage avec les communes de Raon-l’Étape et de Kuppenheim, sous le mandat de la maire de l’époque, Ivana Ballante.",
+    "HISTORY_P2": "Mais bien avant cela, beaucoup de ceux qui font aujourd’hui partie de l’association avaient déjà participé, avec le collège et leurs enfants, aux échanges culturels entre les communes jumelées. Les jeunes, avec l’école, ont été la véritable première impulsion de ce projet ambitieux : l’actuel pacte de jumelage.",
+    "DISCOVER": "Découvrir"
+  },
+  "WHERE_WE_ARE": {
+    "EYEBROW": "Un réseau européen",
+    "TITLE": "Les distances depuis {{city}}",
+    "LEAD": "Trois villes dans trois pays, unies par un pacte d’amitié.",
+    "MAP_ALT": "Carte de l’Europe mettant en évidence {{city}} et ses villes jumelles",
+    "DISTANCE_TO": "Distance jusqu’à {{city}}",
+    "INHABITANTS": "Habitants de {{city}}"
   },
   "PRODUCTS": {
-    "TITLE": "Produits",
-    "SUBTITLE": "Les saveurs de notre région"
+    "TITLE": "Produits du terroir",
+    "SUBTITLE": "Les saveurs de nos villes",
+    "LEAD": "Les spécialités de nos villes jumelées, liées à leur terre et à leurs traditions.",
+    "ITEMS": {
+      "OLIVE_OIL": {
+        "NAME": "Huile d’olive",
+        "FEATURES": ["Produite à Filottrano", "Issue d’olives vertes", "Extraite à froid"]
+      },
+      "VERDICCHIO": {
+        "NAME": "Verdicchio dei Castelli di Jesi",
+        "FEATURES": ["Vin blanc", "Des collines des Castelli di Jesi", "Cépage Verdicchio"]
+      },
+      "SPRITZ": {
+        "NAME": "Spritz",
+        "FEATURES": ["Apéritif italien", "Couleur orange", "Servi bien frais"]
+      }
+    }
   },
   "MEDIA": {
-    "TITLE": "Contenus Média",
-    "SUBTITLE": "Découvrez nos dernières actualités, événements et contenus.",
+    "TITLE": "Actualités et événements",
+    "SUBTITLE": "Les dernières nouvelles, les événements et les moments partagés entre nos villes.",
     "READ_MORE": "Lire la suite",
+    "BACK": "Toutes les actualités",
+    "NOT_FOUND": "Article introuvable",
     "COUNTRY": {
       "it": "Italie",
       "de": "Allemagne",
@@ -37,21 +76,32 @@
     "ARTICLES": {
       "CARNEVALE": {
         "TITLE": "Carnaval en France",
-        "DESCRIPTION": "__TODO : description réelle__ Un moment de fête partagé entre les membres français de l'association, entre masques, musique et tradition. Plus de détails à venir."
+        "BODY": "Un moment de fête partagé entre les membres français de l’association, entre masques, musique et tradition. Nous vous raconterons bientôt cette journée en détail."
       },
       "SUNFLOWERS": {
         "TITLE": "Déguisés en tournesols",
-        "DESCRIPTION": "__TODO : description réelle__ Un événement haut en couleur et en bonne humeur, où les participants étaient déguisés en tournesols. Plus de détails bientôt."
+        "BODY": "Un événement haut en couleur et plein de bonne humeur, où les participants s’étaient déguisés en tournesols pour l’occasion. Plus de détails bientôt."
+      },
+      "STADT": {
+        "TITLE": "Stadtfest à Kuppenheim",
+        "BODY": "La fête de la ville de Kuppenheim, une occasion de rencontre entre les habitants et les amis des villes jumelées. Plus de détails bientôt."
       }
     }
   },
   "CONTACT": {
-    "INTRO": "Contactez-nous pour en savoir plus",
-    "INTRO_HIGHLIGHT": "sur notre association",
-    "HOURS_LINE1": "Nous sommes disponibles du lundi au vendredi",
-    "HOURS_LINE2": "de 9h00 à 18h00"
+    "TITLE": "Nous contacter",
+    "LEAD": "Vous souhaitez en savoir plus sur notre association ou participer aux prochains échanges ? Nous serons ravis d’échanger avec vous.",
+    "ADDRESS": "Siège",
+    "OPEN_MAP": "Ouvrir la carte",
+    "EMAIL": "E-mail",
+    "WRITE": "Nous écrire",
+    "PHONE": "Téléphone",
+    "CALL": "Appeler",
+    "FOLLOW": "Suivez-nous"
   },
   "FOOTER": {
-    "REGISTRY_LABEL": "Numéro du Registre du Commerce de Milan Monza Brianza et Lodi"
+    "TAGLINE": "Association pour le jumelage entre Filottrano, Kuppenheim et Raon-l’Étape.",
+    "NAV_LABEL": "Navigation",
+    "FISCAL_CODE": "N° fiscal"
   }
 }

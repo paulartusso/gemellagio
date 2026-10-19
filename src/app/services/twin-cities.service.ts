@@ -4,7 +4,6 @@ import { AppLanguage } from './translation.service';
 export interface TwinCity {
   key: 'filottrano' | 'kuppenheim' | 'raon';
   name: string;
-  country: string;
   population: number;
   mapImage: string;
 }
@@ -23,21 +22,18 @@ const CITIES: Record<TwinCity['key'], TwinCity> = {
   filottrano: {
     key: 'filottrano',
     name: 'Filottrano',
-    country: 'Italia',
     population: 8849,
     mapImage: 'assets/img/map-it.svg', // Filottrano pin emphasized
   },
   kuppenheim: {
     key: 'kuppenheim',
     name: 'Kuppenheim',
-    country: 'Deutschland',
     population: 8534,
     mapImage: 'assets/img/map-de.svg', // Kuppenheim pin emphasized
   },
   raon: {
     key: 'raon',
     name: "Raon-l'Étape",
-    country: 'France',
     population: 5886,
     mapImage: 'assets/img/map-fr.svg', // Raon-l'Étape pin emphasized
   },

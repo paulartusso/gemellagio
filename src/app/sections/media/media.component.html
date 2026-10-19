@@ -1,28 +1,22 @@
-<div class="separator" style="border-bottom: 1px solid #FAB716; margin: 0;"></div>
-<h3 class="h3" style="color: #FAB716;">{{ 'MEDIA.TITLE' | translate }}</h3>
-<h4>
-  {{ 'MEDIA.SUBTITLE' | translate }}
-</h4>
-<section id="articles-container">
-  <div *ngFor="let article of articlesList" class="card">
-    <div class="flex" style="display: flex; width: 70%;">
-      <!--Image && country badge-->
-      <div class="graphic animated-box">
-        <div class="category" appScrollAnimation="right" [ngClass]="'country-' + article.country">
-          <h4>
-            {{ ('MEDIA.COUNTRY.' + article.country) | translate }}
-          </h4>
-        </div>
-        <div class="img-container" [ngStyle]="{'background-image': 'url(' + article.image + ')'}"></div>
-      </div>
-      <!--Text-->
-      <div class="text-container">
-        <h5>{{ article.titleKey | translate }}</h5>
-        <p>{{ (article.descriptionKey | translate).slice(0, 220) + '...' }}</p>
-        <button (click)="openFullArticle(article.id)">
-          {{ 'MEDIA.READ_MORE' | translate }}
-        </button>
-      </div>
+<header class="page-header container">
+  <span class="eyebrow">{{ 'NAV.MEDIA' | translate }}</span>
+  <h1>{{ 'MEDIA.TITLE' | translate }}</h1>
+  <p class="lead">{{ 'MEDIA.SUBTITLE' | translate }}</p>
+  <div class="town-band"><span></span></div>
+</header>
+
+<section class="container articles">
+  <article *ngFor="let article of articles" class="article" appScrollAnimation="bottom">
+    <a class="thumb" [routerLink]="['/media/full-article', article.id]" tabindex="-1" aria-hidden="true">
+      <img [src]="article.image" alt="" loading="lazy" width="640" height="480">
+    </a>
+    <div class="body">
+      <span class="badge" [ngClass]="'badge--' + article.country">{{ 'MEDIA.COUNTRY.' + article.country | translate }}</span>
+      <h2>
+        <a [routerLink]="['/media/full-article', article.id]">{{ article.key + '.TITLE' | translate }}</a>
+      </h2>
+      <p class="excerpt">{{ article.key + '.BODY' | translate }}</p>
+      <span class="read-more" aria-hidden="true">{{ 'MEDIA.READ_MORE' | translate }} →</span>
     </div>
-  </div>
+  </article>
 </section>

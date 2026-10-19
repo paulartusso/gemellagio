@@ -1,87 +1,48 @@
-<div class="menu">
-  <span (click)="navigateTo('home')">
-    <img src="../../../assets/logo-LOW.png" alt="">
-  </span>
-  <span style="display: flex; flex-direction: row; align-items: center;">
-    <div class="desktop-menu">
-      <span (click)="navigateTo('home')" [class.active]="currentTab === 'home'">
-        {{ 'NAV.ABOUT' | translate }}
+<header class="site-header">
+  <div class="town-band town-band--full"><span></span></div>
+  <div class="container bar">
+    <a routerLink="/home" class="brand" (click)="closeMenu()">
+      <img src="assets/emblem.webp" alt="" width="44" height="44">
+      <span class="brand-text">
+        <span class="brand-name">{{ 'NAV.BRAND' | translate }}</span>
+        <span class="brand-towns">Filottrano · Kuppenheim · Raon-l’Étape</span>
       </span>
-      <span (click)="navigateTo('services')" [class.active]="currentTab === 'services'">
-        {{ 'NAV.SERVICES' | translate }}
-      </span>
-      <!--
-        <span (click)="showStudyCases('desktop')" [class.active]="currentTab === 'case-studies'">
-          Case Studies
-        </span>
-      -->
-      <span (click)="navigateTo('media')" [class.active]="currentTab === 'media'">
-        {{ 'NAV.MEDIA' | translate }}
-      </span>
-      <!--
-        <span (click)="navigateTo('join-us')" [class.active]="currentTab === 'join-us'">
-          Carriera
-        </span>
-      -->
-      <span (click)="navigateTo('contacts')" [class.active]="currentTab === 'contacts'">
-        {{ 'NAV.CONTACT' | translate }}
-      </span>
-    </div>
-    <div class="language-wrapper">
-      <button type="button" class="selected-language" (click)="showLanguages()"
-        [attr.aria-expanded]="showLanguageOptions" aria-label="Cambia lingua">
-        <img [src]="flagIcon(currentLang)" [alt]="currentLang.toUpperCase()">
-      </button>
+    </a>
 
-      <div class="flags" *ngIf="showLanguageOptions">
-        <button type="button" class="flag" *ngFor="let lang of otherLanguages()" (click)="selectLanguage(lang)">
-          <img [src]="flagIcon(lang)" [alt]="lang.toUpperCase()">
-        </button>
-      </div>
-    </div>
-    <i (click)="showMenu()" class="material-icons hamburguer">menu</i>
-  </span>
-</div>
-<!--MOBILE HIDDEN MENU-->
-<div class="links-container">
-  <div *ngIf="isShowing" class="hidden-menu">
-    <div>
-      <span (click)="navigateTo('services')">{{ 'NAV.SERVICES' | translate }}</span>
-    </div>
-    <!--
-      <div>
-        <span (click)="showStudyCases('mobile')">Case studies</span>
-        <div *ngIf="showMobileCases" class="case-studies-mobile">
-          <span (click)="navigateTo('case-studies/cross-channel')">Cross channel</span>
-          <span (click)="navigateTo('case-studies/tools-selection')">Selezione degli strumenti</span>
-          <span (click)="navigateTo('case-studies/mobility')">Mobilità</span>
-        </div>
-      </div>
-    -->
-    <div>
-      <span (click)="navigateTo('media')">{{ 'NAV.MEDIA' | translate }}</span>
-    </div>
-    <!--
-      <div>
-        <span (click)="navigateTo('join-us')">Carriera</span>
-      </div>
-    -->
-    <div>
-      <span (click)="navigateTo('contacts')">{{ 'NAV.CONTACT' | translate }}</span>
+    <nav class="desktop-nav" [attr.aria-label]="'NAV.MAIN' | translate">
+      <a *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active"
+        ariaCurrentWhenActive="page">{{ link.label | translate }}</a>
+    </nav>
+
+    <div class="actions">
+      <ng-container *ngTemplateOutlet="languageSwitch"></ng-container>
+      <button type="button" class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen"
+        aria-controls="mobile-nav" [attr.aria-label]="(menuOpen ? 'NAV.MENU_CLOSE' : 'NAV.MENU_OPEN') | translate">
+        <svg *ngIf="!menuOpen" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <svg *ngIf="menuOpen" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
     </div>
   </div>
-</div>
-<!--STUDY CASES for Desktop-->
-<div class="links-container">
-  <div *ngIf="showCases && !isShowing" class="hidden-menu">
-    <div>
-      <span (click)="navigateTo('case-studies/cross-channel')">{{ 'NAV.CROSS_CHANNEL' | translate }}</span>
+
+  <nav id="mobile-nav" class="mobile-nav" *ngIf="menuOpen" [attr.aria-label]="'NAV.MAIN' | translate">
+    <div class="container">
+      <a *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active" ariaCurrentWhenActive="page"
+        (click)="closeMenu()">{{ link.label | translate }}</a>
     </div>
-    <div>
-      <span (click)="navigateTo('case-studies/tools-selection')">{{ 'NAV.TOOLS_SELECTION' | translate }}</span>
-    </div>
-    <div>
-      <span (click)="navigateTo('case-studies/mobility')">{{ 'NAV.MOBILITY' | translate }}</span>
-    </div>
+  </nav>
+</header>
+
+<ng-template #languageSwitch>
+  <div class="lang-switch" role="group" [attr.aria-label]="'NAV.LANGUAGE' | translate">
+    <button type="button" *ngFor="let lang of languages" (click)="selectLanguage(lang.code)"
+      [class.current]="lang.code === currentLang" [attr.aria-pressed]="lang.code === currentLang"
+      [attr.lang]="lang.code" [attr.title]="lang.name">
+      <span aria-hidden="true">{{ lang.code | uppercase }}</span>
+      <span class="visually-hidden">{{ lang.name }}</span>
+    </button>
   </div>
-</div>
+</ng-template>

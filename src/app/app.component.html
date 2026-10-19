@@ -1,10 +1,13 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Asar&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-  rel="stylesheet">
+<a class="skip-link" href="#main">{{ 'COMMON.SKIP_TO_CONTENT' | translate }}</a>
 <app-menu></app-menu>
-<button *ngIf="showScrollButton" class="up" (click)="scrollUp()">
-  <i class="material-icons">arrow_circle_up</i>
+<main id="main" tabindex="-1">
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>
+<button *ngIf="showScrollButton" type="button" class="back-to-top" (click)="scrollUp()"
+  [attr.aria-label]="'COMMON.BACK_TO_TOP' | translate">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" />
+  </svg>
 </button>
-<router-outlet></router-outlet>

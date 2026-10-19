@@ -1,34 +1,73 @@
 {
-  "NAV": {
-    "HOME": "Home",
-    "ABOUT": "Chi siamo",
-    "SERVICES": "Prodotti",
-    "MEDIA": "Media",
-    "CONTACT": "Contatti",
-    "CROSS_CHANNEL": "Cross channel",
-    "TOOLS_SELECTION": "Selezione degli strumenti",
-    "MOBILITY": "Mobilità"
+  "META": {
+    "SITE_NAME": "Gemellaggio Filottrano · Kuppenheim · Raon-l’Étape",
+    "DESCRIPTION": "Associazione per il gemellaggio tra Filottrano, Kuppenheim e Raon-l’Étape: storia, eventi e prodotti delle tre città."
   },
-  "WHERE_WE_ARE": {
-    "EYEBROW": "Una associazione internazionale",
-    "TITLE_PREFIX": "Distanza",
-    "TITLE_SUFFIX": "tra le città gemellate",
-    "DISTANCE_TO": "da",
-    "INHABITANTS": "abitanti"
+  "COMMON": {
+    "SKIP_TO_CONTENT": "Vai al contenuto",
+    "BACK_TO_TOP": "Torna su",
+    "NEW_TAB": "(si apre in una nuova scheda)"
+  },
+  "NAV": {
+    "BRAND": "Gemellaggio",
+    "ABOUT": "Chi siamo",
+    "PRODUCTS": "Prodotti",
+    "MEDIA": "Notizie",
+    "CONTACT": "Contatti",
+    "MAIN": "Navigazione principale",
+    "MENU_OPEN": "Apri menu",
+    "MENU_CLOSE": "Chiudi menu",
+    "LANGUAGE": "Lingua"
   },
   "HOME": {
-    "CHI_SIAMO_TITLE": "Chi Siamo",
-    "CHI_SIAMO_INTRO": "__TODO: breve introduzione, massimo due frasi__",
-    "HISTORY_TEXT": "L’associazione ha cominciato la sua attività in maniera quasi parallela alla volontà del nostro Comune di autorizzare in data 02/08/2007 la stipula dei “patti di gemellaggio” con l’allora sindaco Ivana Ballante tra i Comuni di Raon l’Étape e Kuppenheim.<br><br>Ma ancora prima molti di quelli che ora sono all’interno dell’Associazione hanno partecipato, con la scuola media e i propri figli, agli scambi culturali tra i Comuni gemellati. I ragazzi, con la partecipazione della scuola, sono stati il primo vero impulso per creare questo ambizioso progetto: l’attuale “Patto di gemellaggio”."
+    "HERO_EYEBROW": "Gemellaggio dal 2007",
+    "HERO_LEAD": "Tre città, tre paesi, un’amicizia europea costruita da cittadini, famiglie e scuole.",
+    "HERO_ALT": "Veduta di Filottrano e delle colline marchigiane",
+    "CTA_EVENTS": "Notizie ed eventi",
+    "CTA_ABOUT": "Chi siamo",
+    "ABOUT_EYEBROW": "Chi siamo",
+    "ABOUT_TITLE": "Un’amicizia tra tre comunità",
+    "ABOUT_INTRO": "Siamo l’associazione che promuove il gemellaggio tra Filottrano, Kuppenheim e Raon-l’Étape. Organizziamo scambi, incontri ed eventi che avvicinano i cittadini delle tre città.",
+    "EMBLEM_ALT": "Emblema del gemellaggio con gli stemmi di Raon-l’Étape, Filottrano e Kuppenheim",
+    "HISTORY_EYEBROW": "La nostra storia",
+    "HISTORY_TITLE": "Nata dagli scambi tra le scuole",
+    "HISTORY_P1": "L’associazione ha cominciato la sua attività quasi in parallelo alla decisione del Comune di Filottrano di autorizzare, il 2 agosto 2007, la stipula dei patti di gemellaggio con i Comuni di Raon-l’Étape e Kuppenheim, con l’allora sindaco Ivana Ballante.",
+    "HISTORY_P2": "Ma ancora prima, molti di quelli che oggi fanno parte dell’associazione avevano partecipato, con la scuola media e i propri figli, agli scambi culturali tra i Comuni gemellati. I ragazzi, insieme alla scuola, sono stati il primo vero impulso per creare questo ambizioso progetto: l’attuale patto di gemellaggio.",
+    "DISCOVER": "Scopri"
+  },
+  "WHERE_WE_ARE": {
+    "EYEBROW": "Una rete europea",
+    "TITLE": "Le distanze da {{city}}",
+    "LEAD": "Tre città in tre paesi, unite da un patto di amicizia.",
+    "MAP_ALT": "Mappa dell’Europa con {{city}} e le città gemellate evidenziate",
+    "DISTANCE_TO": "Distanza da {{city}}",
+    "INHABITANTS": "Abitanti di {{city}}"
   },
   "PRODUCTS": {
-    "TITLE": "Prodotti",
-    "SUBTITLE": "I sapori del nostro territorio"
+    "TITLE": "Prodotti del territorio",
+    "SUBTITLE": "I sapori delle nostre città",
+    "LEAD": "Specialità delle città gemellate, legate alla loro terra e alle loro tradizioni.",
+    "ITEMS": {
+      "OLIVE_OIL": {
+        "NAME": "Olio d’oliva",
+        "FEATURES": ["Prodotto a Filottrano", "Da olive verdi", "Estratto a freddo"]
+      },
+      "VERDICCHIO": {
+        "NAME": "Verdicchio dei Castelli di Jesi",
+        "FEATURES": ["Vino bianco", "Dalle colline dei Castelli di Jesi", "Uva Verdicchio"]
+      },
+      "SPRITZ": {
+        "NAME": "Spritz",
+        "FEATURES": ["Aperitivo italiano", "Dal colore arancione", "Servito fresco"]
+      }
+    }
   },
   "MEDIA": {
-    "TITLE": "Media Content",
-    "SUBTITLE": "Scopri le nostre ultime news, eventi e contenuti.",
+    "TITLE": "Notizie ed eventi",
+    "SUBTITLE": "Le ultime notizie, gli eventi e i momenti condivisi tra le nostre città.",
     "READ_MORE": "Continua a leggere",
+    "BACK": "Tutte le notizie",
+    "NOT_FOUND": "Articolo non trovato",
     "COUNTRY": {
       "it": "Italia",
       "de": "Germania",
@@ -37,25 +76,32 @@
     "ARTICLES": {
       "CARNEVALE": {
         "TITLE": "Carnevale in Francia",
-        "DESCRIPTION": "__TODO: descrizione reale__ Un momento di festa condiviso tra i soci francesi dell'associazione, tra maschere, musica e tradizione. Racconteremo presto i dettagli di questa giornata."
+        "BODY": "Un momento di festa condiviso tra i soci francesi dell’associazione, tra maschere, musica e tradizione. Racconteremo presto i dettagli di questa giornata."
       },
       "SUNFLOWERS": {
         "TITLE": "Vestiti da girasoli",
-        "DESCRIPTION": "__TODO: descrizione reale__ Un evento all'insegna del colore e dell'allegria, con i partecipanti travestiti da girasoli per l'occasione. Presto maggiori dettagli."
+        "BODY": "Un evento all’insegna del colore e dell’allegria, con i partecipanti travestiti da girasoli per l’occasione. Presto maggiori dettagli."
       },
-       "STADT": {
-        "TITLE": "STADT FEST",
-        "DESCRIPTION": "Festa Kuppenheim grehgrhgehjrgjewh xhegrgucyegruy4gwejhrehjcg ejgr h"
+      "STADT": {
+        "TITLE": "Stadtfest a Kuppenheim",
+        "BODY": "La festa cittadina di Kuppenheim, un’occasione di incontro tra la comunità locale e gli amici delle città gemellate. Presto maggiori dettagli."
       }
     }
   },
   "CONTACT": {
-"INTRO": "Contattaci per saperne di più",
-"INTRO_HIGHLIGHT": "sulla nostra associazione",
-"HOURS_LINE1": "Siamo attivi dal lunedì al venerdì",
-"HOURS_LINE2": "dalle 9:00 alle 18:00"
-},
-"FOOTER": {
-"REGISTRY_LABEL": "Numero Registro Imprese di Milano Monza Brianza e Lodi"
-}
+    "TITLE": "Contattaci",
+    "LEAD": "Vuoi saperne di più sulla nostra associazione o partecipare ai prossimi scambi? Saremo felici di sentirti.",
+    "ADDRESS": "Sede",
+    "OPEN_MAP": "Apri la mappa",
+    "EMAIL": "E-mail",
+    "WRITE": "Scrivici",
+    "PHONE": "Telefono",
+    "CALL": "Chiama",
+    "FOLLOW": "Seguici"
+  },
+  "FOOTER": {
+    "TAGLINE": "Associazione per il gemellaggio tra Filottrano, Kuppenheim e Raon-l’Étape.",
+    "NAV_LABEL": "Navigazione",
+    "FISCAL_CODE": "C.F."
+  }
 }
