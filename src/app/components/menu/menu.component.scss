@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 2000;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(1.4) blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -45,9 +45,9 @@
 }
 
 .brand-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .brand-towns {
@@ -159,7 +159,7 @@
     padding: var(--space-3) 0;
     border-bottom: 1px solid var(--line);
     color: var(--ink);
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-size: 1.25rem;
     text-decoration: none;
 

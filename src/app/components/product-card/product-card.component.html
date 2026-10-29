@@ -1,12 +1,15 @@
-<article class="card" appScrollAnimation="bottom">
-  <img [src]="product.img" alt="" loading="lazy" width="640" height="480">
-  <div class="body">
+<!-- Photo fills the card; on hover/tap/focus it shrinks to a round image and the details appear. -->
+<article class="product-box" tabindex="0">
+  <div class="photo" [style.background-image]="'url(' + product.img + ')'">
+    <span class="photo-label" aria-hidden="true">{{ product.key + '.NAME' | translate }}</span>
+  </div>
+  <div class="content">
     <span class="town">{{ product.town }}</span>
     <h2>{{ product.key + '.NAME' | translate }}</h2>
     <ul>
       <li *ngFor="let i of featureIndexes">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-          <path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2"
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+          <path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6"
             stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         {{ product.key + '.FEATURES.' + i | translate }}

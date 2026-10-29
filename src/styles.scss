@@ -1,23 +1,24 @@
-// Design tokens. Palette taken from the twin-town emblem:
-// deep navy circle, Filottrano crimson, Kuppenheim gold.
+// Design tokens. Fresh white base; accents from the twin-town emblem
+// (Filottrano crimson, Kuppenheim gold) brightened for a friendlier tone.
 :root {
-  --ink: #1b2430;
-  --ink-2: #4a5563;
-  --muted: #5f6b78;
-  --paper: #f7f4ee;
+  --ink: #18212c;
+  --ink-2: #475262;
+  --muted: #5d6876;
+  --paper: #ffffff;
   --surface: #ffffff;
-  --surface-2: #efe9df;
-  --line: #e2dbcf;
-  --accent: #9b2335;
-  --accent-strong: #7d1b2a;
-  --gold: #c9a24a;
+  --surface-2: #f3f6fa;
+  --line: #e6e9ef;
+  --accent: #d01f48;
+  --accent-strong: #ad1a3c;
+  --accent-tint: #fdecf0;
+  --gold: #f2b84b;
 
   // One colour per country, used for the town band and country badges.
-  --it: #2f6b4f;
-  --fr: #2b4a7a;
-  --de: #85631a;
+  --it: #1f9d5c;
+  --fr: #2f6fe0;
+  --de: #f2b84b;
 
-  --font-serif: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
+  --font-display: "Plus Jakarta Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --text-sm: 0.875rem;
@@ -40,10 +41,10 @@
   --container: 1160px;
   --measure: 68ch;
 
-  --radius-sm: 6px;
-  --radius: 12px;
-  --shadow-sm: 0 1px 2px rgba(27, 36, 48, 0.06);
-  --shadow-md: 0 8px 24px rgba(27, 36, 48, 0.1);
+  --radius-sm: 10px;
+  --radius: 20px;
+  --shadow-sm: 0 2px 8px rgba(24, 33, 44, 0.06);
+  --shadow-md: 0 14px 34px rgba(24, 33, 44, 0.12);
   --dur: 200ms;
   --header-h: 72px;
 }
@@ -75,10 +76,10 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-serif);
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0;
   text-wrap: balance;
@@ -135,14 +136,16 @@ button {
   }
 }
 
+// Small pill label above titles.
 .eyebrow {
   display: inline-block;
-  margin-bottom: var(--space-3);
-  font-family: var(--font-sans);
+  margin-bottom: var(--space-4);
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--accent-tint);
+  font-family: var(--font-display);
   font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 700;
   color: var(--accent);
 }
 
@@ -160,6 +163,15 @@ button {
 // Header used by every inner page (products, media, contacts, article).
 .page-header {
   padding-block: clamp(48px, 7vw, 88px) clamp(32px, 4vw, 48px);
+  text-align: center;
+
+  .lead {
+    margin-inline: auto;
+  }
+
+  .town-band {
+    margin-inline: auto;
+  }
 
   h1 {
     font-size: var(--text-h1);
@@ -175,8 +187,8 @@ button {
 .town-band {
   display: flex;
   width: 96px;
-  height: 4px;
-  border-radius: 2px;
+  height: 5px;
+  border-radius: 999px;
   overflow: hidden;
 
   &::before,
@@ -211,24 +223,27 @@ button {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 12px 22px;
+  padding: 13px 24px;
   border: 1px solid transparent;
   border-radius: 999px;
+  font-family: var(--font-display);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
   transition: background-color var(--dur) ease, color var(--dur) ease,
-    border-color var(--dur) ease;
+    border-color var(--dur) ease, transform var(--dur) ease, box-shadow var(--dur) ease;
 
   &--primary {
     background: var(--accent);
     color: #fff;
+    box-shadow: 0 8px 20px rgba(208, 31, 72, 0.25);
 
     &:hover {
       background: var(--accent-strong);
       color: #fff;
+      transform: translateY(-1px);
     }
   }
 
@@ -248,27 +263,30 @@ button {
   }
 }
 
+// Country badges: soft tint with dark text of the same hue.
 .badge {
   display: inline-block;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--surface-2);
 
   &--it {
-    background: var(--it);
+    background: #e2f4ea;
+    color: #17643c;
   }
 
   &--fr {
-    background: var(--fr);
+    background: #e6eefc;
+    color: #1d4aa6;
   }
 
   &--de {
-    background: var(--de);
+    background: #fdf2d3;
+    color: #7a5600;
   }
 }
 
